@@ -54,28 +54,26 @@ def happiness(df_mood):
 
 
 
-#NOT FUNCTIONAL
 def imageRating(df_images):
 
-    #Get unique Names
+    #Get unique images and users
     imageNames = df_images['file_name'].unique()
+    usersIds = df_images['user_id'].unique()
 
-    #Group by user
-    groups = df_images.groupby('user_id')
+    ratingsOfAllUsers = []
+    for id in usersIds:
+        dataForUser = df_images[df_images['user_id']==id]
+        dictUser = dataForUser[['file_name','rating']]
+        dictUserDict = dictUser.set_index('file_name').T.to_dict()
 
-    dfImageRating = pd.DataFrame(None,columns=['user_id'])
+        row = []
+        row.append(id)
+        for i in range(0,len(imageNames)):
+            if imageNames[i] in dictUserDict:
+                row.append(dictUserDict.get(imageNames[i]).get('rating'))
+            else:
+                row.append(None)
+        ratingsOfAllUsers.append(row)
 
-    #Create Df
-    for i,imageName in enumerate(imageNames):
-        naming = "Image_{number}"
-        dfImageRating['naming'.format(number=str(i))]
-
-    
-    #Collect Data
-    data = []
-    l = [None] * len(imageNames)
-
-    for group in groups:
-        #get index in filename
-        imageNames.get_index
-
+    dfRatingsOfAllUsers = pd.DataFrame(ratingsOfAllUsers)
+    return dfRatingsOfAllUsers
