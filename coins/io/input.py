@@ -1,31 +1,42 @@
 import pandas as pd
 import numpy as np
+from .utils import get_data_path
+import os
 
 def testmethod():
     print('test successful')
 
 def get_data(datafile):
     if datafile == 'ipip':
-        df = pd.read_csv('../data/input/2020-04-30_ipip_5f30f_r1.simplified_anonymized.csv', sep=';', low_memory=False)
+        path = os.path.join(get_data_path(),'input/2020-04-30_ipip_5f30f_r1.simplified_anonymized.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_ipip(df)
     elif datafile == 'mpzm':
-        df = pd.read_csv('../data/input/2020-04-30_mpzm.simplified_anonymized.csv', sep=';', low_memory=False)
+        path = os.path.join(get_data_path(),'input/2020-04-30_mpzm.simplified_anonymized.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_mpzm(df)
     elif datafile == 'emotions':
-        df = pd.read_csv('../data/input/2020-04-30_resource_diagnostics2_emotions_anonymized.csv', sep=';', low_memory=False)
+        path = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_emotions_anonymized.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_emotions(df)
     elif datafile == 'mood':
-        df = pd.read_csv('../data/input/2020-04-30_mood_anonymized.csv', sep=';', low_memory=False)
+        path = os.path.join(get_data_path(),'input/2020-04-30_mood_anonymized.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_mood(df)
     elif datafile == 'images':
-        df = pd.read_csv('../data/input/2020-04-30_resource_diagnostics_images_anonymized.csv', sep=';', low_memory=False)
-        df2 = pd.read_csv('../data/input/2020-04-30_resource_diagnostics2_images_anonymized.csv', sep=';', low_memory=False)
+        path1 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics_images_anonymized.csv')
+        path2 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_images_anonymized.csv')
+        df = pd.read_csv(path1, sep=';', low_memory=False)
+        df2 = pd.read_csv(path2, sep=';', low_memory=False)
         df = preprocess_images(df, df2)
     elif datafile == 'sessions':
-        df = pd.read_csv('../data/input/2020-04-30_resource_diagnostics_sessions_anonymized.csv', sep=';', low_memory=False)
-        df2 = pd.read_csv('../data/input/2020-04-30_resource_diagnostics2_sessions_anonymized.csv', sep=';', low_memory=False)
+        path1 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics_sessions_anonymized.csv')
+        path2 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_sessions_anonymized.csv')
+        df = pd.read_csv(path1, sep=';', low_memory=False)
+        df2 = pd.read_csv(path2, sep=';', low_memory=False)
         df = preprocess_sessions(df, df2)
     return df
+
 
 def preprocess_ipip(df):
     df.drop_duplicates(inplace = True)
