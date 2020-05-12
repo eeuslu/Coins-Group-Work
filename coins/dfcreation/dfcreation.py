@@ -76,4 +76,5 @@ def imageRating(df_images):
         ratingsOfAllUsers.append(row)
 
     dfRatingsOfAllUsers = pd.DataFrame(ratingsOfAllUsers)
+    dfRatingsOfAllUsers.rename(columns={0:'user_id'}, inplace=True)
     return dfRatingsOfAllUsers
