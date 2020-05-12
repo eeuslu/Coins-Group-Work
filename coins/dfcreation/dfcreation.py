@@ -92,6 +92,7 @@ def createImageRatings(df_images):
 
     dfImageRatings = pd.DataFrame(ratingList)
     dfImageRatings.rename(columns={0:'user_id'}, inplace=True)
+    dfImageRatings.fillna(value=0.0, inplace=True)
     
     return dfImageRatings
 
@@ -101,6 +102,14 @@ def imageRating(df_images):
     #Get unique images and users
     imageNames = df_images['file_name'].unique()
     usersIds = df_images['user_id'].unique()
+    
+    uniqueImageNames = []
+
+    for imageName in imageNames:
+        imageName = imageName.replace('./', '')
+        uniqueImageNames.append(imageName)
+
+    imageNames = numpy.unique(uniqueImageNames)
 
     ratingsOfAllUsers = []
     for id in usersIds:
@@ -119,6 +128,7 @@ def imageRating(df_images):
 
     dfRatingsOfAllUsers = pd.DataFrame(ratingsOfAllUsers)
     dfRatingsOfAllUsers.rename(columns={0:'user_id'}, inplace=True)
+    dfRatingsOfAllUsers.fillna(value=0.0, inplace=True)
     return dfRatingsOfAllUsers
 
 # ------------------------------------------------------------------
