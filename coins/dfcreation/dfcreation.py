@@ -93,38 +93,30 @@ def createImageRatings(df_images):
     return dfImageRatings
 
 
-#NOT FUNCTIONAL
 def imageRating(df_images):
 
-    #Get unique Names
+    #Get unique images and users
     imageNames = df_images['file_name'].unique()
-    uniqueImageNames = []
+    usersIds = df_images['user_id'].unique()
 
-    for imageName in imageNames:
-        imageName = imageName.replace('./', '')
-        uniqueImageNames.append(imageName)
+    ratingsOfAllUsers = []
+    for id in usersIds:
+        dataForUser = df_images[df_images['user_id']==id]
+        dictUser = dataForUser[['file_name','rating']]
+        dictUserDict = dictUser.set_index('file_name').T.to_dict()
 
-    uniqueImageNames = numpy.unique(uniqueImageNames)
+        row = []
+        row.append(id)
+        for i in range(0,len(imageNames)):
+            if imageNames[i] in dictUserDict:
+                row.append(dictUserDict.get(imageNames[i]).get('rating'))
+            else:
+                row.append(None)
+        ratingsOfAllUsers.append(row)
 
-    #Group by user
-    groups = df_images.groupby('user_id')
-
-    dfImageRating = pd.DataFrame(None,columns=['user_id'])
-
-    #Create Df
-    for i,imageName in enumerate(imageNames):
-        naming = "Image_{number}"
-        dfImageRating['naming'.format(number=str(i))]
-
-    
-    #Collect Data
-    data = []
-    l = [None] * len(imageNames)
-
-    for group in groups:
-        #get index in filename
-        imageNames.get_index
-
+    dfRatingsOfAllUsers = pd.DataFrame(ratingsOfAllUsers)
+    dfRatingsOfAllUsers.rename(columns={0:'user_id'}, inplace=True)
+    return dfRatingsOfAllUsers
 
 # ------------------------------------------------------------------
 # -------------------------- NOT USED NOW --------------------------
