@@ -47,6 +47,8 @@ def createImageDescriptions(df_images):
     
     # filter only for entries which are favorites
     dfTextAboutImages = dfTextAboutImages[dfTextAboutImages['favorite']==True][['user_id','file_name','reasons','emotions','strengths','utilization','story']]
+
+    dfTextAboutImages['file_name'] = dfTextAboutImages['file_name'].str.replace('./', '')
     
     return dfTextAboutImages
 
@@ -89,6 +91,7 @@ def createImageRatings(df_images):
         ratingList.append(ratings)
 
     dfImageRatings = pd.DataFrame(ratingList)
+    dfImageRatings.rename(columns={0:'user_id'}, inplace=True)
     
     return dfImageRatings
 
