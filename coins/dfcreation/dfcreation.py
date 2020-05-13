@@ -97,40 +97,6 @@ def createImageRatings(df_images):
     return dfImageRatings
 
 
-def imageRating(df_images):
-
-    #Get unique images and users
-    imageNames = df_images['file_name'].unique()
-    usersIds = df_images['user_id'].unique()
-    
-    uniqueImageNames = []
-
-    for imageName in imageNames:
-        imageName = imageName.replace('./', '')
-        uniqueImageNames.append(imageName)
-
-    imageNames = numpy.unique(uniqueImageNames)
-
-    ratingsOfAllUsers = []
-    for id in usersIds:
-        dataForUser = df_images[df_images['user_id']==id]
-        dictUser = dataForUser[['file_name','rating']]
-        dictUserDict = dictUser.set_index('file_name').T.to_dict()
-
-        row = []
-        row.append(id)
-        for i in range(0,len(imageNames)):
-            if imageNames[i] in dictUserDict:
-                row.append(dictUserDict.get(imageNames[i]).get('rating'))
-            else:
-                row.append(None)
-        ratingsOfAllUsers.append(row)
-
-    dfRatingsOfAllUsers = pd.DataFrame(ratingsOfAllUsers)
-    dfRatingsOfAllUsers.rename(columns={0:'user_id'}, inplace=True)
-    dfRatingsOfAllUsers.fillna(value=0.0, inplace=True)
-    return dfRatingsOfAllUsers
-
 # ------------------------------------------------------------------
 # -------------------------- NOT USED NOW --------------------------
 
