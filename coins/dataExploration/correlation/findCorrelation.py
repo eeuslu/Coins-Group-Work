@@ -17,6 +17,16 @@ def findCorrelations(dfSocialDemographics,dfPersonality,dfImageRatings,dfMotives
 
     return dfMerge1CorrFiltered
 
+#Return all values above
+def findHighCorrelation(dfCorrelation, values):
+
+    highCorrelative = []
+    for column in dfCorrelation.columns:
+        buffer = dfCorrelation[dfCorrelation[column] > abs(values)][column]
+        if len(buffer) > 0:
+            highCorrelative.append(buffer)
+
+    return highCorrelative
 
 
 def visualizeCorrelation(dfCorrelation):
