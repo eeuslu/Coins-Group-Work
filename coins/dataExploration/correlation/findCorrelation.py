@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 import coins
 
@@ -27,6 +28,23 @@ def findHighCorrelation(dfCorrelation, values):
             highCorrelative.append(buffer)
 
     return highCorrelative
+
+# def heatmap(dfCorrelation):
+
+#     corr = dfMerge1CorrFiltered.corr()
+#     x = sns.heatmap(
+#     corr, 
+#     vmin=-1, vmax=1, center=0,
+#     cmap=sns.diverging_palette(20, 220, n=200),
+#     square=True
+# )
+#     ax.set_xticklabels(
+#     ax.get_xticklabels(),
+#     rotation=45,
+#     horizontalalignment='right'
+# );
+
+#     return heatmap
 
 
 def visualizeCorrelation(dfCorrelation):
