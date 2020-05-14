@@ -49,6 +49,7 @@ def createImageDescriptions(df_images):
     dfTextAboutImages = dfTextAboutImages[dfTextAboutImages['favorite']==True][['user_id','file_name','reasons','emotions','strengths','utilization','story']]
 
     dfTextAboutImages['file_name'] = dfTextAboutImages['file_name'].str.replace('./', '')
+    dfTextAboutImages = dfTextAboutImages.reset_index(drop=True)
     
     return dfTextAboutImages
 
