@@ -44,6 +44,8 @@ def findHighCorrelation(dfCorrelation, values):
 #     horizontalalignment='right'
 # );
 
+#    sns.heatmap(corr.corr(), annot = True) #display different correlation coefficient
+
 #     return heatmap
 
 
