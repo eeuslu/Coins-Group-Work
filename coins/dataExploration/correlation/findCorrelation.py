@@ -3,19 +3,28 @@ import pandas as pd
 import coins
 
 
-def findCorrelations(dfSocialDemographics,dfPersonality,dfImageRatings,dfMotives,dfMood):
+def findCorrelations(dfMain,dfList):
 
-    dfMerge1 = dfSocialDemographics.set_index('user_id').join(dfPersonality.set_index('user_id'),how='inner',lsuffix='_l', rsuffix='_r')
-    dfMerge1 = pd.get_dummies(dfMerge1)
-    dfMerge1Corr = dfMerge1.corr()
+    correlationList = []
 
-    attributSet1 = ['neurotizismus','extraversion','offenheit','vertraeglichkeit','gewissenhaftigkeit']
-    dfMerge1CorrFiltered = dfMerge1Corr.drop(attributSet1,axis=1)
+    for df in dfList:
 
-    attributSet2 = list(dfMerge1CorrFiltered.columns)
-    dfMerge1CorrFiltered = dfMerge1CorrFiltered.drop(attributSet2)
+        #Correlation between dfSocialDemographics and dfMotives
+        dfMerge = dfMain.set_index('user_id').join(df.set_index('user_id'),how='inner',lsuffix='_l', rsuffix='_r')
+        dfMerge = pd.get_dummies(dfMerge)
+        dfMergeCorr = dfMerge.corr()
 
-    return dfMerge1CorrFiltered
+        attributSet1 = list(df.drop('user_id',axis=1).columns)
+        dfMergeCorrFiltered = dfMergeCorr.drop(attributSet1,axis=1)
+
+        attributSet2 = list(dfMergeCorrFiltered.columns)
+    
+        #Final df
+        dfMergeCorrFiltered = dfMergeCorrFiltered.drop(attributSet2)
+        correlationList.append(dfMergeCorrFiltered)
+
+    return correlationList
+
 
 #Return all values above
 def findHighCorrelation(dfCorrelation, values):
@@ -29,14 +38,31 @@ def findHighCorrelation(dfCorrelation, values):
     return highCorrelative
 
 
-def visualizeCorrelation(dfCorrelation):
+
+def visualizeCorrelation(dfCorrelation, i):
 
     f = plt.figure(figsize=(25, 50))
     plt.matshow(dfCorrelation)
     cb = plt.colorbar()
     cb.ax.tick_params(labelsize=14)
 
-    #fig1 = plt.gcf()
+    fig1 = plt.gcf()
     plt.show()
     plt.draw()
-    #f.savefig('first.png',bbox_inches='tight')   
+    fig1.savefig('first{number}.png'.format(number=i),bbox_inches='tight')   
+
+
+
+def reportCorrelation(dfMain, dfNameList, dfList, value):
+
+    correlationList = findCorrelations(dfMain, dfList)
+
+    for i,result in enumerate(correlationList):
+
+        print("############## {df_name} ###############".format(df_name=dfNameList[i]))
+        visualizeCorrelation(result,i)
+        highCorrelation = findHighCorrelation(result,value)
+
+        for correlation in highCorrelation:
+            print("#############".format(df_name=dfNameList[i]))
+            print(correlation)
