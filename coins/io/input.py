@@ -59,16 +59,6 @@ def preprocess_ipip(df):
     df['version'] = df.version.astype('category')
     df['ageKat'] = df.ageKat.astype('category')
 
-    # # convert datatypes to boolean
-    # df['job_status_edu_fulltime'] = df.job_status_edu_fulltime.astype('bool')
-    # df['job_status_edu_parttime'] = df.job_status_edu_parttime.astype('bool')
-    # df['job_status_employed_fulltime'] = df.job_status_employed_fulltime.astype('bool')
-    # df['job_status_employed_parttime'] = df.job_status_employed_parttime.astype('bool')
-    # df['job_status_selfemployed'] = df.job_status_selfemployed.astype('bool')
-    # df['job_status_houskeeping'] = df.job_status_houskeeping.astype('bool')
-    # df['job_status_unemployed'] = df.job_status_unemployed.astype('bool')
-    # df['job_status_retired'] = df.job_status_retired.astype('bool')
-
     # convert datatypes to datetime
     df['user_created_at'] = pd.to_datetime(df['user_created_at'], utc=True)
     df['last_sign_in_at'] = pd.to_datetime(df['last_sign_in_at'], utc=True)
@@ -135,16 +125,6 @@ def preprocess_mpzm(df):
     df['version'] = df.version.astype('category')
     df['ageKat'] = df.ageKat.astype('category')
 
-    # # convert datatypes to boolean
-    # df['job_status_edu_fulltime'] = df.job_status_edu_fulltime.astype('bool')
-    # df['job_status_edu_parttime'] = df.job_status_edu_parttime.astype('bool')
-    # df['job_status_employed_fulltime'] = df.job_status_employed_fulltime.astype('bool')
-    # df['job_status_employed_parttime'] = df.job_status_employed_parttime.astype('bool')
-    # df['job_status_selfemployed'] = df.job_status_selfemployed.astype('bool')
-    # df['job_status_houskeeping'] = df.job_status_houskeeping.astype('bool')
-    # df['job_status_unemployed'] = df.job_status_unemployed.astype('bool')
-    # df['job_status_retired'] = df.job_status_retired.astype('bool')
-
     # convert datatypes to float64
     df['Bindung'] = df.Bindung.str.replace(',','.').astype('float64')
     df['Unternehmungslust'] = df.Unternehmungslust.str.replace(',','.').astype('float64')
@@ -209,8 +189,6 @@ def preprocess_images(df, df2):
     df = df.append(df2, sort=False)
     df = df.reset_index(drop=True)
 
-
-
     # convert datatypes to category
     df['gender'] = df.gender.astype('category')
     df['country'] = df.country.astype('category')
@@ -223,17 +201,6 @@ def preprocess_images(df, df2):
     df['educational_achievement'] = df.educational_achievement.astype('category')
     df['registration_ageKat'] = df.registration_ageKat.astype('category')
     df['version'] = df.version.astype('category')
-
-    # # convert datatypes to boolean
-    # df['job_status_edu_fulltime'] = df.job_status_edu_fulltime.astype('bool')
-    # df['job_status_edu_parttime'] = df.job_status_edu_parttime.astype('bool')
-    # df['job_status_employed_fulltime'] = df.job_status_employed_fulltime.astype('bool')
-    # df['job_status_employed_parttime'] = df.job_status_employed_parttime.astype('bool')
-    # df['job_status_selfemployed'] = df.job_status_selfemployed.astype('bool')
-    # df['job_status_houskeeping'] = df.job_status_houskeeping.astype('bool')
-    # df['job_status_unemployed'] = df.job_status_unemployed.astype('bool')
-    # df['job_status_retired'] = df.job_status_retired.astype('bool')
-    # df['favorite'] = df.favorite.astype('bool')
 
     # convert datatypes to datetime
     df['user_created_at'] = pd.to_datetime(df['user_created_at'], utc=True)
@@ -277,16 +244,6 @@ def preprocess_sessions(df, df2):
     df['educational_achievement'] = df.educational_achievement.astype('category')
     df['registration_ageKat'] = df.registration_ageKat.astype('category')
     df['version'] = df.version.astype('category')
-
-    # # convert datatypes to boolean
-    # df['job_status_edu_fulltime'] = df.job_status_edu_fulltime.astype('bool')
-    # df['job_status_edu_parttime'] = df.job_status_edu_parttime.astype('bool')
-    # df['job_status_employed_fulltime'] = df.job_status_employed_fulltime.astype('bool')
-    # df['job_status_employed_parttime'] = df.job_status_employed_parttime.astype('bool')
-    # df['job_status_selfemployed'] = df.job_status_selfemployed.astype('bool')
-    # df['job_status_houskeeping'] = df.job_status_houskeeping.astype('bool')
-    # df['job_status_unemployed'] = df.job_status_unemployed.astype('bool')
-    # df['job_status_retired'] = df.job_status_retired.astype('bool')
 
     # convert datatypes to datetime
     df['user_created_at'] = pd.to_datetime(df['user_created_at'], utc=True)
