@@ -16,9 +16,15 @@ def findCorrelations(dfMain,dfList):
         dfMerge = pd.get_dummies(dfMerge)
         dfMergeCorr = dfMerge.corr()
 
-        attributSet1 = list(df.drop('user_id',axis=1).columns)
-        dfMergeCorrFiltered = dfMergeCorr.drop(attributSet1,axis=1)
+        allAttributeSet1 = list(pd.get_dummies(df.drop('user_id',axis=1)).columns)
+        attributeSet1 = []
 
+        for attribute in allAttributeSet1:
+            if attribute in dfMergeCorr:
+                attributeSet1.append(attribute)
+
+
+        dfMergeCorrFiltered = dfMergeCorr.drop(attributeSet1,axis=1)
         attributSet2 = list(dfMergeCorrFiltered.columns)
     
         #Final df
@@ -26,6 +32,7 @@ def findCorrelations(dfMain,dfList):
         correlationList.append(dfMergeCorrFiltered)
 
     return correlationList
+
 
 
 #Return all values above
