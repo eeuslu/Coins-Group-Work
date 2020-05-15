@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import seaborn as sns
 import pandas as pd
 import coins
@@ -38,26 +39,14 @@ def findHighCorrelation(dfCorrelation, values):
 
     return highCorrelative
 
-# def heatmap(dfCorrelation):
+#Correlation between Social Demographics and Features
+def heatmap(dfMergeCorrFiltered):
 
-#     corr = dfMerge1CorrFiltered.corr()
-#     x = sns.heatmap(
-#     corr, 
-#     vmin=-1, vmax=1, center=0,
-#     cmap=sns.diverging_palette(20, 220, n=200),
-#     square=True
-# )
-#     ax.set_xticklabels(
-#     ax.get_xticklabels(),
-#     rotation=45,
-#     horizontalalignment='right'
-# );
+ plt.subplots(figsize=(25,15))
+ sns_plot = sns.heatmap(dfMergeCorrFiltered,  cmap='coolwarm')
 
-#    sns.heatmap(corr.corr(), annot = True) #display different correlation coefficient
-
-#     return heatmap
-
-
+ sns_plot.figure.savefig("output.png")
+ 
 
 def visualizeCorrelation(dfCorrelation, i):
 
