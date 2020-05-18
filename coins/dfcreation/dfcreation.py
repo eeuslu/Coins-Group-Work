@@ -96,7 +96,21 @@ def createImageRatings(df_images):
     
     return dfImageRatings
 
-
+def cleanImageDescriptions(df):
+    df = df.drop(columns=['Unnamed: 0'])
+    
+    dfNumeric = df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
+    
+    dfNumeric = dfNumeric.fillna(method='ffill', axis='columns')
+    dfNumeric = dfNumeric.fillna(method='bfill', axis='columns')
+    
+    df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']] = dfNumeric[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
+    
+    df = df.dropna(axis='index', subset=['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment'])
+    
+    df = df.reset_index(drop=True)
+    
+    return df
 # ------------------------------------------------------------------
 # -------------------------- NOT USED NOW --------------------------
 

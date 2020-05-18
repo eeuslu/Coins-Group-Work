@@ -58,7 +58,7 @@ def heatmap(dfMergeCorrFiltered):
 def visualizeCorrelation(dfCorrelation, i):
 
     f = plt.figure(figsize=(25, 50))
-    plt.matshow(dfCorrelation)
+    plt.matshow(dfCorrelation,cmap='RdYlGn')
     cb = plt.colorbar()
     cb.ax.tick_params(labelsize=14)
 
@@ -66,6 +66,7 @@ def visualizeCorrelation(dfCorrelation, i):
     plt.show()
     plt.draw()
     fig1.savefig('first{number}.png'.format(number=i),bbox_inches='tight')   
+
 
 
 

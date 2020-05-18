@@ -181,6 +181,9 @@ def preprocess_mood(df):
     df.drop(columns=['admin', 'accept_terms_and_conditions', 'accept_data_privacy', 'created_by', 'consultant'], inplace=True)
     df.rename(columns={'Unnamed: 0': 'index'}, inplace=True)
     df.set_index('index', inplace=True)
+    df['PositiveAktivierung'] = df.PositiveAktivierung.str.replace(',','.').astype('float64')
+    df['NegativeAktivierung'] = df.NegativeAktivierung.str.replace(',','.').astype('float64')
+    df['Zufriedenheit_Glueck'] = df.Zufriedenheit_Glueck.str.replace(',','.').astype('float64')
 
     #todo change datatypes
 
