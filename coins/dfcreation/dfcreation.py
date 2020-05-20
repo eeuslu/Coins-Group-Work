@@ -101,7 +101,6 @@ def createImageRatings(df_images):
     return dfImageRatings
 
 
-=======
 # fill NaNs in dfImageDescriptions with bfill and ffill where possible, delete other NaN rows
 def cleanImageDescriptions(df):
     df = df.drop(columns=['Unnamed: 0'])
