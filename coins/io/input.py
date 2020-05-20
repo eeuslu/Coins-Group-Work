@@ -35,6 +35,17 @@ def get_data(datafile):
         df = pd.read_csv(path1, sep=';', low_memory=False)
         df2 = pd.read_csv(path2, sep=';', low_memory=False)
         df = preprocess_sessions(df, df2)
+    elif datafile == 'mood':
+        path = os.path.join(get_data_path(),'input/2020-04-30_mood_anonymized.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = preprocess_mood(df)
+    elif datafile == 'sentimentComplete':
+        path = os.path.join(get_data_path(),'input/dfImageDescriptions_englishSentimentEmotionsScores.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+    elif datafile == 'sentiment':
+        path = os.path.join(get_data_path(),'input/dfImageDescriptions_germanSentimentScores.csv')
+        df = pd.read_csv(path, sep=',', low_memory=False)
+        
     return df
 
 

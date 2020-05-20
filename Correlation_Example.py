@@ -11,22 +11,22 @@ df2 = coins.io.get_data('mpzm')
 df3 = coins.io.get_data('images')
 df4 = coins.io.get_data('emotions')
 df5 = coins.io.get_data('mood')
+df6 = coins.io.get_data('sentimentComplete')
+df7 = coins.io.get_data('sentiment')
 
 #Then create the dataframes 
 dfPersonality = coins.dfcreation.createPersonality(df1)
 dfSocialDemographics = coins.dfcreation.createSocialDemographics(df1,df2,df3,df4,df5)
 dfImageRating = coins.dfcreation.createImageRatings(df3)
-
+dfImageDescriptions = coins.dfcreation.cleanImageDescriptions(df6)
 
 #CURRENTLY NOT IN USE
 dfMotives = coins.dfcreation.createMotives(df2)
 dfMood = coins.dfcreation.createMood(df5)
 
 
+############################################# Some data preparation for dfImageDescription ###################################################################
 #%%
-#Get the sentiment Score
-dfImageDescriptions = pd.read_csv('all_sentimentScores.csv')
-dfImageDescriptions = coins.dfcreation.cleanImageDescriptions(dfImageDescriptions)
 dfImageDescriptions.drop(['reasons', 'emotions', 'strengths', 'utilization', 'story'], axis=1, inplace=True)
 #%%
 #Small example how to filter for the scores for a destinct image
@@ -34,6 +34,9 @@ dfImageDescriptionsFiltered = dfImageDescriptions[dfImageDescriptions['file_name
 dfImageDescriptionsFiltered.drop('file_name',axis=1,inplace=True)
 dfImageDescriptionsFiltered
 
+
+
+################################################################################################################################
 #%%
 #Get the report (4 parameters needed)
 #1. First overgive the "main" dataframe -- all the following dataframes refer to him    --type=DataFrame
