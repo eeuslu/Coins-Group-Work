@@ -3,6 +3,8 @@
 
 import coins
 import pandas as pd
+#%%
+from scipy.stats import linregress
 
 #%%
 #First get the raw data
@@ -62,10 +64,8 @@ print('#################################1#######################################
 
 
 
-
-
 #%%
-coins.dataExploration.reportCorrelation(dfPersonality,['dfSocialDemographics','dfImageRating','dfMotives','dfMood'],[dfSocialDemographics,dfImageRating,dfMotives,dfMood],0.2)
+coins.dataExploration.reportCorrelation(dfPersonality,['dfSocialDemographics','dfPersonality'],[dfSocialDemographics,dfPersonality],0.2)
 print('#################################2#######################################')
 #%%
 coins.dataExploration.reportCorrelation(dfImageRating,['dfSocialDemographics','dfPersonality','dfMotives','dfMood'],[dfSocialDemographics,dfPersonality,dfMotives,dfMood],0.2)
@@ -76,3 +76,37 @@ print('#################################4#######################################
 #%%
 coins.dataExploration.reportCorrelation(dfMood,['dfSocialDemographics','dfPersonality','dfImageRating','dfMotives'],[dfSocialDemographics,dfPersonality,dfImageRating,dfMotives],0.3)
 print('#################################4#######################################')
+
+#%%
+from scipy.stats import linregress
+
+#%%
+dfMerge = dfPersonality.set_index('user_id').join(dfMood.set_index('user_id'),how='inner',lsuffix='_l', rsuffix='_r')
+dfMerge = pd.get_dummies(dfMerge)
+dfMerge.dropna(inplace=True)
+#%%
+allRValues = []
+allPValues = []
+
+for column_Y in dfMerge.columns:
+    rValues = []
+    pValues = []
+
+    for column_X in dfMerge.columns:
+        rValues.append(linregress(dfMerge[column_Y], dfMerge[column_X]).rvalue)
+        pValues.append(linregress(dfMerge[column_Y], dfMerge[column_X]).pvalue)
+    allRValues.append(rValues)
+    allPValues.append(pValues)
+
+#Convert to dataframe -- Must have the same format as .corr()
+allRValues = pd.DataFrame(allRValues,columns=dfMerge.columns)
+allPValues = pd.DataFrame(allPValues,columns=dfMerge.columns)
+
+#Set indexes
+allRValues = allRValues.set_index(dfMerge.columns)
+# %%
+allRValues
+
+# %%
+
+# %%
