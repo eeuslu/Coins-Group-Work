@@ -7,5 +7,5 @@ setup(
     author="COINS Group 3",
     author_email="coinproject3@gmail.com",
     packages=["coins"],
-    install_requires=['pandas']
+    install_requires=['pandas', 'ibm_watson', 'requests']
 )
