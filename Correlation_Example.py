@@ -12,13 +12,16 @@ df3 = coins.io.get_data('images')
 df4 = coins.io.get_data('emotions')
 df5 = coins.io.get_data('mood')
 
-#The create the dataframes 
+#Then create the dataframes 
 dfPersonality = coins.dfcreation.createPersonality(df1)
 dfSocialDemographics = coins.dfcreation.createSocialDemographics(df1,df2,df3,df4,df5)
 dfImageRating = coins.dfcreation.createImageRatings(df3)
 
-#dfMotives = coins.dfcreation.createMotives(df2)
-#dfMood = coins.dfcreation.createMood(df5)
+
+#CURRENTLY NOT IN USE
+dfMotives = coins.dfcreation.createMotives(df2)
+dfMood = coins.dfcreation.createMood(df5)
+
 
 #%%
 #Get the sentiment Score
