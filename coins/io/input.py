@@ -6,46 +6,34 @@ import os
 def testmethod():
     print('test successful')
 
-def get_data(datafile):
+def getPreprocessedRawData(datafile):
     if datafile == 'ipip':
-        path = os.path.join(get_data_path(),'input/2020-04-30_ipip_5f30f_r1.simplified_anonymized.csv')
+        path = os.path.join(get_data_path(),'input/ipip.csv')
         df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_ipip(df)
     elif datafile == 'mpzm':
-        path = os.path.join(get_data_path(),'input/2020-04-30_mpzm.simplified_anonymized.csv')
+        path = os.path.join(get_data_path(),'input/mpzm.csv')
         df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_mpzm(df)
-    elif datafile == 'emotions':
-        path = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_emotions_anonymized.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
-        df = preprocess_emotions(df)
     elif datafile == 'mood':
-        path = os.path.join(get_data_path(),'input/2020-04-30_mood_anonymized.csv')
+        path = os.path.join(get_data_path(),'input/mood.csv')
         df = pd.read_csv(path, sep=';', low_memory=False)
         df = preprocess_mood(df)
     elif datafile == 'images':
-        path1 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics_images_anonymized.csv')
-        path2 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_images_anonymized.csv')
+        path1 = os.path.join(get_data_path(),'input/images_v1.csv')
+        path2 = os.path.join(get_data_path(),'input/images_v2.csv')
         df = pd.read_csv(path1, sep=';', low_memory=False)
         df2 = pd.read_csv(path2, sep=';', low_memory=False)
         df = preprocess_images(df, df2)
     elif datafile == 'sessions':
-        path1 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics_sessions_anonymized.csv')
-        path2 = os.path.join(get_data_path(),'input/2020-04-30_resource_diagnostics2_sessions_anonymized.csv')
+        path1 = os.path.join(get_data_path(),'input/sessions_v1.csv')
+        path2 = os.path.join(get_data_path(),'input/sessions_v2.csv')
         df = pd.read_csv(path1, sep=';', low_memory=False)
         df2 = pd.read_csv(path2, sep=';', low_memory=False)
         df = preprocess_sessions(df, df2)
-    elif datafile == 'mood':
-        path = os.path.join(get_data_path(),'input/2020-04-30_mood_anonymized.csv')
+    elif datafile == 'imageLabels':
+        path = os.path.join(get_data_path(),'input/imageLabels.csv')
         df = pd.read_csv(path, sep=';', low_memory=False)
-        df = preprocess_mood(df)
-    elif datafile == 'sentimentComplete':
-        path = os.path.join(get_data_path(),'input/dfImageDescriptions_englishSentimentEmotionsScores.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
-    elif datafile == 'sentiment':
-        path = os.path.join(get_data_path(),'input/dfImageDescriptions_germanSentimentScores.csv')
-        df = pd.read_csv(path, sep=',', low_memory=False)
-        
     return df
 
 
@@ -155,28 +143,40 @@ def preprocess_mpzm(df):
 
     return df
 
-def preprocess_emotions(df):
-    df.drop_duplicates(inplace = True)
-    df = df[df['reason_of_attendence'] == 'serious']
-    df.drop(columns=['admin', 'accept_terms_and_conditions', 'accept_data_privacy', 'reason_of_attendence', 'created_by', 'consultant', 'quest_id'], inplace=True)
-    df.rename(columns={'Unnamed: 0': 'index'}, inplace=True)
-    df.set_index('index', inplace=True)
-    df.replace({'\n': ' '}, regex=True, inplace=True)
-
-    #todo change datatypes
-
-    return df
-
 def preprocess_mood(df):
     df.drop_duplicates(inplace=True)
-    df.drop(columns=['admin', 'accept_terms_and_conditions', 'accept_data_privacy', 'created_by', 'consultant'], inplace=True)
+    df.drop(columns=['admin', 'accept_terms_and_conditions', 'accept_data_privacy', 'created_by', 'consultant', 'coordinates', 'time_zone'], inplace=True)
     df.rename(columns={'Unnamed: 0': 'index'}, inplace=True)
     df.set_index('index', inplace=True)
+
+    # convert datatypes to category
+    df['gender'] = df.gender.astype('category')
+    df['country'] = df.country.astype('category')
+    df['work_country'] = df.work_country.astype('category')
+    df['work_district'] = df.work_district.astype('category')
+    df['job_position'] = df.job_position.astype('category')
+    df['job_sector'] = df.job_sector.astype('category')
+    df['found_over'] = df.found_over.astype('category')
+    df['company_size'] = df.company_size.astype('category')
+    df['educational_achievement'] = df.educational_achievement.astype('category')
+    df['registration_ageKat'] = df.registration_ageKat.astype('category')
+    df['version'] = df.version.astype('category')
+    df['ageKat'] = df.ageKat.astype('category')
+
+    # fill missing datetimes by logical equivalent (sign_in_count == 0)
+    df.last_sign_in_at.replace('                       ', np.nan, inplace=True)
+    df.last_sign_in_at.fillna(df.user_created_at, inplace=True)
+
+    # convert datatypes to datetime
+    df['user_created_at'] = pd.to_datetime(df['user_created_at'], utc=True)
+    df['last_sign_in_at'] = pd.to_datetime(df['last_sign_in_at'], utc=True)
+    df['session_created_at'] = pd.to_datetime(df['session_created_at'], utc=True)
+    df['session_updated_at'] = pd.to_datetime(df['session_updated_at'], utc=True)
+
+    # convert datatypes to float64
     df['PositiveAktivierung'] = df.PositiveAktivierung.str.replace(',','.').astype('float64')
     df['NegativeAktivierung'] = df.NegativeAktivierung.str.replace(',','.').astype('float64')
     df['Zufriedenheit_Glueck'] = df.Zufriedenheit_Glueck.str.replace(',','.').astype('float64')
-
-    #todo change datatypes
 
     return df
 
@@ -194,8 +194,7 @@ def preprocess_images(df, df2):
     df.replace({'\n': ' '}, regex=True, inplace=True)
     df2.replace({'\n': ' '}, regex=True, inplace=True)
 
-    # merge two image dataframe
-    # todo text formatting before merging
+    # merge the two different image dataframes
     df['emotion_recognition_enabled'] = False
     df['category_id'] = np.nan
     df2.rename(columns={'name': 'file_name', 'id': 'image_id'}, inplace=True)
@@ -239,8 +238,7 @@ def preprocess_sessions(df, df2):
     df.replace({'\n': ' '}, regex=True, inplace=True)
     df2.replace({'\n': ' '}, regex=True, inplace=True)
 
-    # merge two sessions dataframes
-     # todo text formatting before merging
+    # merge the two different session dataframes
     df['emotion_recognition_enabled'] = False
     df.rename(columns={'sorted_tags': 'categories'}, inplace=True)
     df = df.append(df2, sort=False)
