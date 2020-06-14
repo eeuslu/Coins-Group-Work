@@ -2,9 +2,59 @@ import pandas as pd
 import numpy as np
 from .utils import get_data_path
 import os
+import yaml
 
 def testmethod():
     print('test successful')
+
+# return API credentials from the local credentials.yaml file
+def getAPIcredentials(credential):
+    path = os.path.join(get_data_path(),'input/credentials.yaml')
+    with open(path, 'r') as credentials:
+        credentials = yaml.load(credentials)
+    
+    if credential == 'apiKey_ibmWatson':
+        apiKey_ibmWatson = credentials['ibmWatson']['apiKey']
+        return apiKey_ibmWatson
+    elif credential == 'apiURL_ibmWatson':
+        apiURL_ibmWatson = credentials['ibmWatson']['apiURL']
+        return apiURL_ibmWatson
+    elif credential == 'apiKey_deepL':
+        apiKey_deepL = credentials['deepL']['apiKey']
+        return apiKey_deepL
+    else:
+        return 'the credential you are looking for was not found.'
+
+
+def loadInitialDFs(datafile):
+    if datafile == 'personality':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/personality.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageRatings':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/imageRatings.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageDescriptions':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/imageDescriptions.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'socioDemographics':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/socioDemographics.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageLabels':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/imageLabels.csv')
+        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    return df
+
+def loadPreparedImageDescriptions():
+    path = os.path.join(get_data_path(),'output/initialDataFrames/preparedImageDescriptions.csv')
+    df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+    df = df.drop(columns=['Unnamed: 0'])
+    return df
+
 
 def getPreprocessedRawData(datafile):
     if datafile == 'ipip':

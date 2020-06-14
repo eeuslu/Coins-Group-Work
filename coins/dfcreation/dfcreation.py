@@ -10,12 +10,14 @@ def createPersonality(df_ipip):
     #drop duplicates
     dfPersonality.drop_duplicates(inplace=True)
 
+    dfPersonality = dfPersonality.reset_index(drop=True)
+
     return dfPersonality
 
 
-def createSocialDemographics(df_ipip, df_mpzm, df_images, df_emotions, df_mood):
+def createSocioDemographics(df_ipip, df_mpzm, df_images, df_mood):
     
-    sources = [df_mpzm, df_images, df_emotions, df_mood]
+    sources = [df_mpzm, df_images, df_mood]
     
     # create first DataFrame as base for concat
     dfSocialDemographics = df_ipip[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
@@ -103,7 +105,9 @@ def createImageRatings(df_images):
 
 # fill NaNs in dfImageDescriptions with bfill and ffill where possible, delete other NaN rows
 def cleanImageDescriptions(df):
-    df = df.drop(columns=['Unnamed: 0'])
+    
+    if 'Unnamed: 0' in df.columns:
+        df = df.drop(columns=['Unnamed: 0'])
 
     dfSentiments = df[['reasons_translation_sentiment', 'emotions_translation_sentiment', 'strengths_translation_sentiment', 'utilization_translation_sentiment', 'story_translation_sentiment']]
     dfSadness = df[['reasons_translation_sadness', 'emotions_translation_sadness', 'strengths_translation_sadness', 'utilization_translation_sadness', 'story_translation_sadness']]
@@ -138,22 +142,6 @@ def cleanImageDescriptions(df):
     
     return df
 
-
-def cleanImageDescriptions_old(df):
-    df = df.drop(columns=['Unnamed: 0'])
-    
-    dfNumeric = df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
-    
-    dfNumeric = dfNumeric.fillna(method='ffill', axis='columns')
-    dfNumeric = dfNumeric.fillna(method='bfill', axis='columns')
-    
-    df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']] = dfNumeric[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
-    
-    df = df.dropna(axis='index', subset=['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment'])
-    
-    df = df.reset_index(drop=True)
-    
-    return df
 
 # ------------------------------------------------------------------
 # -------------------------- NOT USED NOW --------------------------
