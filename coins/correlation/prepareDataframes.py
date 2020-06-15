@@ -107,29 +107,71 @@ def preparePersonality(dfPersonality, multiclass=False, split="hard"):
     return dfInput
 
 
-def prepareImageDescriptions(dfImageDescriptions):
-    print('test')
+def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='median'):
+    
+    # drop unnecessary columns and all NaN values
+    dfImageDescriptions = dfImageDescriptions.drop(columns=['file_name', 'reasons', 'emotions', 'strengths', 'utilization', 'story', 'reasons_translation', 'emotions_translation', 'strengths_translation', 'utilization_translation', 'story_translation'])
+    dfImageDescriptions = dfImageDescriptions.dropna(axis='index')
 
+    dfInput = dfImageDescriptions.copy()
 
-def imageDescriptionToCategory(df):
-    dfInput = df.copy()
-    for column in dfInput:
-        if column != "user_id":
-            colName = column+"Category"
-            if "sentiment" in column:
-                #firstBorder = 0
-                #secondBorder = dfInput[column].quantile(0.66)
-                dfInput.loc[dfInput[column] < -0.25, colName] = -1
-                #dfInput.loc[dfInput[column].round() == 0, colName] = 0
-                #dfInput.loc[dfInput[column].round() == 1, colName] = 1
-                dfInput.loc[((-0.25 <= dfInput[column]) & (dfInput[column] < 0.25)), colName] = 0
-                dfInput.loc[dfInput[column] >= 0.25, colName] = 1
+    # check if multiclass prediction is wanted
+    if multiclass == False:
+
+        # go through all columns and make the split
+        for column in dfImageDescriptions:
+            if column != "user_id":
+                
+                # define new column name
+                colName = column+"Category"
+
+                # check for split type
+                if split == 'hard':
+                    # check if column contains sentiment or emotion value
+                    if 'sentiment' in column:
+                        border = 0                        
+                    elif (('reasons' in column) | ('strengths' in column) | ('emotions' in column) | ('utilization' in column) | ('story' in column)):
+                        border = 0.5
+                elif split == 'mean':
+                    border = dfInput[column].mean()
+                elif split == 'median':
+                    border = dfInput[column].median()
+                
+                # split
+                dfInput.loc[dfInput[column] < border, colName] = 0
+                dfInput.loc[dfInput[column] >= border, colName] = 1
+
+                # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
-            elif (('reasons' in column) | ('strengths' in column) | ('emotions' in column) | ('utilization' in column) | ('story' in column)): 
-                firstBorder = dfInput[column].quantile(0.33)
-                secondBorder = dfInput[column].quantile(0.66)
-                dfInput.loc[dfInput[column] < firstBorder, colName] = -1
-                dfInput.loc[((firstBorder <= dfInput[column]) & (dfInput[column] < secondBorder)), colName] = 0
-                dfInput.loc[dfInput[column] >= secondBorder, colName] = 1
+            
+    elif multiclass == True:
+
+        # go through all columns and make the split
+        for column in dfImageDescriptions:
+            if column != "user_id":
+                
+                # define new column name
+                colName = column+"Category"
+
+                # check for split type
+                if split == 'hard':
+                    # check if column contains sentiment or emotion value
+                    if 'sentiment' in column:
+                        border1 = -0.25        
+                        border2 = 0.25                
+                    elif (('reasons' in column) | ('strengths' in column) | ('emotions' in column) | ('utilization' in column) | ('story' in column)):
+                        border1 = 0.33
+                        border2 = 0.66
+                elif split == 'thirds':
+                    border1 = dfInput[column].quantile(0.33)
+                    border2 = dfInput[column].quantile(0.66)
+                
+                # split
+                dfInput.loc[dfInput[column] < border1, colName] = 0
+                dfInput.loc[(dfInput[column] >= border1) & (dfInput[column] < border2), colName] = 1
+                dfInput.loc[dfInput[column] >= border2, colName] = 2
+
+                # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
+
     return dfInput
