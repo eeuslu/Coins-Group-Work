@@ -49,62 +49,66 @@ def prepare_SocioDemographics(dfSocioDemographics, dropLowerThenProzent):
     return dfSocialDemographicsDummies,dfSocialDemographicsDummiesWithID,dropedColumnsList
 
 
-#To make later steps easier, use value ranges instead of real numbers.
-#As an alternative use clusters.
-def prepare_Personality(dfPersonality, multiclass=False, split="Median", cluster=0):
+# transform values in dfPersonality from real numbers to classes for classification purpose
+def preparePersonality(dfPersonality, multiclass=False, split="hard"):
 
     dfInput = dfPersonality.copy()
-    #Decide how many splits should occure
-    if  multiclass == False:
+    
+    # check if multiclass prediction is wanted
+    if multiclass == False:
 
-        #Go through all columns and make the split
+        # go through all columns and make the split
         for column in dfPersonality.columns:
             if column != "user_id":
-                colName = column+"Category"
-
-                if split == "Hard":
-                    dfInput.loc[dfInput[column] < 3, colName] = 0
-                    dfInput.loc[dfInput[column] >= 3, colName] = 1
-                    
-                elif split == "Mean":
-                    border = dfInput[column].mean()
-                    dfInput.loc[dfInput[column] < border, colName] = 0
-                    dfInput.loc[dfInput[column] >= border, colName] = 1
                 
-                elif split == "Median":
-                    border = dfInput[column].median()
-                    dfInput.loc[dfInput[column] < border, colName] = 0
-                    dfInput.loc[dfInput[column] >= border, colName] = 1
-
-
-                dfInput.drop(column, axis=1, inplace=True)
-
-
-    #Decide how many splits should occure
-    if  multiclass == True:
-
-        #Go through all columns and make the split
-        for column in dfPersonality.columns:
-            if column != "user_id":
+                # define new column name
                 colName = column+"Category"
 
-                if split == "Hard":
-                    dfInput.loc[dfInput[column] < 2.5, colName] = 0
-                    dfInput.loc[(dfInput[column] >= 2.5) & (dfInput[column] < 3.5), colName] = 1
-                    dfInput.loc[dfInput[column] >= 3.5, colName] = 2
+                # check for split type
+                if split == "hard":
+                    border = 3
+                elif split == "mean":
+                    border = dfInput[column].mean()
+                elif split == "median":
+                    border = dfInput[column].median()
 
-                else:
-                    quantilU = dfInput[column].quantile(0.33)
-                    quantilO = dfInput[column].quantile(0.66)
+                # split
+                dfInput.loc[dfInput[column] < border, colName] = 0
+                dfInput.loc[dfInput[column] >= border, colName] = 1
 
-                    dfInput.loc[dfInput[column] < quantilU, colName] = 0
-                    dfInput.loc[(dfInput[column] >= quantilU) & (dfInput[column] < quantilO), colName] = 1
-                    dfInput.loc[dfInput[column] >= quantilO, colName] = 2
+                # drop old column
+                dfInput.drop(column, axis=1, inplace=True)
+    
+    elif multiclass == True:
+
+        # go through all columns and make the split
+        for column in dfPersonality.columns:
+            if column != "user_id":
+                
+                # define new column name
+                colName = column+"Category"
+
+                # check for split type
+                if split == "hard":
+                    border1 = 2.5
+                    border2 = 3.5
+                elif split == 'thirds':
+                    border1 = dfInput[column].quantile(0.33)
+                    border2 = dfInput[column].quantile(0.66)
+
+                # split
+                dfInput.loc[dfInput[column] < border1, colName] = 0
+                dfInput.loc[(dfInput[column] >= border1) & (dfInput[column] < border2), colName] = 1
+                dfInput.loc[dfInput[column] >= border2, colName] = 2
+
+                # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
 
     return dfInput
 
 
+def prepareImageDescriptions(dfImageDescriptions):
+    print('test')
 
 
 def imageDescriptionToCategory(df):
