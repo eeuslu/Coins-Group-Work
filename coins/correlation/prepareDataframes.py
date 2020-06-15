@@ -8,6 +8,7 @@ def prepare_SocioDemographics(dfSocioDemographics, dropLowerThenProzent):
     dfSocioDemographicsCopy = dfSocioDemographics.copy()
     # drop some columns with high redundance
     dfSocioDemographicsCopy.drop(['registration_ageKat', 'work_country', 'work_district', 'job_status_retired'] ,axis=1, inplace=True)
+    dfSocioDemographicsCopy.dropma(inplace=True)
 
     #Get original columns
     originColumns = dfSocioDemographicsCopy.columns
@@ -50,11 +51,11 @@ def prepare_SocioDemographics(dfSocioDemographics, dropLowerThenProzent):
 
 #To make later steps easier, use value ranges instead of real numbers.
 #As an alternative use clusters.
-def prepare_Personality(dfPersonality, classes = 2, split="Median", cluster=0, multiclass=True):
+def prepare_Personality(dfPersonality, multiclass=False, split="Median", cluster=0):
 
     dfInput = dfPersonality.copy()
-    #DEcide how many splits should occure
-    if classes == 2:
+    #Decide how many splits should occure
+    if  multiclass == False:
 
         #Go through all columns and make the split
         for column in dfPersonality.columns:
@@ -75,15 +76,31 @@ def prepare_Personality(dfPersonality, classes = 2, split="Median", cluster=0, m
                     dfInput.loc[dfInput[column] < border, colName] = 0
                     dfInput.loc[dfInput[column] >= border, colName] = 1
 
+
                 dfInput.drop(column, axis=1, inplace=True)
 
-                if multiclass == False:
-                    dfInput[colName] = dfInput[colName].apply(str)
 
-    if multiclass == False:
-        ids = dfInput['user_id']
-        dfInput = pd.get_dummies(dfInput.drop('user_id',axis=1))
-        dfInput['user_id'] = ids
+    #Decide how many splits should occure
+    if  multiclass == True:
+
+        #Go through all columns and make the split
+        for column in dfPersonality.columns:
+            if column != "user_id":
+                colName = column+"Category"
+
+                if split == "Hard":
+                    dfInput.loc[dfInput[column] < 2.5, colName] = 0
+                    dfInput.loc[(dfInput[column] >= 2.5) & (dfInput[column] < 3.5), colName] = 1
+                    dfInput.loc[dfInput[column] >= 3.5, colName] = 2
+
+                else:
+                    quantilU = dfInput[column].quantile(0.33)
+                    quantilO = dfInput[column].quantile(0.66)
+
+                    dfInput.loc[dfInput[column] < quantilU, colName] = 0
+                    dfInput.loc[(dfInput[column] >= quantilU) & (dfInput[column] < quantilO), colName] = 1
+                    dfInput.loc[dfInput[column] >= quantilO, colName] = 2
+                dfInput.drop(column, axis=1, inplace=True)
 
     return dfInput
 
