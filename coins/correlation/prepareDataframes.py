@@ -1,52 +1,50 @@
 import pandas as pd
 
-#Prepare the SocioDemographic data for the correlation finding
-#This include to drop redundanct columns and drop seldom values
-def prepare_SocioDemographics(dfSocioDemographics, dropLowerThenProzent):
+# general cleaning of dfSocioDemographics, transforming categorical values using One Hot Encoding, drop categories with low sample size
+def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
+    
+    # drop NaN values
+    dfSocioDemographics.dropna(inplace=True)
 
-    #Make a copy first
-    dfSocioDemographicsCopy = dfSocioDemographics.copy()
-    # drop some columns with high redundance
-    dfSocioDemographicsCopy.drop(['registration_ageKat', 'work_country', 'work_district', 'job_status_retired'] ,axis=1, inplace=True)
-    dfSocioDemographicsCopy.dropma(inplace=True)
+    # get original columns
+    originalColumns = dfSocioDemographics.columns
 
-    #Get original columns
-    originColumns = dfSocioDemographicsCopy.columns
+    # save the user IDs and drop them
+    dfSocioDemographicsID = dfSocioDemographics['user_id']
+    dfSocioDemographics.drop('user_id',axis=1,inplace=True)
 
-    #Save the IDS and drop it
-    dfSocialDemographicsID = dfSocioDemographicsCopy['user_id']
-    dfSocioDemographicsCopy.drop('user_id',axis=1,inplace=True)
+    # create dummies
+    dfSocioDemographicsDummies = pd.get_dummies(dfSocioDemographics)
 
-    #Create dummies
-    dfSocialDemographicsDummies = pd.get_dummies(dfSocioDemographicsCopy)
+    # get all binary columns
+    binaryColumns = dfSocioDemographicsDummies.drop(originalColumns,axis=1,errors='ignore').columns.tolist()
+    jobStatusColumns = ['job_status_edu_parttime', 'job_status_edu_fulltime', 'job_status_employed_parttime', 'job_status_employed_fulltime', 'job_status_selfemployed', 'job_status_houskeeping', 'job_status_unemployed', 'job_status_retired']
+    for column in jobStatusColumns:
+        binaryColumns.append(column)
 
-    #Get all non-Dummie columns -> drop originColumns
-    dummieColums = dfSocialDemographicsDummies.drop(originColumns,axis=1,errors='ignore').columns
+    # drop all dummy columns where sample size is smaller than dropPercentage
+    originalLength = len(dfSocioDemographicsDummies)
+    droppedColumnsList = []
 
-    #Drop all dummie collumns where dropLowerThenProzent taken place
-    originalLength = len(dfSocialDemographicsDummies)
-    dropedColumnsList = []
-
-    for column in dummieColums:
-        #Get number of columns where dummi is 1
-        length = len(dfSocialDemographicsDummies[dfSocialDemographicsDummies[column] == 1])
+    for column in binaryColumns:
         
-        #Get percentage where dummie is 1. If lower then overgiven value drop
-        if (length/originalLength) < (dropLowerThenProzent/100):
-            dfSocialDemographicsDummies.drop(column,axis=1,inplace=True)
-            dropedColumnsList.append(column)
+        # get number of rows where dummy is 1
+        length = len(dfSocioDemographicsDummies[dfSocioDemographicsDummies[column] == 1])
+        
+        # get percentage where dummy is 1. Drop if lower than dropPercentage
+        if (length/originalLength) < (dropPercentage/100):
+            dfSocioDemographicsDummies.drop(column,axis=1,inplace=True)
+            droppedColumnsList.append(column)
 
-    #Drop all columns with
-
-    #Create a second version include the user ids
-    dfSocialDemographicsDummiesWithID = dfSocialDemographicsDummies.copy()
-    dfSocialDemographicsDummiesWithID['user_id'] = dfSocialDemographicsID
+    # add user IDs again
+    #dfSocioDemographicsDummies['user_id'] = dfSocioDemographicsID
+    dfSocioDemographicsDummies.insert(loc=0, column='user_id', value=dfSocioDemographicsID)
+    dfSocioDemographicsDummies = dfSocioDemographicsDummies.reset_index(drop=True)
   
-    #Drop na values
-    dfSocialDemographicsDummies.dropna(inplace=True)
-    dfSocialDemographicsDummiesWithID.dropna(inplace=True)
+    # drop NaN values
+    dfSocioDemographicsDummies.dropna(inplace=True)
 
-    return dfSocialDemographicsDummies,dfSocialDemographicsDummiesWithID,dropedColumnsList
+    return dfSocioDemographicsDummies, droppedColumnsList
 
 
 # transform values in dfPersonality from real numbers to classes for classification purpose

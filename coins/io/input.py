@@ -33,19 +33,19 @@ def loadInitialDFs(datafile):
         df = df.drop(columns=['Unnamed: 0'])
     elif datafile == 'imageRatings':
         path = os.path.join(get_data_path(),'output/initialDataFrames/imageRatings.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     elif datafile == 'imageDescriptions':
         path = os.path.join(get_data_path(),'output/initialDataFrames/imageDescriptions.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     elif datafile == 'socioDemographics':
         path = os.path.join(get_data_path(),'output/initialDataFrames/socioDemographics.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     elif datafile == 'imageLabels':
         path = os.path.join(get_data_path(),'output/initialDataFrames/imageLabels.csv')
-        df = pd.read_csv(path, sep=';', low_memory=False)
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     return df
 
