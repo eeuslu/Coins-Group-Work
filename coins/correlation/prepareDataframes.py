@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.cluster import KMeans
 
 #Prepare the SocioDemographic data for the correlation finding
 #This include to drop redundanct columns and drop seldom values
@@ -55,7 +56,7 @@ def prepare_Personality(dfPersonality, multiclass=False, split="Median", cluster
 
     dfInput = dfPersonality.copy()
     #Decide how many splits should occure
-    if  multiclass == False:
+    if  multiclass == False and cluster == 0:
 
         #Go through all columns and make the split
         for column in dfPersonality.columns:
@@ -79,9 +80,10 @@ def prepare_Personality(dfPersonality, multiclass=False, split="Median", cluster
 
                 dfInput.drop(column, axis=1, inplace=True)
 
+        return dfInput
 
     #Decide how many splits should occure
-    if  multiclass == True:
+    if  multiclass == True and cluster == 0:
 
         #Go through all columns and make the split
         for column in dfPersonality.columns:
@@ -102,7 +104,20 @@ def prepare_Personality(dfPersonality, multiclass=False, split="Median", cluster
                     dfInput.loc[dfInput[column] >= quantilO, colName] = 2
                 dfInput.drop(column, axis=1, inplace=True)
 
-    return dfInput
+        return dfInput
+
+
+    #Cluster if wanted
+    if cluster != 0:
+     
+        dfPersonalityNoId = dfInput.drop('user_id',axis=1)
+
+        kmeans = KMeans(n_clusters=cluster, random_state=0).fit(dfPersonalityNoId)
+
+        prediction = kmeans.predict(dfPersonalityNoId)
+        dfInput['cluster'] = prediction
+
+        return dfInput
 
 
 
