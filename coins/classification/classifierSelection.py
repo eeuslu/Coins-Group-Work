@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 import itertools
+from coins.correlation import calculateCorrWithPValue, balanceAccordingToColumn
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -28,20 +30,38 @@ def powerset(iterable):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
 
-def findBestClassififier(x,y,p_Values):
+def findBestClassifier(x, y, inputFeatureCombination=False):
     # initialize values
-    inputFeature = x.copy()
-    targetFeature = y.copy()
-    pValues = p_Values.copy()
+    arrayX = x.copy()
+    dfY = y.copy()
+
+    # create input feature
+    targetFeature = dfY
+    if len(arrayX) > 1:
+        inputFeature = arrayX[0]
+        i = 1
+        while i < len(arrayX):
+            inputFeature = pd.merge(inputFeature, arrayX[i], on='user_id', how='inner')
+            i += 1
+    else:
+        inputFeature = arrayX[0]
+    
+    # calculate p-values
+    inputFeature, targetFeature, dfJoinedData, pValues, correlation = calculateCorrWithPValue(inputFeature, targetFeature)
     pValuesTransformed = pValues.T
     dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy', 'Model', 'PCA', 'Standard Scaler'])
     targetFeatureList = list(pValues.index.values)
 
-    print("target.f.l.  ",targetFeatureList)
-    print("p-T  ",pValuesTransformed)
+    #print("target.f.l.  ",targetFeatureList)
+    #print("p-T  ",pValuesTransformed)
 
     # iterate through all target feature
     for t in targetFeatureList:
+        # balance data based on target feature
+        dfXY = balanceAccordingToColumn(dfJoinedData,t)
+        dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
+        dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
+
         # get list with p_values bellow 0.05
         inputFeatureList = list((pValuesTransformed[pValuesTransformed[t] < 0.05]).index)
         globalBestResult = [t, '-','-', -1, -1, '-', '-', '-']
@@ -49,23 +69,28 @@ def findBestClassififier(x,y,p_Values):
         # check whether there are input features or not
         if len(inputFeatureList) > 0:
 
-            # create all possible combinations of input features
-            allInputFeatureCombinationsDummy = list(powerset(inputFeatureList))
-            allInputFeatureCombinationsDummy.pop(0)
+            # check whether a combination of input feature is wanted or not
+            if inputFeatureCombination == True:
+                # create all possible combinations of input features
+                allInputFeatureCombinationsDummy = list(powerset(inputFeatureList))
+                allInputFeatureCombinationsDummy.pop(0)
             
-            allInputFeatureCombinations = []
-            for a in allInputFeatureCombinationsDummy:
-                dummyList = []
-                for b in a:
-                    dummyList.append(b)
-                allInputFeatureCombinations.append(dummyList)
-            
+                allInputFeatureCombinations = []
+                for a in allInputFeatureCombinationsDummy:
+                    dummyList = []
+                    for b in a:
+                        dummyList.append(b)
+                    allInputFeatureCombinations.append(dummyList)
+            else:
+                # append all input Features in list
+                allInputFeatureCombinations = []
+                allInputFeatureCombinations.append(inputFeatureList)        
 
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
 
-                x = inputFeature[combination]
-                y = targetFeature[t]
+                x = dfXBalanced[combination]
+                y = dfYBalanced[t]
 
                 #create array for performance evaluation and initilize it with suitable values
                 bestResult = [t, ('| '.join(combination)),'-', -1, -1, '-', '-', '-']
