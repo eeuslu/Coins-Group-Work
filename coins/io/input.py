@@ -4,8 +4,6 @@ from .utils import get_data_path
 import os
 import yaml
 
-def testmethod():
-    print('test successful')
 
 # return API credentials from the local credentials.yaml file
 def getAPIcredentials(credential):
@@ -49,10 +47,34 @@ def loadInitialDFs(datafile):
         df = df.drop(columns=['Unnamed: 0'])
     return df
 
+
 def loadAnalyzedImageDescriptions():
-    path = os.path.join(get_data_path(),'output/initialDataFrames/preparedImageDescriptions.csv')
+    path = os.path.join(get_data_path(),'output/analyzedDataFrames/analyzedImageDescriptions.csv')
     df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
     df = df.drop(columns=['Unnamed: 0'])
+    return df
+
+def loadPreparedDFs(datafile):
+    if datafile == 'personality':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/personality.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageRatings':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/imageRatings.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageDescriptions':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/imageDescriptions.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'socioDemographics':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/socioDemographics.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
+    elif datafile == 'imageLabels':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/imageLabels.csv')
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+        df = df.drop(columns=['Unnamed: 0'])
     return df
 
 

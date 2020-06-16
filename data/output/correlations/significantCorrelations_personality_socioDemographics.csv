@@ -1,0 +1,41 @@
+;attribute 1;attribute 2;p-value;correlation
+0;registration_age;gewissenhaftigkeitCategory;0,0194;0,11255422040025773
+1;job_status_edu_parttime;gewissenhaftigkeitCategory;0,0326;0,10294700514618818
+2;job_status_edu_fulltime;vertraeglichkeitCategory;0,0068;-0,13010110567577807
+3;job_status_employed_fulltime;extraversionCategory;0,0141;0,11812829728025293
+4;job_status_employed_fulltime;offenheitCategory;0,0456;-0,09634696740357157
+5;gender_f;neurotizismusCategory;0,0093;0,12514308235908747
+6;gender_f;offenheitCategory;0,0189;0,11304691619419326
+7;gender_f;vertraeglichkeitCategory;0,0119;0,12108330018659147
+8;gender_m;neurotizismusCategory;0,0093;-0,12514308235908747
+9;gender_m;offenheitCategory;0,0189;-0,11304691619419326
+10;gender_m;vertraeglichkeitCategory;0,0119;-0,12108330018659147
+11;registration_ageKat_50-59;gewissenhaftigkeitCategory;0,0081;0,12741661806714008
+12;country_AT;offenheitCategory;0,0412;0,09837170191166757
+13;country_CH;neurotizismusCategory;0,0086;-0,12640584964267268
+14;country_DE;neurotizismusCategory;0,0233;0,10922204993509424
+15;work_country_CH;neurotizismusCategory;0,0191;-0,11287538844838892
+16;work_district_AG;vertraeglichkeitCategory;0,048;0,09528769813600502
+17;work_district_BE;gewissenhaftigkeitCategory;0,036;-0,10101686479444381
+18;work_district_HE;gewissenhaftigkeitCategory;0,0431;-0,09746283464307358
+19;work_district_SG;neurotizismusCategory;0,0008;-0,16084215303305582
+20;work_district_SO;offenheitCategory;0,0488;0,09498762723015562
+21;work_district_TG;gewissenhaftigkeitCategory;0,0345;0,10186173794712465
+22;job_position_Sachbearbeiter/-in;neurotizismusCategory;0,0378;0,10006353496217145
+23;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);neurotizismusCategory;0,0099;-0,12405499647520846
+24;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);gewissenhaftigkeitCategory;0,0164;0,11555594677983966
+25;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);gewissenhaftigkeitCategory;0,0051;0,13467089743295899
+26;job_position_untere Führungsstufe (z.B. Teamleitung);offenheitCategory;0,0102;-0,1235627809391389
+27;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;neurotizismusCategory;0,0009;-0,158686822475271
+28;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;extraversionCategory;0,0033;0,1412259209830695
+29;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;offenheitCategory;0,0005;-0,1662331557220316
+30;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;gewissenhaftigkeitCategory;0,0407;0,09864943643053853
+31;job_sector_Gastgewerbe/Beherbergung und Gastronomie;extraversionCategory;0,0307;0,10411471204381025
+32;job_sector_Gesundheits- und Sozialwesen;extraversionCategory;0,0277;-0,1060384439709271
+33;job_sector_Gesundheits- und Sozialwesen;gewissenhaftigkeitCategory;0,0421;-0,09793017854381533
+34;job_sector_Information und Kommunikation;vertraeglichkeitCategory;0,0117;0,12129701922365888
+35;company_size_250.0;neurotizismusCategory;0,0166;-0,11535303776683051
+36;company_size_9.0;neurotizismusCategory;0,0379;0,10003505898121702
+37;company_size_9.0;offenheitCategory;0,0321;0,10325976829731798
+38;educational_achievement_Berufs- oder Fachmaturität;neurotizismusCategory;0,0265;0,10685891864052185
+39;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;offenheitCategory;0,0315;0,10364695626954713

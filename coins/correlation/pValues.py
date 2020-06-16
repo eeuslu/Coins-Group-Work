@@ -37,3 +37,27 @@ def calculatePValue(x, y):
         for c in x.columns:
             pvalues[r][c] = round(pearsonr(y[r], x[c])[1], 4)
     return pvalues
+
+# returns only significant correlations with p <= 0.05
+def extractSignificantCorrelations(pDF, cDF):
+    attribute1 = []
+    attribute2 = []
+    pValue = []
+    corr = []
+    n = []
+
+    for index, row in pDF.iterrows():
+        for column in pDF.columns:
+            if pDF[column][index] <= 0.05:
+                attribute1.append(index)
+                attribute2.append(column)
+                pValue.append(pDF[column][index])
+                corr.append(cDF[column][index])
+    
+    dfSignificantCorrelations = pd.DataFrame()
+    dfSignificantCorrelations['attribute 1'] = attribute1
+    dfSignificantCorrelations['attribute 2'] = attribute2
+    dfSignificantCorrelations['p-value'] = pValue
+    dfSignificantCorrelations['correlation'] = corr
+
+    return dfSignificantCorrelations
