@@ -102,6 +102,33 @@ def createImageRatings(df_images):
     
     return dfImageRatings
 
+def createImageContents(df_images, df_imageLabels):
+    
+    # get important columns from images dataframe
+    dfImageContents = df_images[['user_id', 'file_name', 'favorite']]
+    
+    # drop duplicates
+    dfImageContents.drop_duplicates(inplace=True)
+    
+    # filter only for entries which are favorites
+    dfImageContents = dfImageContents[dfImageContents['favorite']==True][['user_id','file_name']]
+
+    # align file_name formatting
+    dfImageContents['file_name'] = dfImageContents['file_name'].str.replace('./', '')
+
+    # merge favorite images with imageLabels
+    dfImageContents = dfImageContents.merge(df_imageLabels, how='inner', on='file_name')
+
+    # drop file_name column and duplicates
+    dfImageContents = dfImageContents.drop(columns=['file_name'])
+    dfImageContents.drop_duplicates(inplace=True)
+
+    # reset index
+    dfImageContents = dfImageContents.reset_index(drop=True)
+
+    return dfImageContents
+
+
 
 # fill NaNs in dfImageDescriptions with bfill and ffill where possible, delete other NaN rows
 def cleanImageDescriptions(df):

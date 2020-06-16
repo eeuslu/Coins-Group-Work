@@ -41,8 +41,8 @@ def loadInitialDFs(datafile):
         path = os.path.join(get_data_path(),'output/initialDataFrames/socioDemographics.csv')
         df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
-    elif datafile == 'imageLabels':
-        path = os.path.join(get_data_path(),'output/initialDataFrames/imageLabels.csv')
+    elif datafile == 'imageContents':
+        path = os.path.join(get_data_path(),'output/initialDataFrames/imageContents.csv')
         df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     return df
@@ -71,8 +71,8 @@ def loadPreparedDFs(datafile):
         path = os.path.join(get_data_path(),'output/preparedDataFrames/socioDemographics.csv')
         df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
-    elif datafile == 'imageLabels':
-        path = os.path.join(get_data_path(),'output/preparedDataFrames/imageLabels.csv')
+    elif datafile == 'imageContents':
+        path = os.path.join(get_data_path(),'output/preparedDataFrames/imageContents.csv')
         df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
         df = df.drop(columns=['Unnamed: 0'])
     return df
