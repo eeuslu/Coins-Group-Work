@@ -1,0 +1,71 @@
+;neurotizismusCategory;extraversionCategory;offenheitCategory;vertraeglichkeitCategory;gewissenhaftigkeitCategory
+registration_age;0,0536;0,1045;0,0766;0,9711;0,0194
+job_status_edu_parttime;0,1423;0,1201;0,7845;0,5824;0,0326
+job_status_edu_fulltime;0,8017;0,6098;0,3731;0,0068;0,6526
+job_status_employed_parttime;0,548;0,1105;0,2486;0,2355;0,4186
+job_status_employed_fulltime;0,1159;0,0141;0,0456;0,2067;0,8028
+job_status_selfemployed;0,1747;0,0584;0,1145;0,6666;0,4994
+job_status_houskeeping;0,5842;0,9721;0,0783;0,5214;0,9721
+job_status_unemployed;0,2286;0,2826;0,7854;0,8858;0,1627
+gender_f;0,0093;0,0758;0,0189;0,0119;0,5919
+gender_m;0,0093;0,0758;0,0189;0,0119;0,5919
+registration_ageKat_10-19;0,1332;0,097;0,4352;0,9136;0,9863
+registration_ageKat_20-29;0,0677;0,4065;0,1685;0,9251;0,18
+registration_ageKat_30-39;0,8374;0,4801;0,756;0,7191;0,7532
+registration_ageKat_40-49;0,9179;0,4425;0,1999;0,7242;0,6043
+registration_ageKat_50-59;0,0513;0,1322;0,5777;0,357;0,0081
+country_AT;0,2624;0,9889;0,0412;0,9296;0,9889
+country_CH;0,0086;0,8438;0,0866;0,704;0,746
+country_DE;0,0233;0,7992;0,1796;0,7734;0,7216
+country_IT;0,4968;0,5553;0,5825;0,6158;0,5716
+work_country_CH;0,0191;0,3887;0,0844;0,3158;0,5596
+work_country_DE;0,0598;0,2576;0,208;0,1865;0,6688
+work_district_AG;0,1594;0,8178;0,5056;0,048;0,5916
+work_district_BE;0,3772;0,6027;0,2242;0,8771;0,036
+work_district_BL;0,4974;0,4024;0,4352;0,3526;0,1041
+work_district_BS;0,101;0,6252;0,0791;0,7983;0,1605
+work_district_GR;0,4711;0,3731;0,3899;0,6507;0,3731
+work_district_HE;0,2624;0,323;0,3006;0,3603;0,0431
+work_district_LU;0,8387;0,5758;0,9546;0,8771;0,9805
+work_district_NI;0,1337;0,16;0,9817;0,1758;0,1542
+work_district_NW;0,8211;0,2463;0,2724;0,7926;0,6902
+work_district_SG;0,0008;0,2539;0,4074;0,2265;0,0727
+work_district_SO;0,8529;0,509;0,0488;0,6185;0,2094
+work_district_TG;0,4711;0,7785;0,3899;0,6507;0,0345
+work_district_ZG;0,8686;0,16;0,9631;0,1205;0,9842
+work_district_ZH;0,2762;0,5208;0,9115;0,5985;0,2728
+job_position_Fachspezialist/-in;0,4523;0,868;0,56;0,9346;0,2327
+job_position_Sachbearbeiter/-in;0,0378;0,1478;0,2441;0,2378;0,4104
+job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0099;0,2876;0,9877;0,5096;0,0164
+job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,7606;0,9709;0,1946;0,0642;0,0051
+job_position_untere Führungsstufe (z.B. Teamleitung);0,3514;0,5048;0,0102;0,1199;0,1675
+job_sector_Baugewerbe/Bau;0,8477;0,6709;0,5954;0,5101;0,3444
+job_sector_Energieversorgung;0,9073;0,9889;0,974;0,9296;0,9889
+job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0009;0,0033;0,0005;0,5775;0,0407
+job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,3094;0,1991;0,4699;0,0958;0,1806
+job_sector_Erbringung von sonstigen Dienstleistungen;0,4556;0,3547;0,0612;0,8141;0,4143
+job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,6235;0,4478;0,4699;0,2547;0,1806
+job_sector_Erziehung und Unterricht;0,4792;0,2576;0,3851;0,8097;0,2269
+job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0518;0,0307;0,7196;0,6507;0,3731
+job_sector_Gesundheits- und Sozialwesen;0,4494;0,0277;0,6668;0,9375;0,0421
+"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,4974;0,4024;0,3896;0,3526;0,4219
+job_sector_Information und Kommunikation;0,2193;0,1334;0,0992;0,0117;0,3671
+job_sector_Kunst, Unterhaltung und Erholung;0,2741;0,0523;0,4901;0,6185;0,5379
+job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,3533;0,1433;0,8935;0,6709;0,8576
+job_sector_Verkehr und Lagerei;0,785;0,12;0,9474;0,8577;0,3229
+"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,1375;0,1982;0,5691;0,109;0,4896
+company_size_1.0;0,6222;0,2544;0,7594;0,6669;0,4635
+company_size_249.0;0,232;0,199;0,5956;0,5039;0,4286
+company_size_250.0;0,0166;0,1906;0,1163;0,8434;0,418
+company_size_49.0;0,9175;0,8454;0,7941;0,5785;0,6431
+company_size_9.0;0,0379;0,9643;0,0321;0,3357;0,161
+educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,346;0,3212;0,3257;0,2965;0,3212
+educational_achievement_Bachelor;0,5746;0,3846;0,8812;0,7816;0,8467
+educational_achievement_Berufliche Grundbildung;0,3169;0,6401;0,0569;0,3969;0,3116
+educational_achievement_Berufs- oder Fachmaturität;0,0265;0,8576;0,7691;0,1979;0,2698
+educational_achievement_Doktorat, Habilitation;0,4452;0,2901;0,091;0,3587;0,6062
+educational_achievement_Gymnasiale Maturität, Lehrkräfte-Seminar;0,3796;0,4889;0,1411;0,9;0,4889
+educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0741;0,5621;0,0556;0,8797;0,1382
+educational_achievement_Höhere Fachschule lusive Nachdiplome;0,1287;0,9709;0,7502;0,5251;0,3988
+educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,4399;0,3225;0,0315;0,9314;0,732
+educational_achievement_obligatorische Schule;0,4968;0,5553;0,5445;0,5125;0,5553

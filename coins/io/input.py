@@ -49,7 +49,7 @@ def loadInitialDFs(datafile):
         df = df.drop(columns=['Unnamed: 0'])
     return df
 
-def loadPreparedImageDescriptions():
+def loadAnalyzedImageDescriptions():
     path = os.path.join(get_data_path(),'output/initialDataFrames/preparedImageDescriptions.csv')
     df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
     df = df.drop(columns=['Unnamed: 0'])

@@ -22,7 +22,7 @@ def calculateCorrWithPValue(x,y):
 
     # calculate correlation
     correlation = dfJoinedData.corr()
-    #correlation = correlation.iloc[0:(yLength-1),(yLength-1):]
+    correlation = correlation.iloc[0:(yLength-1),(yLength-1):]
 
     return dfX, dfY, dfJoinedData, pValue, correlation
 
