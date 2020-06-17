@@ -43,7 +43,7 @@ def logisticRegression(input, target, PCA_Value=0.99):
     try:
         log.fit(x_train_scaled, y_train)
     except ValueError:
-        print(y_train)
+        return -1, -1, '-' , '-', '-'
     # predict test set
     y_predict = log.predict(x_test_scaled)
 

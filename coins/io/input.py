@@ -3,6 +3,7 @@ import numpy as np
 from .utils import get_data_path
 import os
 import yaml
+from sklearn.externals.joblib import dump, load
 
 
 # return API credentials from the local credentials.yaml file
@@ -335,3 +336,24 @@ def preprocess_sessions(df, df2):
     df['session_created_at'] = pd.to_datetime(df['session_created_at'], utc=True)
 
     return df
+
+def loadBestResult(targetDataFrameName):
+    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/bestResults.csv')
+    df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+    return df
+
+def loadModel(targetFeatureName, targetDataFrameName):
+    targetFeatureName = targetFeatureName.replace("/", "")
+    #Save the model
+    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/model/' + targetFeatureName + 'Model.pkl')
+    model = load(path)
+
+    #Save the PCA
+    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/pca/' + targetFeatureName + 'PCA.pkl')
+    pca = load(path)
+
+    #Save the StandardScaler
+    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/standardScaler/' + targetFeatureName + 'StandardScaler.pkl')
+    standardScaler = load(path)
+
+    return model, pca, standardScaler

@@ -1,0 +1,7 @@
+;TargetFeature;InputFeature;BestAlgorithm;R^2;Accuracy
+0;human;-;-;-1;-1
+1;animal;-;-;-1;-1
+2;nature;-;-;-1;-1
+3;mobility;-;-;-1;-1
+4;child;-;-;-1;-1
+5;food;-;-;-1;-1

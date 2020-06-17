@@ -26,6 +26,7 @@ def savePreparedDFs(df, fileName):
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
 
 def saveModel(model, pca, standardScaler, targetFeatureName, targetDataFrameName):
+    targetFeatureName = targetFeatureName.replace("/", "")
     #Save the model
     path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/model/' + targetFeatureName + 'Model.pkl')
     dump(model,path)
