@@ -1,0 +1,6 @@
+;TargetFeature;InputFeature;BestAlgorithm;R^2;Accuracy
+0;neurotizismusCategory;job_status_edu_parttime| educational_achievement_Berufs- oder Fachmaturität| 8| 9| 10| 17| 20| 22| 27| 29| 31| 32| 33| 38| 46| 47| 49| 55| 56| 58| 59| 82| 115| 139;Logistic Regression;-0,04999999999999982;0,7407407407407407
+1;extraversionCategory;job_status_edu_parttime| work_district_LU| job_sector_Gastgewerbe/Beherbergung und Gastronomie| nature| 3| 8| 9| 10| 17| 20| 22| 27| 29| 31| 32| 33| 38| 46| 47| 48| 49| 54| 55| 56| 58| 59| 64| 91| 99| 102| 113| 126| 137| 139| 145;SVC (linear);0,22619047619047616;0,8076923076923077
+2;offenheitCategory;company_size_250.0| educational_achievement_Berufs- oder Fachmaturität| nature| mobility| 1| 23| 25| 37| 39| 42| 50| 51| 57| 61| 63| 66| 70| 77| 95| 108| 109| 142;KNN Classifier, Degree: 4;0,04166666666666685;0,782608695652174
+3;vertraeglichkeitCategory;job_sector_Gastgewerbe/Beherbergung und Gastronomie| job_sector_Information und Kommunikation| 6| 10| 15| 60| 62| 69| 73| 86| 106| 107| 108| 109| 111| 134;KNN Classifier, Degree: 8;0,40000000000000013;0,8518518518518519
+4;gewissenhaftigkeitCategory;job_status_edu_parttime| registration_ageKat_50-59| educational_achievement_Berufs- oder Fachmaturität| 1| 4| 12| 15| 23| 35| 39| 42| 51| 57| 61| 63| 65| 82| 88| 91| 126;KNN Classifier, Degree: 5;0,10989010989011005;0,7777777777777778

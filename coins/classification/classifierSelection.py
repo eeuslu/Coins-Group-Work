@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+from varname import nameof
 import itertools
 from coins.correlation import calculateCorrWithPValue, balanceAccordingToColumn
+from coins.io.output import saveBestResults, saveModel
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -30,7 +32,7 @@ def powerset(iterable):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
 
-def findBestClassifier(x, y, inputFeatureCombination=False):
+def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, printProgress=False):
     # initialize values
     arrayX = x.copy()
     dfY = y.copy()
@@ -47,9 +49,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
         inputFeature = arrayX[0]
     
     # calculate p-values
-    inputFeature, targetFeature, dfJoinedData, pValues, correlation = calculateCorrWithPValue(inputFeature, targetFeature)
+    inputFeature, targetFeature, dfJoinedData, pValues, _ = calculateCorrWithPValue(inputFeature, targetFeature)
     pValuesTransformed = pValues.T
-    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy', 'Model', 'PCA', 'Standard Scaler'])
+    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy'])
     targetFeatureList = list(pValues.index.values)
 
     #print("target.f.l.  ",targetFeatureList)
@@ -58,13 +60,18 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
     # iterate through all target feature
     for t in targetFeatureList:
         # balance data based on target feature
-        dfXY = balanceAccordingToColumn(dfJoinedData,t)
+        dfXYBalanced = balanceAccordingToColumn(dfJoinedData,t)
         dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
         dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
+        #dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
+        #dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
 
         # get list with p_values bellow 0.05
         inputFeatureList = list((pValuesTransformed[pValuesTransformed[t] < 0.05]).index)
-        globalBestResult = [t, '-','-', -1, -1, '-', '-', '-']
+        globalBestResult = [t, '-','-', -1, -1]
+        globalBestModel = '-'
+        globalBestPCA = '-'
+        globalBestScaler = '-'
 
         # check whether there are input features or not
         if len(inputFeatureList) > 0:
@@ -89,11 +96,16 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
 
-                x = dfXBalanced[combination]
-                y = dfYBalanced[t]
+                #x = dfXBalanced[combination]
+                #y = dfYBalanced[t]
+                x = dfXYBalanced[combination]
+                y = dfXYBalanced[t]
 
                 #create array for performance evaluation and initilize it with suitable values
-                bestResult = [t, ('| '.join(combination)),'-', -1, -1, '-', '-', '-']
+                bestResult = [t, ('| '.join(combination)),'-', -1, -1]
+                bestModel = '-'
+                bestPCA = '-'
+                bestScaler = '-'
 
                 # logistic regression
                 r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y)
@@ -101,9 +113,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                     bestResult[2] = 'Logistic Regression'
                     bestResult[3] = r2
                     bestResult[4] = accuracy
-                    bestResult[5] = model
-                    bestResult[6] = pca
-                    bestResult[7] = scaler
+                    bestModel = model
+                    bestPCA = pca
+                    bestScaler = scaler
 
                 # random forest classifier
                 r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y)
@@ -111,9 +123,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                     bestResult[2] = 'Random Forest Classifier'
                     bestResult[3] = r2
                     bestResult[4] = accuracy
-                    bestResult[5] = model
-                    bestResult[6] = pca
-                    bestResult[7] = scaler
+                    bestModel = model
+                    bestPCA = pca
+                    bestScaler = scaler
 
                 # K-Neighbors Classifier
                 for k in range(1,10):
@@ -122,9 +134,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                         bestResult[2] = 'KNN Classifier, Degree: %d' % (k)
                         bestResult[3] = r2
                         bestResult[4] = accuracy
-                        bestResult[5] = model
-                        bestResult[6] = pca
-                        bestResult[7] = scaler
+                        bestModel = model
+                        bestPCA = pca
+                        bestScaler = scaler
 
                 # linear Support Vector Machine
                 r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y)
@@ -132,9 +144,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                     bestResult[2] = 'SVC (linear)'
                     bestResult[3] = r2
                     bestResult[4] = accuracy
-                    bestResult[5] = model
-                    bestResult[6] = pca
-                    bestResult[7] = scaler
+                    bestModel = model
+                    bestPCA = pca
+                    bestScaler = scaler
 
                 # polynomial Support Vector Machine
                 for d in range(1,10):
@@ -143,9 +155,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                         bestResult[2] = 'SVC (polynomial), Degree: %d' % (d)
                         bestResult[3] = r2
                         bestResult[4] = accuracy
-                        bestResult[5] = model
-                        bestResult[6] = pca
-                        bestResult[7] = scaler
+                        bestModel = model
+                        bestPCA = pca
+                        bestScaler = scaler
                 
                 # Gaussian Naive Bayes Classifier
                 r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y)
@@ -153,9 +165,9 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                     bestResult[2] = 'Gaussian Naive Bayes'
                     bestResult[3] = r2
                     bestResult[4] = accuracy
-                    bestResult[5] = model
-                    bestResult[6] = pca
-                    bestResult[7] = scaler
+                    bestModel = model
+                    bestPCA = pca
+                    bestScaler = scaler
 
                 # Ridge Regression
                 r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y)
@@ -163,23 +175,30 @@ def findBestClassifier(x, y, inputFeatureCombination=False):
                     bestResult[2] = 'Ridge Regression'
                     bestResult[3] = r2
                     bestResult[4] = accuracy
-                    bestResult[5] = model
-                    bestResult[6] = pca
-                    bestResult[7] = scaler
+                    bestModel = model
+                    bestPCA = pca
+                    bestScaler = scaler
 
                 # set bestResult to globalBestResult, if Accuracy is higher
                 if bestResult[4] > globalBestResult[4]:
                     globalBestResult = bestResult
+                    globalBestModel = bestModel
+                    globalBestPCA = bestPCA
+                    globalBestScaler = bestScaler
                 
-            # append best result to dfBestResult data frame
+            # append best result to dfBestResult data frame and save model, pca & standardScaler to .pkl files
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
+            saveModel(globalBestModel, globalBestPCA, globalBestScaler, t, targetFeatureName)
+            
 
         else:
             globalBestResult = [t, 'no input feature with p-value below 0.05' ,'-', '-', '-', '-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
         
-        print("completed: " + t)
+        if (printProgress == True):
+            print("completed: " + t)
     
+    saveBestResults(dfBestResults, targetFeatureName)
     return dfBestResults
 
 ################################################################################################################################################################
