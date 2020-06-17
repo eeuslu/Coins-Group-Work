@@ -32,7 +32,7 @@ def powerset(iterable):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
 
-def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, printProgress=False):
+def findBestClassifier(x, y, targetDataFrameName ,inputFeatureCombination=False, printProgress=False):
     # initialize values
     arrayX = x.copy()
     dfY = y.copy()
@@ -61,10 +61,6 @@ def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, p
     for t in targetFeatureList:
         # balance data based on target feature
         dfXYBalanced = balanceAccordingToColumn(dfJoinedData,t)
-        dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
-        dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
-        #dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
-        #dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
 
         # get list with p_values bellow 0.05
         inputFeatureList = list((pValuesTransformed[pValuesTransformed[t] < 0.05]).index)
@@ -96,8 +92,6 @@ def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, p
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
 
-                #x = dfXBalanced[combination]
-                #y = dfYBalanced[t]
                 x = dfXYBalanced[combination]
                 y = dfXYBalanced[t]
 
@@ -188,7 +182,7 @@ def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, p
                 
             # append best result to dfBestResult data frame and save model, pca & standardScaler to .pkl files
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
-            saveModel(globalBestModel, globalBestPCA, globalBestScaler, t, targetFeatureName)
+            saveModel(globalBestModel, globalBestPCA, globalBestScaler, t, targetDataFrameName)
             
 
         else:
@@ -198,24 +192,38 @@ def findBestClassifier(x, y, targetFeatureName ,inputFeatureCombination=False, p
         if (printProgress == True):
             print("completed: " + t)
     
-    saveBestResults(dfBestResults, targetFeatureName)
+    saveBestResults(dfBestResults, targetDataFrameName)
     return dfBestResults
 
 ################################################################################################################################################################
 # fill values based on prediction
+#def fillValues(x, targetDataFrameName):
+#    # initialize values
+#    arrayX = x.copy()
+#    targetDataFrame = targetDataFrameName.copy()
 
-def fillValues(df, results):
-    dfX = df.copy()
-    dfResult = results.copy()
-    for index, row in dfResult.iterrows():
-        inputFeatureList = row["InputFeature"].split("| ")
-        inputFeature = dfX[inputFeatureList]
-        model = row["Model"]
-        pca = row["PCA"]
-        st_scaler = row["Standard Scaler"]
+#    # create input feature
+#    if len(arrayX) > 1:
+#        inputFeature = arrayX[0]
+#        i = 1
+#        while i < len(arrayX):
+#            inputFeature = pd.merge(inputFeature, arrayX[i], on='user_id', how='inner')
+#            i += 1
+#    else:
+#        inputFeature = arrayX[0]
 
-        # predict new values
-        x_scaled = st_scaler.transform(inputFeature)
-        x_scaled = pca.transform(x_scaled)
-        dfX[row["TargetFeature"]] = model.predict(x_scaled)
-    return dfX
+#    # load bestResults csv
+#    dfX = df.copy()
+#    dfResult = results.copy()
+#    for index, row in dfResult.iterrows():
+#        inputFeatureList = row["InputFeature"].split("| ")
+#        inputFeature = dfX[inputFeatureList]
+#        model = row["Model"]
+#        pca = row["PCA"]
+#        st_scaler = row["Standard Scaler"]
+
+#        # predict new values
+#        x_scaled = st_scaler.transform(inputFeature)
+#        x_scaled = pca.transform(x_scaled)
+#        dfX[row["TargetFeature"]] = model.predict(x_scaled)
+#    return dfX
