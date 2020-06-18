@@ -31,16 +31,21 @@ def powerset(iterable):
     s = list(iterable)
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
-
-def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombination=False, printProgress=False):
-    # initialize values
-    targetFeature = y.copy()
-
+def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False, printProgress=False):
+    #initialize data
+    arrayX= x.copy()
+    dfY = y.copy()
     # create input feature
-    inputFeature = pd.merge(x1, x2, on='user_id', how='inner')
-    inputFeature = pd.merge(inputFeature, x3, on='user_id', how='inner')
-    inputFeature = pd.merge(inputFeature, x4, on='user_id', how='inner')
-    
+    targetFeature = dfY
+    if len(arrayX) > 1:
+        inputFeature = arrayX[0]
+        i = 1
+        while i < len(arrayX):
+            inputFeature = pd.merge(inputFeature, arrayX[i], on='user_id', how='inner')
+            i += 1
+    else:
+        inputFeature = arrayX[0]
+
     # calculate p-values
     inputFeature, targetFeature, dfJoinedData, pValues, _ = calculateCorrWithPValue(inputFeature, targetFeature)
     pValuesTransformed = pValues.T
@@ -50,24 +55,22 @@ def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombi
     # iterate through all target feature
     for t in targetFeatureList:
         # balance data based on target feature
-        dfXYBalanced = balanceAccordingToColumn(dfJoinedData,t)
-
+        dfXY = balanceAccordingToColumn(dfJoinedData,t)
+        dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
+        dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
         # get list with p_values bellow 0.05
         inputFeatureList = list((pValuesTransformed[pValuesTransformed[t] < 0.05]).index)
         globalBestResult = [t, '-','-', -1, -1]
         globalBestModel = '-'
         globalBestPCA = '-'
         globalBestScaler = '-'
-
         # check whether there are input features or not
         if len(inputFeatureList) > 0:
-
             # check whether a combination of input feature is wanted or not
             if inputFeatureCombination == True:
                 # create all possible combinations of input features
                 allInputFeatureCombinationsDummy = list(powerset(inputFeatureList))
                 allInputFeatureCombinationsDummy.pop(0)
-            
                 allInputFeatureCombinations = []
                 for a in allInputFeatureCombinationsDummy:
                     dummyList = []
@@ -77,13 +80,12 @@ def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombi
             else:
                 # append all input Features in list
                 allInputFeatureCombinations = []
-                allInputFeatureCombinations.append(inputFeatureList)        
-
+                allInputFeatureCombinations.append(inputFeatureList)    
+                    
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
-
-                x = dfXYBalanced[combination]
-                y = dfXYBalanced[t]
+                x = dfXBalanced[combination]
+                y = dfYBalanced[t]
 
                 #create array for performance evaluation and initilize it with suitable values
                 bestResult = [t, ('| '.join(combination)),'-', -1, -1]
@@ -108,7 +110,7 @@ def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombi
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y)
                 except:
-                    accuray = -1
+                    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Random Forest Classifier'
                     bestResult[3] = r2
@@ -157,7 +159,7 @@ def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombi
                         bestModel = model
                         bestPCA = pca
                         bestScaler = scaler
-                
+
                 # Gaussian Naive Bayes Classifier
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y)
@@ -190,21 +192,17 @@ def findBestClassifier(x1, x2, x3, x4, y, targetDataFrameName ,inputFeatureCombi
                     globalBestModel = bestModel
                     globalBestPCA = bestPCA
                     globalBestScaler = bestScaler
-                
-            # append best result to dfBestResult data frame and save model, pca & standardScaler to .pkl files
+
+            # append best result to dfBestResult data frame
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
             if(globalBestResult[4] > 0):
                 saveModel(globalBestModel, globalBestPCA, globalBestScaler, t, targetDataFrameName)
-            
-
         else:
             globalBestResult = [t, 'no input feature with p-value below 0.05' ,'-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
-        
         if (printProgress == True):
             print("completed: " + t)
-    
-    saveBestResults(dfBestResults, targetDataFrameName)
+        saveBestResults(dfBestResults, targetDataFrameName)
     return dfBestResults
 
 ################################################################################################################################################################

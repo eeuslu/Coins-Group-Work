@@ -40,10 +40,8 @@ def logisticRegression(input, target, PCA_Value=0.99):
 
     # create regression
     log = LogisticRegression(n_jobs=-1)
-    try:
-        log.fit(x_train_scaled, y_train)
-    except ValueError:
-        return -1, -1, '-' , '-', '-'
+    log.fit(x_train_scaled, y_train)
+    
     # predict test set
     y_predict = log.predict(x_test_scaled)
 
