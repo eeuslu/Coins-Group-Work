@@ -32,6 +32,9 @@ def powerset(iterable):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
 
 def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False, printProgress=False):
+    #Used for classifies
+    testSize = 0.3
+
     #initialize data
     arrayX= x.copy()
     dfY = y.copy()
@@ -49,21 +52,25 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
     # calculate p-values
     inputFeature, targetFeature, dfJoinedData, pValues, _ = calculateCorrWithPValue(inputFeature, targetFeature)
     pValuesTransformed = pValues.T
-    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy'])
+
+    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy', 'TestSampleSize'])
     targetFeatureList = list(pValues.index.values)
 
     # iterate through all target feature
-    for t in targetFeatureList:
+    for targetFeature in targetFeatureList:
         # balance data based on target feature
-        dfXY = balanceAccordingToColumn(dfJoinedData,t)
-        dfXBalanced = dfJoinedData.iloc[:,(len(dfY.columns)):]
-        dfYBalanced = dfJoinedData.iloc[:,1:(len(dfY.columns))]
+        dfXYBalanced = balanceAccordingToColumn(dfJoinedData,targetFeature)
+        testSampleSize = round(len(dfXYBalanced)*testSize,0)
+
         # get list with p_values bellow 0.05
-        inputFeatureList = list((pValuesTransformed[pValuesTransformed[t] < 0.05]).index)
-        globalBestResult = [t, '-','-', -1, -1]
+        inputFeatureList = list((pValuesTransformed[pValuesTransformed[targetFeature] < 0.05]).index)
+
+        #[targetFeature, inputFeatures, classifier, r2, accuracy, testSampleSize]
+        globalBestResult = [targetFeature, '-','-', -1, -1, testSampleSize]
         globalBestModel = '-'
         globalBestPCA = '-'
         globalBestScaler = '-'
+
         # check whether there are input features or not
         if len(inputFeatureList) > 0:
             # check whether a combination of input feature is wanted or not
@@ -71,11 +78,13 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 # create all possible combinations of input features
                 allInputFeatureCombinationsDummy = list(powerset(inputFeatureList))
                 allInputFeatureCombinationsDummy.pop(0)
+
                 allInputFeatureCombinations = []
-                for a in allInputFeatureCombinationsDummy:
+                for inputFeatureCombination in allInputFeatureCombinationsDummy:
                     dummyList = []
-                    for b in a:
-                        dummyList.append(b)
+                    for inputFeature in inputFeatureCombination:
+                        dummyList.append(inputFeature)
+                        
                     allInputFeatureCombinations.append(dummyList)
             else:
                 # append all input Features in list
@@ -84,18 +93,19 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
-                x = dfXBalanced[combination]
-                y = dfYBalanced[t]
+
+                x = dfXYBalanced[combination]
+                y = dfXYBalanced[targetFeature]
 
                 #create array for performance evaluation and initilize it with suitable values
-                bestResult = [t, ('| '.join(combination)),'-', -1, -1]
+                bestResult = [targetFeature, ('| '.join(combination)),'-', -1, -1, testSampleSize]
                 bestModel = '-'
                 bestPCA = '-'
                 bestScaler = '-'
 
                 # logistic regression
                 try:
-                    r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y)
+                    r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y,testSize=testSize)
                 except:
                     accuracy = -1
                 if(accuracy > bestResult[4]):
@@ -108,7 +118,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # random forest classifier
                 try:
-                    r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y)
+                    r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y,testSize=testSize)
                 except:
                     accuracy = -1
                 if(accuracy > bestResult[4]):
@@ -122,7 +132,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 # K-Neighbors Classifier
                 for k in range(1,10):
                     try:
-                        r2, accuracy, model, pca, scaler = classifiers.knnClassifier(x,y,k)
+                        r2, accuracy, model, pca, scaler = classifiers.knnClassifier(x,y,k,testSize=testSize)
                     except:
                         accuracy = -1
                     if(accuracy > bestResult[4]):
@@ -135,7 +145,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # linear Support Vector Machine
                 try:
-                    r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y)
+                    r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y,testSize=testSize)
                 except:
                     accuracy = -1
                 if(accuracy > bestResult[4]):
@@ -149,7 +159,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 # polynomial Support Vector Machine
                 for d in range(1,10):
                     try:
-                        r2, accuracy, model, pca, scaler = classifiers.svcPoly(x,y,d)
+                        r2, accuracy, model, pca, scaler = classifiers.svcPoly(x,y,d,testSize=testSize)
                     except:
                         accuracy = -1
                     if(accuracy > bestResult[4]):
@@ -162,7 +172,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # Gaussian Naive Bayes Classifier
                 try:
-                    r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y)
+                    r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y,testSize=testSize)
                 except:
                     accuracy = -1
                 if(accuracy > bestResult[4]):
@@ -175,7 +185,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # Ridge Regression
                 try:
-                    r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y)
+                    r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y,testSize=testSize)
                 except:
                     accuracy = -1
                 if(accuracy > bestResult[4]):
@@ -196,12 +206,13 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
             # append best result to dfBestResult data frame
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
             if(globalBestResult[4] > 0):
-                saveModel(globalBestModel, globalBestPCA, globalBestScaler, t, targetDataFrameName)
+                saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
+               
         else:
-            globalBestResult = [t, 'no input feature with p-value below 0.05' ,'-', '-', '-']
+            globalBestResult = [targetFeature, 'no input feature with p-value below 0.05' ,'-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
         if (printProgress == True):
-            print("completed: " + t)
+            print("completed: " + targetFeature)
         saveBestResults(dfBestResults, targetDataFrameName)
     return dfBestResults
 
