@@ -51,30 +51,34 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
     # calculate p-values
     inputFeature, targetFeature, dfJoinedData, pValues, _ = calculateCorrWithPValue(inputFeature, targetFeature)
+  
     pValuesTransformed = pValues.T
 
-    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy', 'TestSampleSize'])
+    dfBestResults = pd.DataFrame(columns=['TargetFeature', 'InputFeature', 'BestAlgorithm', 'R^2', 'Accuracy', 'TestSampleSizePerValue'])
     targetFeatureList = list(pValues.index.values)
-
+    
     # iterate through all target feature
     for targetFeature in targetFeatureList:
         # balance data based on target feature
         dfXYBalanced = balanceAccordingToColumn(dfJoinedData,targetFeature)
-        testSampleSize = round(len(dfXYBalanced)*testSize,0)
-
+        testSampleSize = round(len(dfXYBalanced[dfXYBalanced[targetFeature]==dfXYBalanced[targetFeature].unique()[0]])*testSize,0)
+  
         # get list with p_values bellow 0.05
         inputFeatureList = list((pValuesTransformed[pValuesTransformed[targetFeature] < 0.05]).index)
-
-        #[targetFeature, inputFeatures, classifier, r2, accuracy, testSampleSize]
+    
+        #[targetFeature, inputFeatures, classifier, r2, accuracy, TestSampleSizePerValue]
         globalBestResult = [targetFeature, '-','-', -1, -1, testSampleSize]
         globalBestModel = '-'
         globalBestPCA = '-'
         globalBestScaler = '-'
+    
 
         # check whether there are input features or not
         if len(inputFeatureList) > 0:
+  
             # check whether a combination of input feature is wanted or not
             if inputFeatureCombination == True:
+        
                 # create all possible combinations of input features
                 allInputFeatureCombinationsDummy = list(powerset(inputFeatureList))
                 allInputFeatureCombinationsDummy.pop(0)
@@ -90,7 +94,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 # append all input Features in list
                 allInputFeatureCombinations = []
                 allInputFeatureCombinations.append(inputFeatureList)    
-                    
+   
             # evaluate models for all combinations of input features
             for combination in allInputFeatureCombinations:
 
@@ -206,14 +210,14 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
             # append best result to dfBestResult data frame
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
             if(globalBestResult[4] > 0):
-                saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
-               
+                #saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
+                pass
         else:
-            globalBestResult = [targetFeature, 'no input feature with p-value below 0.05' ,'-', '-', '-']
+            globalBestResult = [targetFeature, 'no input feature with p-value below 0.05' ,'-', '-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
         if (printProgress == True):
             print("completed: " + targetFeature)
-        saveBestResults(dfBestResults, targetDataFrameName)
+        #saveBestResults(dfBestResults, targetDataFrameName)
     return dfBestResults
 
 ################################################################################################################################################################

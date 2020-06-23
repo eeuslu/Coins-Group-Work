@@ -11,6 +11,7 @@ def createPersonality(df_ipip):
     dfPersonality.drop_duplicates(inplace=True)
 
     dfPersonality = dfPersonality.reset_index(drop=True)
+    dfPersonality.dropna(inplace=True)
 
     return dfPersonality
 
@@ -35,9 +36,11 @@ def createSocioDemographics(df_ipip, df_mpzm, df_images, df_mood):
     
     # drop duplicates
     dfSocialDemographics.drop_duplicates(inplace=True)
+    dfSocialDemographics.drop('registration_age',axis=1,inplace=True)
 
     # reset index
     dfSocialDemographics = dfSocialDemographics.reset_index(drop=True)
+    dfSocialDemographics.dropna(inplace=True)
 
     return dfSocialDemographics
     
@@ -55,6 +58,7 @@ def createImageDescriptions(df_images):
 
     dfTextAboutImages['file_name'] = dfTextAboutImages['file_name'].str.replace('./', '')
     dfTextAboutImages = dfTextAboutImages.reset_index(drop=True)
+    dfTextAboutImages.dropna(inplace=True)
     
     return dfTextAboutImages
 
@@ -99,8 +103,11 @@ def createImageRatings(df_images):
     dfImageRatings = pd.DataFrame(ratingList)
     dfImageRatings.rename(columns={0:'user_id'}, inplace=True)
     dfImageRatings.fillna(value=0.0, inplace=True)
+    dfImageRatings.dropna(inplace=True)
     
     return dfImageRatings
+
+
 
 def createImageContents(df_images, df_imageLabels):
     
@@ -125,6 +132,7 @@ def createImageContents(df_images, df_imageLabels):
 
     # reset index
     dfImageContents = dfImageContents.reset_index(drop=True)
+    dfImageContents.dropna(inplace=True)
 
     return dfImageContents
 

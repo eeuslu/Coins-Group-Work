@@ -54,8 +54,21 @@ def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
 def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=0):
 
     dfInput = dfPersonality.copy()
+
+    #If Cluster wanted
+    if cluster != 0:
+     
+        dfPersonalityNoId = dfInput.drop('user_id',axis=1)
+
+        kmeans = KMeans(n_clusters=cluster, random_state=0).fit(dfPersonalityNoId)
+
+        prediction = kmeans.predict(dfPersonalityNoId)
+        dfInput['cluster'] = prediction
+        dfInput['cluster'] = dfInput['cluster'].astype('float')
+
+
     #Decide how many splits should occure
-    if  multiclass == False and cluster == 0:
+    if  multiclass == False:
 
         # go through all columns and make the split
         for column in dfPersonality.columns:
@@ -79,11 +92,11 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                 # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
 
-        return dfInput
+     
 
 
     #Decide how many splits should occure
-    if  multiclass == True and cluster == 0:
+    elif  multiclass == True:
 
         #Go through all columns and make the split
         for column in dfPersonality.columns:
@@ -108,20 +121,12 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                 # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
 
-        return dfInput
+    if multiclass == None:
+        for column in dfInput.columns:
+            if column not in ['user_id','cluster']:
+                dfInput.drop(column,axis=1,inplace=True)
 
-
-    #Cluster if wanted
-    if cluster != 0:
-     
-        dfPersonalityNoId = dfInput.drop('user_id',axis=1)
-
-        kmeans = KMeans(n_clusters=cluster, random_state=0).fit(dfPersonalityNoId)
-
-        prediction = kmeans.predict(dfPersonalityNoId)
-        dfInput['cluster'] = prediction
-
-        return dfInput
+    return dfInput
 
 
 

@@ -20,12 +20,12 @@ from sklearn.metrics import accuracy_score
 ################################################################################################################################################################
 # define classification models
 
-def logisticRegression(input, target, PCA_Value=0.99):
+def logisticRegression(input, target, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -49,12 +49,12 @@ def logisticRegression(input, target, PCA_Value=0.99):
 
 
 
-def gaussianNBClassifier(input, target, PCA_Value=0.99):
+def gaussianNBClassifier(input, target, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -78,12 +78,12 @@ def gaussianNBClassifier(input, target, PCA_Value=0.99):
 
 
 
-def ridgeClassifier(input, target, PCA_Value=0.99):
+def ridgeClassifier(input, target, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -107,12 +107,12 @@ def ridgeClassifier(input, target, PCA_Value=0.99):
 
 
 
-def randomForestClassifier(input, target, PCA_Value=0.99):
+def randomForestClassifier(input, target, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -136,12 +136,12 @@ def randomForestClassifier(input, target, PCA_Value=0.99):
 
 
 
-def knnClassifier(input, target, k, PCA_Value=0.99):
+def knnClassifier(input, target, k, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -165,12 +165,12 @@ def knnClassifier(input, target, k, PCA_Value=0.99):
 
 
 
-def svcLinear(input, target, PCA_Value=0.99):
+def svcLinear(input, target, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
@@ -194,12 +194,12 @@ def svcLinear(input, target, PCA_Value=0.99):
 
 
 
-def svcPoly(input, target, d, PCA_Value=0.99):
+def svcPoly(input, target, d, PCA_Value=0.99, testSize = 0.3):
     x = input.copy()
     y = target.copy()
 
     # split data into test and training set
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=50)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=testSize, random_state=50)
     
     # normalize data
     st_scaler = StandardScaler()
