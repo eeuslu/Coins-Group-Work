@@ -108,10 +108,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 bestScaler = '-'
 
                 # logistic regression
-                try:
-                    r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y,testSize=testSize)
-                except:
-                    accuracy = -1
+                #try:
+                r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y,testSize=testSize)
+                #except:
+                #    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Logistic Regression'
                     bestResult[3] = r2
@@ -121,10 +121,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     bestScaler = scaler
 
                 # random forest classifier
-                try:
-                    r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y,testSize=testSize)
-                except:
-                    accuracy = -1
+                #try:
+                r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y,testSize=testSize)
+                #except:
+                #    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Random Forest Classifier'
                     bestResult[3] = r2
@@ -135,10 +135,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # K-Neighbors Classifier
                 for k in range(1,10):
-                    try:
-                        r2, accuracy, model, pca, scaler = classifiers.knnClassifier(x,y,k,testSize=testSize)
-                    except:
-                        accuracy = -1
+                    #try:
+                    r2, accuracy, model, pca, scaler = classifiers.knnClassifier(x,y,k,testSize=testSize)
+                    #except:
+                    #    accuracy = -1
                     if(accuracy > bestResult[4]):
                         bestResult[2] = 'KNN Classifier, Degree: %d' % (k)
                         bestResult[3] = r2
@@ -148,10 +148,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                         bestScaler = scaler
 
                 # linear Support Vector Machine
-                try:
-                    r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y,testSize=testSize)
-                except:
-                    accuracy = -1
+                #try:
+                r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y,testSize=testSize)
+                #except:
+                #    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'SVC (linear)'
                     bestResult[3] = r2
@@ -162,10 +162,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
 
                 # polynomial Support Vector Machine
                 for d in range(1,10):
-                    try:
-                        r2, accuracy, model, pca, scaler = classifiers.svcPoly(x,y,d,testSize=testSize)
-                    except:
-                        accuracy = -1
+                    #try:
+                    r2, accuracy, model, pca, scaler = classifiers.svcPoly(x,y,d,testSize=testSize)
+                    #except:
+                    #    accuracy = -1
                     if(accuracy > bestResult[4]):
                         bestResult[2] = 'SVC (polynomial), Degree: %d' % (d)
                         bestResult[3] = r2
@@ -175,10 +175,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                         bestScaler = scaler
 
                 # Gaussian Naive Bayes Classifier
-                try:
-                    r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y,testSize=testSize)
-                except:
-                    accuracy = -1
+                #try:
+                r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y,testSize=testSize)
+                #except:
+                #    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Gaussian Naive Bayes'
                     bestResult[3] = r2
@@ -188,10 +188,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     bestScaler = scaler
 
                 # Ridge Regression
-                try:
-                    r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y,testSize=testSize)
-                except:
-                    accuracy = -1
+                #try:
+                r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y,testSize=testSize)
+                #except:
+                #    accuracy = -1
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Ridge Regression'
                     bestResult[3] = r2

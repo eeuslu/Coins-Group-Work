@@ -3,7 +3,7 @@ import pandas as pd
 def balanceAccordingToColumn(dfInput,balnceColumn):
 
     #Create an empty dataframe to fill it up
-    dfPOutput = pd.DataFrame(None,columns=dfInput.columns)
+    dfOutput = pd.DataFrame(None,columns=dfInput.columns)
 
     #Check if column exists
     if balnceColumn in dfInput.columns:
@@ -14,9 +14,14 @@ def balanceAccordingToColumn(dfInput,balnceColumn):
 
         for value in values:
             dfForValue = dfInput[dfInput[balnceColumn] == value].sample(n=minValue)
-            dfPOutput = pd.concat([dfPOutput,dfForValue])
+            dfOutput = pd.concat([dfOutput,dfForValue])
 
-        return dfPOutput
+        for column in dfOutput.columns:
+            if column != 'user_id':
+                if dfOutput[column].dtype == 'object':
+                    dfOutput[column] = pd.to_numeric(dfOutput[column])
+
+        return dfOutput
     
     else:
         print("Column does not exist in Dataframe")
