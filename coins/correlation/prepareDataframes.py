@@ -109,7 +109,7 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                 if split == "hard":
                     border1 = 2.5
                     border2 = 3.5
-                elif split == 'median':
+                else:
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
 
@@ -186,7 +186,7 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                     elif (('reasons' in column) | ('strengths' in column) | ('emotions' in column) | ('utilization' in column) | ('story' in column)):
                         border1 = 0.33
                         border2 = 0.66
-                elif split == 'thirds':
+                else:
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
                 
