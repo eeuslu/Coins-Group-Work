@@ -4,6 +4,7 @@ from .utils import get_data_path
 import os
 import yaml
 from sklearn.externals.joblib import dump, load
+import hashlib
 
 
 # return API credentials from the local credentials.yaml file
@@ -339,21 +340,31 @@ def preprocess_sessions(df, df2):
 
 def loadBestResult(targetDataFrameName):
     path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/bestResults.csv')
+    path = '{directory}/output/modelResults/bestResults/{fileName}.csv'.format(directory=get_data_path(),fileName=targetDataFrameName)
     df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+  
     return df
 
+
 def loadModel(targetFeatureName, targetDataFrameName):
-    targetFeatureName = targetFeatureName.replace("/", "")
+
+    targetFeatureName = getHash(targetFeatureName)
+
     #Save the model
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/model/' + targetFeatureName + 'Model.pkl')
+    path = '{directory}/output/modelResults/{targetDataFrameName}/model/{targetFeatureName}.pkl'.format(directory=get_data_path(), targetDataFrameName=targetDataFrameName, targetFeatureName=targetFeatureName)
     model = load(path)
 
     #Save the PCA
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/pca/' + targetFeatureName + 'PCA.pkl')
+    path = '{directory}/output/modelResults/{targetDataFrameName}/pca/{targetFeatureName}.pkl'.format(directory=get_data_path(), targetDataFrameName=targetDataFrameName, targetFeatureName=targetFeatureName)
     pca = load(path)
 
     #Save the StandardScaler
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/standardScaler/' + targetFeatureName + 'StandardScaler.pkl')
+    path = '{directory}/output/modelResults/{targetDataFrameName}/scaler/{targetFeatureName}.pkl'.format(directory=get_data_path(), targetDataFrameName=targetDataFrameName, targetFeatureName=targetFeatureName)
     standardScaler = load(path)
 
     return model, pca, standardScaler
+
+
+
+def getHash(name):
+    return hashlib.sha256(name.encode()).hexdigest()[:20]

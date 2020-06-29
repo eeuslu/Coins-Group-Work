@@ -42,9 +42,7 @@ def savePreparedDFs(df, fileName):
 
 def saveModel(model, pca, standardScaler, targetFeatureName, targetDataFrameName):
 
-    print(type(targetDataFrameName))
-    
-    targetFeatureName = getHash(targetDataFrameName)
+    targetFeatureName = getHash(targetFeatureName)
 
     #Save the model
     path = '{directory}/output/modelResults/{target}/model/{feature}.pkl'.format(directory=get_data_path(),target=targetDataFrameName, feature=targetFeatureName)
@@ -67,4 +65,4 @@ def saveBestResults(df, targetDataFrameName):
 
 
 def getHash(name):
-    return hashlib.sha256(name.encode()).hexdigest()[:15]
+    return hashlib.sha256(name.encode()).hexdigest()[:20]
