@@ -2,14 +2,21 @@ import pandas as pd
 import os
 from .utils import get_data_path
 from sklearn.externals.joblib import dump, load
+import hashlib
 
 def saveInitialDFs(df, fileName):
-    path = os.path.join(get_data_path(),'output/initialDataFrames/' + fileName + '.csv')
+
+    path = '{directory}/output/initialDataFrames/{filename}.csv'.format(directory=get_data_path(),filename=fileName)
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
 
+
+
 def saveAnalyzedImageDescriptions(df):
+
     path = os.path.join(get_data_path(),'output/analyzedDataFrames/analyzedImageDescriptions.csv')
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
+
+
 
 # def saveCorrelationsAndPValues(dfC, dfP, fileName):
 #     pathC = os.path.join(get_data_path(),'output/correlations/c_' + fileName + '.csv')
@@ -17,28 +24,47 @@ def saveAnalyzedImageDescriptions(df):
 #     pathP = os.path.join(get_data_path(),'output/correlations/p_' + fileName + '.csv')
 #     dfP.to_csv(pathP, sep=';', decimal=',', encoding='utf-8')
 
+
+
 def saveSignificantCorrelations(df, fileName):
-    path = os.path.join(get_data_path(),'output/correlations/significantCorrelations_' + fileName + '.csv')
+
+    path = '{directory}/output/correlations/significantCorrelations_{filename}.csv'.format(directory=get_data_path(),filename=fileName)
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
+
+
 
 def savePreparedDFs(df, fileName):
-    path = os.path.join(get_data_path(),'output/preparedDataFrames/' + fileName + '.csv')
+
+    path = '{directory}/output/preparedDataFrames/{filename}.csv'.format(directory=get_data_path(),filename=fileName)
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
 
+
+
 def saveModel(model, pca, standardScaler, targetFeatureName, targetDataFrameName):
-    targetFeatureName = targetFeatureName.replace("/", "")
+
+    print(type(targetDataFrameName))
+    
+    targetFeatureName = getHash(targetDataFrameName)
+
     #Save the model
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/model/' + targetFeatureName + 'Model.pkl')
+    path = '{directory}/output/modelResults/{target}/model/{feature}.pkl'.format(directory=get_data_path(),target=targetDataFrameName, feature=targetFeatureName)
     dump(model,path)
 
     #Save the PCA
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/pca/' + targetFeatureName + 'PCA.pkl')
+    path = '{directory}/output/modelResults/{target}/pca/{feature}.pkl'.format(directory=get_data_path(),target=targetDataFrameName, feature=targetFeatureName)
     dump(pca,path)
 
     #Save the StandardScaler
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/standardScaler/' + targetFeatureName + 'StandardScaler.pkl')
+    path = '{directory}/output/modelResults/{target}/scaler/{feature}.pkl'.format(directory=get_data_path(),target=targetDataFrameName, feature=targetFeatureName)
     dump(standardScaler,path)
 
+
+
 def saveBestResults(df, targetDataFrameName):
-    path = os.path.join(get_data_path(), 'output/modelResults/' + targetDataFrameName + '/bestResults.csv')
+    path = '{directory}/output/modelResults/bestResults/{filename}.csv'.format(directory=get_data_path(),filename=targetDataFrameName)
     df.to_csv(path, sep=';', decimal=',', encoding='utf-8')
+
+
+
+def getHash(name):
+    return hashlib.sha256(name.encode()).hexdigest()[:15]

@@ -210,14 +210,14 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
             # append best result to dfBestResult data frame
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
             if(globalBestResult[4] > 0):
-                #saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
+                saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
                 pass
         else:
             globalBestResult = [targetFeature, 'no input feature with p-value below 0.05' ,'-', '-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
         if (printProgress == True):
             print("completed: " + targetFeature)
-        #saveBestResults(dfBestResults, targetDataFrameName)
+        saveBestResults(dfBestResults, targetDataFrameName)
     return dfBestResults
 
 ################################################################################################################################################################
