@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as numpy
+from .utils import get_data_path
 
 def createPersonality(df_ipip):
 
@@ -16,23 +17,23 @@ def createPersonality(df_ipip):
     return dfPersonality
 
 
-def createSocioDemographics(df_ipip, df_mpzm, df_images, df_mood):
-    
-    sources = [df_mpzm, df_images, df_mood]
+def createSocioDemographics(dfList):
     
     # create first DataFrame as base for concat
-    dfSocialDemographics = df_ipip[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
+    dfSocialDemographics = dfList[0][['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
                             'job_position','job_sector','company_size','job_status_edu_parttime','job_status_edu_fulltime',
                             'job_status_employed_parttime','job_status_employed_fulltime','job_status_selfemployed',
                             'job_status_houskeeping','job_status_unemployed','job_status_retired','educational_achievement']]
 
-    # concat defined columns with all other dataframes containing valuable information about demographics
-    for source in sources:
-        dfSocialDemographicsSource = source[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
+    if len(dfList) > 1:
+        # concat defined columns with all other dataframes containing valuable information about demographics
+        sources = dfList[1:]
+        for source in sources:
+            dfSocialDemographicsSource = source[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
                             'job_position','job_sector','company_size','job_status_edu_parttime','job_status_edu_fulltime',
                             'job_status_employed_parttime','job_status_employed_fulltime','job_status_selfemployed',
                             'job_status_houskeeping','job_status_unemployed','job_status_retired','educational_achievement']]
-        dfSocialDemographics = pd.concat([dfSocialDemographics,dfSocialDemographicsSource],ignore_index=True)
+            dfSocialDemographics = pd.concat([dfSocialDemographics,dfSocialDemographicsSource],ignore_index=True)
     
     # drop duplicates
     dfSocialDemographics.drop_duplicates(inplace=True)
@@ -44,6 +45,7 @@ def createSocioDemographics(df_ipip, df_mpzm, df_images, df_mood):
 
     return dfSocialDemographics
     
+
 
 def createImageDescriptions(df_images):
 
@@ -63,27 +65,47 @@ def createImageDescriptions(df_images):
     return dfTextAboutImages
 
 
-def createImageRatings(df_images):
+#If train == true save the dict. Else load it
+def createImageRatings(df_images, train):
 
-    # get unique image names
-    imageNames = df_images['file_name'].unique()
-    uniqueImageNames = []
+    #First get the path
+    path = '{directory}/input/SystemOwned/imageDict.csv'.format(directory=get_data_path())
 
-    for imageName in imageNames:
-        imageName = imageName.replace('./', '')
-        uniqueImageNames.append(imageName)
+    if train == True:
+        # get unique image names
+        imageNames = df_images['file_name'].unique()
+        uniqueImageNames = []
 
-    uniqueImageNames = numpy.unique(uniqueImageNames)
+        for imageName in imageNames:
+            imageName = imageName.replace('./', '')
+            uniqueImageNames.append(imageName)
 
-    # create dict for image file names and numbers
-    imageNumbers = list(range(1, 148))
-    imageDict = dict(zip(imageNumbers, uniqueImageNames))
+        uniqueImageNames = numpy.unique(uniqueImageNames)
+
+        # create dict for image file names and numbers
+        imageNumbers = list(range(0, 147))
+        imageDict = dict(zip(imageNumbers, uniqueImageNames))
+
+        # create inverted image Dictionary
+        inv_imageDict = {v: k for k, v in imageDict.items()}
+
+        inv_imageDf = pd.DataFrame.from_dict(inv_imageDict,orient='index')
+        inv_imageDf.reset_index(inplace=True)
+        inv_imageDf.columns = ['imageName','number']
+        inv_imageDf.to_csv(path,index=False,sep=';',header=True,encoding='utf-8')
+
+    #If train == False load the dict
+    else:
+        inputDf = pd.read_csv(path,sep=';',encoding='utf-8')
+        inputDf = inputDf.set_index('imageName')
+        inputDf.drop('number',axis=1)
+
+        inv_imageDict = inputDf.to_dict()
+        inv_imageDict=inv_imageDict['number']
 
     # get unique user IDs
     uniqueUsers = df_images['user_id'].unique()
 
-    # create inverted image Dictionary
-    inv_imageDict = {v: k for k, v in imageDict.items()}
 
     # create rating table for user per image
     ratingList = []
@@ -106,6 +128,7 @@ def createImageRatings(df_images):
     dfImageRatings.dropna(inplace=True)
     
     return dfImageRatings
+
 
 
 

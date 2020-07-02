@@ -55,6 +55,10 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
 
     dfInput = dfPersonality.copy()
 
+    #empty list for configuration saving
+    configuration = []
+    configuration.append([multiclass,split,cluster])
+
     #If Cluster wanted
     if cluster != 0:
      
@@ -65,6 +69,9 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
         prediction = kmeans.predict(dfPersonalityNoId)
         dfInput['cluster'] = prediction
         dfInput['cluster'] = dfInput['cluster'].astype('float')
+
+        #save cluster centers
+        configuration.append(['cluster',kmeans.cluster_centers_])
 
 
     #Decide how many splits should occure
@@ -84,6 +91,9 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                     border = dfInput[column].mean()
                 elif split == "median":
                     border = dfInput[column].median()
+
+                #Save border
+                configuration.append(border)
 
                 # split
                 dfInput.loc[dfInput[column] < border, colName] = 0
@@ -113,6 +123,9 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
 
+                #Save borders
+                configuration.append([border1,border2])
+
                 # split
                 dfInput.loc[dfInput[column] < border1, colName] = 0
                 dfInput.loc[(dfInput[column] >= border1) & (dfInput[column] < border2), colName] = 1
@@ -126,12 +139,19 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
             if column not in ['user_id','cluster']:
                 dfInput.drop(column,axis=1,inplace=True)
 
+
+    
+
     return dfInput
 
 
 
 
 def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='median'):
+
+    #empty list for configuration saving
+    configuration = []
+    configuration.append([multiclass,split])
     
     # drop unnecessary columns and all NaN values
     dfImageDescriptions = dfImageDescriptions.drop(columns=['file_name', 'reasons', 'emotions', 'strengths', 'utilization', 'story', 'reasons_translation', 'emotions_translation', 'strengths_translation', 'utilization_translation', 'story_translation'])
@@ -161,6 +181,10 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                 elif split == 'median':
                     border = dfInput[column].median()
                 
+
+                #Save borders
+                configuration.append([border])
+
                 # split
                 dfInput.loc[dfInput[column] < border, colName] = 0
                 dfInput.loc[dfInput[column] >= border, colName] = 1
@@ -190,6 +214,9 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
                 
+                #Save borders
+                configuration.append([border1,border2])
+
                 # split
                 dfInput.loc[dfInput[column] < border1, colName] = 0
                 dfInput.loc[(dfInput[column] >= border1) & (dfInput[column] < border2), colName] = 1
@@ -197,5 +224,8 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
 
                 # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
+
+    
+    print(configuration)
 
     return dfInput
