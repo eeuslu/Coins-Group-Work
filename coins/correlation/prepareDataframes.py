@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.cluster import KMeans
+from .utils import get_data_path
 
 # general cleaning of dfSocioDemographics, transforming categorical values using One Hot Encoding, drop categories with low sample size
 def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
@@ -48,18 +49,10 @@ def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
     return dfSocioDemographicsDummies, droppedColumnsList
 
 
-
-
-# transform values in dfPersonality from real numbers to classes for classification purpose
-def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=0):
-
-    dfInput = dfPersonality.copy()
-
-    #empty list for configuration saving
-    configuration = []
-    configuration.append([multiclass,split,cluster])
-
-    #If Cluster wanted
+def cluster(cluster=5):
+#If Cluster wanted
+    pass
+    """
     if cluster != 0:
      
         dfPersonalityNoId = dfInput.drop('user_id',axis=1)
@@ -73,10 +66,34 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
         #save cluster centers
         configuration.append(['cluster',kmeans.cluster_centers_])
 
+        for column in dfInput.columns:
+            if column not in ['user_id','cluster']:
+                dfInput.drop(column,axis=1,inplace=True)
+
+    """
+
+
+# transform values in dfPersonality from real numbers to classes for classification purpose
+def preparePersonality(dfPersonality,train, multiclass=False, split="median"):
+
+    #For saving
+    path = '{directory}/input/SystemOwned/bordersPersonality.csv'.format(directory=get_data_path())
+    #empty list for configuration saving
+    configuration = []
+    #Copy
+    dfInput = dfPersonality.copy()
+
+
+    if train == False:
+        dfConfiguration = pd.read_csv(path,sep=';',header=None)
+        dfConfigurationValues = dfConfiguration.values
+        
+        multiclass = dfConfigurationValues[0][0]
+
 
     #Decide how many splits should occure
     if  multiclass == False:
-
+        count=0
         # go through all columns and make the split
         for column in dfPersonality.columns:
             if column != "user_id":
@@ -92,8 +109,13 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                 elif split == "median":
                     border = dfInput[column].median()
 
-                #Save border
-                configuration.append(border)
+
+                if train == False:
+                    border = dfConfigurationValues[count][1]
+                    count +=1 
+
+                #Save borders
+                configuration.append([multiclass,border,0])
 
                 # split
                 dfInput.loc[dfInput[column] < border, colName] = 0
@@ -107,7 +129,7 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
 
     #Decide how many splits should occure
     elif  multiclass == True:
-
+        count=0
         #Go through all columns and make the split
         for column in dfPersonality.columns:
             if column != "user_id":
@@ -123,8 +145,13 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
 
+                if train == False:
+                    border1 = dfConfigurationValues[count][1]
+                    border2 = dfConfigurationValues[count][2]
+                    count +=1 
+
                 #Save borders
-                configuration.append([border1,border2])
+                configuration.append([multiclass,border1,border2])
 
                 # split
                 dfInput.loc[dfInput[column] < border1, colName] = 0
@@ -134,24 +161,23 @@ def preparePersonality(dfPersonality, multiclass=False, split="median", cluster=
                 # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
 
-    if multiclass == None:
-        for column in dfInput.columns:
-            if column not in ['user_id','cluster']:
-                dfInput.drop(column,axis=1,inplace=True)
+
+    if train == True:
+        dfConfiguration = pd.DataFrame(configuration)
+        dfConfiguration.to_csv(path,sep=';',header=False, index=False)
 
 
-    
-
+    print(configuration)
     return dfInput
 
 
 
 
-def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='median'):
-
+def prepareImageDescriptions(dfImageDescriptions,train, multiclass=False, split='median'):
+    #For saving
+    path = '{directory}/input/SystemOwned/bordersImageDescription.csv'.format(directory=get_data_path())
     #empty list for configuration saving
     configuration = []
-    configuration.append([multiclass,split])
     
     # drop unnecessary columns and all NaN values
     dfImageDescriptions = dfImageDescriptions.drop(columns=['file_name', 'reasons', 'emotions', 'strengths', 'utilization', 'story', 'reasons_translation', 'emotions_translation', 'strengths_translation', 'utilization_translation', 'story_translation'])
@@ -159,11 +185,19 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
 
     dfInput = dfImageDescriptions.copy()
 
+    if train == False:
+        dfConfiguration = pd.read_csv(path,sep=';',header=None)
+        dfConfigurationValues = dfConfiguration.values
+        
+        multiclass = dfConfigurationValues[0][0]
+
     # check if multiclass prediction is wanted
     if multiclass == False:
 
         # go through all columns and make the split
+        count = 0
         for column in dfImageDescriptions:
+          
             if column != "user_id":
                 
                 # define new column name
@@ -173,17 +207,22 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                 if split == 'hard':
                     # check if column contains sentiment or emotion value
                     if 'sentiment' in column:
-                        border = 0                        
+                        border = 0       
                     elif (('reasons' in column) | ('strengths' in column) | ('emotions' in column) | ('utilization' in column) | ('story' in column)):
                         border = 0.5
+
                 elif split == 'mean':
                     border = dfInput[column].mean()
                 elif split == 'median':
                     border = dfInput[column].median()
+
                 
+                if train == False:
+                    border = dfConfigurationValues[count][1]
+                    count +=1 
 
                 #Save borders
-                configuration.append([border])
+                configuration.append([multiclass,border,0])
 
                 # split
                 dfInput.loc[dfInput[column] < border, colName] = 0
@@ -193,7 +232,7 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                 dfInput.drop(column, axis=1, inplace=True)
             
     elif multiclass == True:
-
+        count = 0
         # go through all columns and make the split
         for column in dfImageDescriptions:
             if column != "user_id":
@@ -214,8 +253,14 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                     border1 = dfInput[column].quantile(0.33)
                     border2 = dfInput[column].quantile(0.66)
                 
+
+                if train == False:
+                    border1 = dfConfigurationValues[count][1]
+                    border2 = dfConfigurationValues[count][2]
+                    count +=1 
+
                 #Save borders
-                configuration.append([border1,border2])
+                configuration.append([multiclass,border1,border2])
 
                 # split
                 dfInput.loc[dfInput[column] < border1, colName] = 0
@@ -225,7 +270,9 @@ def prepareImageDescriptions(dfImageDescriptions, multiclass=False, split='media
                 # drop old column
                 dfInput.drop(column, axis=1, inplace=True)
 
-    
-    print(configuration)
+    if train == True:
+        dfConfiguration = pd.DataFrame(configuration)
+        dfConfiguration.to_csv(path,sep=';',header=False, index=False)
+        
 
     return dfInput
