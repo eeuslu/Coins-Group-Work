@@ -172,8 +172,6 @@ def preparePersonality(dfPersonality,train, multiclass=False, split="median"):
         dfConfiguration = pd.DataFrame(configuration)
         dfConfiguration.to_csv(path,sep=';',header=False, index=False)
 
-
-    print(configuration)
     return dfInput
 
 

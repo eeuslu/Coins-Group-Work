@@ -1,112 +1,66 @@
 ;attribute 1;attribute 2;p-value;correlation
-0;reasons_translation_sentimentCategory;gender_f;0,0164;0,12073695853421011
-1;reasons_translation_sentimentCategory;gender_m;0,0156;-0,12154978390402583
-2;reasons_translation_sentimentCategory;work_district_AG;0,0302;0,10905950845272103
-3;reasons_translation_sadnessCategory;job_sector_Erziehung und Unterricht;0,0444;0,10122806649663137
-4;reasons_translation_sadnessCategory;educational_achievement_Berufliche Grundbildung;0,0471;-0,09996032281706696
-5;reasons_translation_joyCategory;job_status_unemployed;0,0056;-0,13909089078443498
-6;reasons_translation_joyCategory;gender_f;0,0042;0,14375210210705236
-7;reasons_translation_joyCategory;gender_m;0,0076;-0,13414236765604812
-8;reasons_translation_joyCategory;registration_ageKat_50-59;0,02;-0,11701911592506622
-9;reasons_translation_fearCategory;job_status_edu_fulltime;0,0413;-0,10271218050399104
-10;reasons_translation_fearCategory;work_district_BS;0,0376;0,10466430427045992
-11;reasons_translation_fearCategory;work_district_SO;0,0376;0,1046643042704588
-12;reasons_translation_fearCategory;job_position_Fachspezialist/-in;0,0066;0,13656775357713927
-13;reasons_translation_fearCategory;job_sector_Information und Kommunikation;0,0369;-0,1050658895721781
-14;reasons_translation_disgustCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0298;0,1093520039496262
-15;reasons_translation_angerCategory;job_sector_Baugewerbe/Bau;0,0496;-0,09884562222672355
-16;reasons_translation_angerCategory;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0384;0,10423986532333637
-17;reasons_translation_angerCategory;job_sector_Information und Kommunikation;0,0075;-0,1343062107755686
-18;reasons_translation_angerCategory;job_sector_Kunst, Unterhaltung und Erholung;0,0391;0,10386913982647733
-19;reasons_translation_angerCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0302;0,10908111565256708
-20;reasons_translation_angerCategory;job_sector_Verkehr und Lagerei;0,0262;-0,11188008137313026
-21;emotions_translation_sentimentCategory;work_country_CH;0,0453;0,10079365630289547
-22;emotions_translation_sentimentCategory;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,019;0,11801818782629174
-23;emotions_translation_sadnessCategory;job_status_unemployed;0,0144;0,12303395636844607
-24;emotions_translation_sadnessCategory;job_sector_Gesundheits- und Sozialwesen;0,0351;-0,10605298554833407
-25;emotions_translation_sadnessCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0359;0,10563073577711125
-26;emotions_translation_sadnessCategory;company_size_1.0;0,0185;-0,11845338195823873
-27;emotions_translation_joyCategory;country_DE;0,0366;-0,10521987432326196
-28;emotions_translation_joyCategory;job_sector_Energieversorgung;0,0369;0,10506105244513898
-29;emotions_translation_fearCategory;job_status_unemployed;0,0113;0,12730041669855774
-30;emotions_translation_fearCategory;work_district_GR;0,0252;-0,11262568781940531
-31;emotions_translation_fearCategory;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0378;-0,10452977535519087
-32;emotions_translation_fearCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,032;0,10792796078033531
-33;emotions_translation_disgustCategory;registration_ageKat_20-29;0,0407;-0,10301732097496238
-34;emotions_translation_disgustCategory;job_position_Fachspezialist/-in;0,0154;0,12178671844953527
-35;emotions_translation_disgustCategory;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0388;-0,10400136073606382
-36;emotions_translation_disgustCategory;educational_achievement_Berufs- oder Fachmaturität;0,0112;-0,1275273076821302
-37;emotions_translation_angerCategory;job_status_unemployed;0,0155;0,12172285293918225
-38;strengths_translation_sentimentCategory;gender_f;0,0389;0,10398248075912009
-39;strengths_translation_sentimentCategory;work_district_ZG;0,0316;-0,10819711241743124
-40;strengths_translation_sentimentCategory;educational_achievement_Bachelor;0,0076;-0,1341776451782088
-41;strengths_translation_sadnessCategory;work_district_BS;0,0329;0,1073598347720785
-42;strengths_translation_sadnessCategory;job_sector_Baugewerbe/Bau;0,0401;0,10333837007757243
-43;strengths_translation_sadnessCategory;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0115;-0,12706124824314585
-44;strengths_translation_sadnessCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0085;0,13222499381434372
-45;strengths_translation_joyCategory;job_status_houskeeping;0,0066;-0,1364065257787423
-46;strengths_translation_joyCategory;work_district_ZG;0,0056;-0,13912049392728582
-47;strengths_translation_joyCategory;job_sector_Erbringung von sonstigen Dienstleistungen;0,0449;0,10096785707895363
-48;strengths_translation_joyCategory;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0021;0,1545715178023684
-49;strengths_translation_joyCategory;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0138;0,12385607309653261
-50;strengths_translation_joyCategory;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,008;0,13323684801626737
-51;strengths_translation_fearCategory;job_status_employed_parttime;0,0037;0,14568099648126173
-52;strengths_translation_fearCategory;job_status_employed_fulltime;0,0187;-0,11832200002681609
-53;strengths_translation_fearCategory;work_district_BS;0,0263;0,11180339887498954
-54;strengths_translation_fearCategory;work_district_NI;0,0499;-0,09874672526679586
-55;strengths_translation_fearCategory;work_district_ZG;0,0047;0,1419684428304049
-56;strengths_translation_fearCategory;job_position_Fachspezialist/-in;0,0125;0,12555711970620512
-57;strengths_translation_fearCategory;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0371;-0,10495919171222033
-58;strengths_translation_disgustCategory;job_status_houskeeping;0,0021;0,1544316726876702
-59;strengths_translation_disgustCategory;work_country_CH;0,0496;0,0988425397897563
-60;strengths_translation_disgustCategory;work_district_BS;0,0303;0,10900654345759686
-61;strengths_translation_disgustCategory;work_district_ZG;0,0059;0,1384169836402139
-62;strengths_translation_disgustCategory;job_position_Fachspezialist/-in;0,0082;0,1328464020002544
-63;strengths_translation_disgustCategory;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,008;-0,13321610807963702
-64;strengths_translation_disgustCategory;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0034;-0,14712219494286527
-65;strengths_translation_angerCategory;work_district_LU;0,0038;0,14539151440208212
-66;strengths_translation_angerCategory;job_position_Fachspezialist/-in;0,0321;0,10786975044017268
-67;strengths_translation_angerCategory;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0075;-0,1344443848551909
-68;utilization_translation_sentimentCategory;educational_achievement_Doktorat, Habilitation;0,0434;0,10167654462541388
-69;utilization_translation_sadnessCategory;job_status_selfemployed;0,0227;-0,11465430632569021
-70;utilization_translation_joyCategory;work_district_BS;0,0329;-0,1073598347720784
-71;utilization_translation_joyCategory;job_sector_Baugewerbe/Bau;0,0401;-0,10333837007757274
-72;utilization_translation_joyCategory;company_size_9.0;0,0484;-0,09937678385751282
-73;utilization_translation_fearCategory;job_status_employed_parttime;0,0232;0,11420214506881626
-74;utilization_translation_fearCategory;job_sector_Energieversorgung;0,0484;-0,09936752053164073
-75;utilization_translation_disgustCategory;job_status_edu_parttime;0,0017;0,15730109562360067
-76;utilization_translation_disgustCategory;work_country_CH;0,0342;0,10657378458834178
-77;utilization_translation_disgustCategory;work_country_DE;0,0443;-0,10125518060459987
-78;utilization_translation_disgustCategory;work_district_BS;0,0338;0,10681593040642604
-79;utilization_translation_disgustCategory;job_sector_Verkehr und Lagerei;0,0478;0,09962998634153461
-80;utilization_translation_angerCategory;job_status_houskeeping;0,0493;0,09897046253585447
-81;utilization_translation_angerCategory;country_CH;0,0107;0,12833460079151268
-82;utilization_translation_angerCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0119;0,12649712663930257
-83;story_translation_sentimentCategory;work_district_AG;0,0336;-0,10693355502046142
-84;story_translation_sadnessCategory;educational_achievement_Gymnasiale Maturität, Lehrkräfte-Seminar;0,0364;0,10534974091300031
-85;story_translation_joyCategory;registration_ageKat_50-59;0,0455;-0,10070075449530737
-86;story_translation_joyCategory;country_CH;0,0399;0,10344956939744476
-87;story_translation_joyCategory;country_DE;0,0231;-0,11431318550463586
-88;story_translation_joyCategory;work_district_ZG;0,0224;0,1148816099677101
-89;story_translation_fearCategory;job_status_edu_parttime;0,0035;0,1467619246331379
-90;story_translation_fearCategory;job_status_employed_parttime;0,0052;0,14032209574288051
-91;story_translation_fearCategory;job_status_employed_fulltime;0,0341;-0,10665339131085158
-92;story_translation_fearCategory;country_CH;0,018;0,11899975465542907
-93;story_translation_disgustCategory;job_status_edu_parttime;0,0083;0,13269033971247485
-94;story_translation_disgustCategory;job_status_employed_parttime;0,0228;0,11451650606710738
-95;story_translation_disgustCategory;job_status_employed_fulltime;0,0002;-0,18935105658810902
-96;story_translation_disgustCategory;gender_f;0,0425;0,10210710001806138
-97;story_translation_disgustCategory;registration_ageKat_40-49;0,0058;-0,13848292026985098
-98;story_translation_disgustCategory;country_CH;0,0066;0,1363765088778442
-99;story_translation_disgustCategory;country_DE;0,0327;-0,10747001007737458
-100;story_translation_disgustCategory;work_country_CH;0,0187;0,11823957045489468
-101;story_translation_disgustCategory;work_country_DE;0,008;-0,13326105794660764
-102;story_translation_disgustCategory;work_district_AG;0,0487;0,09925780902519388
-103;story_translation_disgustCategory;work_district_BS;0,02;0,11701757632746079
-104;story_translation_disgustCategory;work_district_SG;0,032;-0,10792796078033493
-105;story_translation_disgustCategory;job_position_Fachspezialist/-in;0,0343;0,10654117569166165
-106;story_translation_disgustCategory;educational_achievement_Doktorat, Habilitation;0,0362;0,10546175371348829
-107;story_translation_angerCategory;work_district_NW;0,0461;-0,10041617429285485
-108;story_translation_angerCategory;work_district_ZH;0,0072;0,13503528440313536
-109;story_translation_angerCategory;educational_achievement_Gymnasiale Maturität, Lehrkräfte-Seminar;0,0364;0,1053497409130008
-110;story_translation_angerCategory;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0385;-0,1041957526595142
+0;reasons_translation_sentimentCategory;gender_f;0,0414;0,09695492532599857
+1;reasons_translation_sentimentCategory;gender_m;0,0402;-0,09751471781795763
+2;reasons_translation_sadnessCategory;educational_achievement_Berufliche Grundbildung;0,027;-0,10506409782215424
+3;reasons_translation_sadnessCategory;educational_achievement_Berufs- oder Fachmaturität;0,0244;0,10694699952061372
+4;reasons_translation_joyCategory;gender_f;0,004;0,13659235544157503
+5;reasons_translation_joyCategory;gender_m;0,0065;-0,12908223824478327
+6;reasons_translation_joyCategory;registration_ageKat_50-59;0,0138;-0,11695663295998693
+7;reasons_translation_joyCategory;job_position_untere Führungsstufe (z.B. Teamleitung);0,0497;-0,09332033571569226
+8;reasons_translation_fearCategory;job_status_edu_parttime;0,0433;0,09608279544575138
+9;reasons_translation_fearCategory;registration_ageKat_50-59;0,0237;0,10747997731506141
+10;reasons_translation_fearCategory;job_position_Sachbearbeiter/-in;0,0474;-0,09425631872968565
+11;reasons_translation_fearCategory;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0097;0,12283384927058474
+12;reasons_translation_disgustCategory;job_status_employed_fulltime;0,0297;-0,1033332104425677
+13;reasons_translation_disgustCategory;job_status_unemployed;0,0496;0,09335360112849773
+14;reasons_translation_disgustCategory;job_position_Fachspezialist/-in;0,037;0,09912538238516089
+15;reasons_translation_disgustCategory;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0174;-0,11291005322148043
+16;reasons_translation_angerCategory;gender_m;0,0496;0,09333567094788009
+17;reasons_translation_angerCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0465;0,09465731865414707
+18;reasons_translation_angerCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0087;0,12442718112676283
+19;emotions_translation_sentimentCategory;country_CH;0,0054;0,13207572345766647
+20;emotions_translation_sentimentCategory;country_DE;0,0101;-0,12205006085910851
+21;emotions_translation_sentimentCategory;work_country_CH;0,0437;0,09585606005573938
+22;emotions_translation_sentimentCategory;work_country_DE;0,0262;-0,1056606485436398
+23;emotions_translation_joyCategory;country_DE;0,0399;-0,097664861464964
+24;emotions_translation_joyCategory;work_country_CH;0,0496;0,09335636976475335
+25;emotions_translation_joyCategory;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0058;-0,1310043788734267
+26;emotions_translation_fearCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0149;0,11559134223347607
+27;emotions_translation_fearCategory;educational_achievement_Berufs- oder Fachmaturität;0,0331;0,1012502637739445
+28;strengths_translation_sentimentCategory;gender_f;0,0269;0,10516229752827636
+29;strengths_translation_sentimentCategory;gender_m;0,0466;-0,09459872337958584
+30;strengths_translation_sentimentCategory;company_size_249.0;0,0171;-0,11329528270965199
+31;strengths_translation_sentimentCategory;company_size_250.0;0,027;0,10506326162448622
+32;strengths_translation_sadnessCategory;job_sector_Erziehung und Unterricht;0,0453;0,09515870799000897
+33;strengths_translation_joyCategory;job_status_selfemployed;0,0085;-0,12488396323665993
+34;strengths_translation_joyCategory;educational_achievement_Berufliche Grundbildung;0,0494;-0,09343044783880086
+35;strengths_translation_joyCategory;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0482;0,09393136510412523
+36;strengths_translation_fearCategory;job_sector_Erbringung von sonstigen Dienstleistungen;0,0161;-0,1142639707975568
+37;strengths_translation_fearCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0142;-0,11647296778751628
+38;strengths_translation_fearCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0223;0,10858954783480866
+39;strengths_translation_angerCategory;job_status_houskeeping;0,0395;0,097851956304111
+40;utilization_translation_sentimentCategory;work_district_BE;0,0488;0,0936543215355453
+41;utilization_translation_sadnessCategory;job_status_selfemployed;0,016;-0,11443837425008932
+42;utilization_translation_disgustCategory;country_CH;0,0409;0,09716425502749138
+43;utilization_translation_angerCategory;registration_ageKat_20-29;0,0381;-0,09855799235121109
+44;utilization_translation_angerCategory;job_position_Sachbearbeiter/-in;0,0257;-0,10597170303729682
+45;story_translation_sentimentCategory;work_district_BE;0,0109;0,1209172282310618
+46;story_translation_sentimentCategory;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0142;-0,11646091099824919
+47;story_translation_sadnessCategory;job_status_edu_parttime;0,0391;0,09807256941631812
+48;story_translation_sadnessCategory;registration_ageKat_30-39;0,0445;0,09553222941172762
+49;story_translation_sadnessCategory;work_country_CH;0,0479;0,09404807008621784
+50;story_translation_sadnessCategory;work_district_AG;0,0188;0,11159568415754355
+51;story_translation_joyCategory;registration_ageKat_20-29;0,0419;0,09668929819595419
+52;story_translation_joyCategory;job_position_Fachspezialist/-in;0,0233;-0,10780213836282428
+53;story_translation_fearCategory;job_status_edu_parttime;0,0424;0,09646815956798266
+54;story_translation_fearCategory;job_status_employed_parttime;0,0169;0,1134828022118259
+55;story_translation_fearCategory;job_status_employed_fulltime;0,0475;-0,09421571260831023
+56;story_translation_disgustCategory;job_status_employed_fulltime;0,0079;-0,1260101041992111
+57;story_translation_disgustCategory;gender_f;0,0345;0,10047942376754135
+58;story_translation_disgustCategory;gender_m;0,0346;-0,1004185741325923
+59;story_translation_disgustCategory;registration_ageKat_30-39;0,0499;0,09322476799833726
+60;story_translation_disgustCategory;job_position_Sachbearbeiter/-in;0,0163;-0,11402564701400109
+61;story_translation_angerCategory;job_status_employed_fulltime;0,0167;-0,1137104887370285
+62;story_translation_angerCategory;work_country_CH;0,0095;0,12314853408033088
+63;story_translation_angerCategory;work_country_DE;0,0368;-0,09922726729953384
+64;story_translation_angerCategory;work_district_ZH;0,0402;0,09752966822362369

@@ -102,7 +102,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 y = dfXYBalanced[targetFeature]
 
                 #create array for performance evaluation and initilize it with suitable values
-                bestResult = [targetFeature, ('| '.join(combination)),'-', -1, -1, testSampleSize]
+                bestResult = [targetFeature, ('| '.join(combination)),'-', -1, 0, testSampleSize]
                 bestModel = '-'
                 bestPCA = '-'
                 bestScaler = '-'
@@ -111,7 +111,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.logisticRegression(x,y,testSize=testSize)
                 except:
-                    accuracy = -1
+                    accuracy = 0
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Logistic Regression'
                     bestResult[3] = r2
@@ -124,7 +124,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.randomForestClassifier(x,y,testSize=testSize)
                 except:
-                    accuracy = -1
+                    accuracy = 0
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Random Forest Classifier'
                     bestResult[3] = r2
@@ -138,7 +138,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     try:
                         r2, accuracy, model, pca, scaler = classifiers.knnClassifier(x,y,k,testSize=testSize)
                     except:
-                        accuracy = -1
+                        accuracy = 0
                     if(accuracy > bestResult[4]):
                         bestResult[2] = 'KNN Classifier, Degree: %d' % (k)
                         bestResult[3] = r2
@@ -151,7 +151,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.svcLinear(x,y,testSize=testSize)
                 except:
-                    accuracy = -1
+                    accuracy = 0
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'SVC (linear)'
                     bestResult[3] = r2
@@ -165,7 +165,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     try:
                         r2, accuracy, model, pca, scaler = classifiers.svcPoly(x,y,d,testSize=testSize)
                     except:
-                        accuracy = -1
+                        accuracy = 0
                     if(accuracy > bestResult[4]):
                         bestResult[2] = 'SVC (polynomial), Degree: %d' % (d)
                         bestResult[3] = r2
@@ -178,7 +178,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.gaussianNBClassifier(x,y,testSize=testSize)
                 except:
-                    accuracy = -1
+                    accuracy = 0
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Gaussian Naive Bayes'
                     bestResult[3] = r2
@@ -191,7 +191,7 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                 try:
                     r2, accuracy, model, pca, scaler = classifiers.ridgeClassifier(x,y,testSize=testSize)
                 except:
-                    accuracy = -1
+                    accuracy = 0
                 if(accuracy > bestResult[4]):
                     bestResult[2] = 'Ridge Regression'
                     bestResult[3] = r2
@@ -208,10 +208,10 @@ def findBestClassifier(x, y, targetDataFrameName, inputFeatureCombination=False,
                     globalBestScaler = bestScaler
 
             # append best result to dfBestResult data frame
+
             dfBestResults.loc[len(dfBestResults)] = globalBestResult
-            if(globalBestResult[4] > 0.0):
+            if(globalBestResult[4] > 0):
                 saveModel(globalBestModel, globalBestPCA, globalBestScaler, targetFeature, targetDataFrameName)
-                pass
         else:
             globalBestResult = [targetFeature, 'no input feature with p-value below 0.05' ,'-', '-', '-', '-']
             dfBestResults.loc[len(dfBestResults)] = globalBestResult

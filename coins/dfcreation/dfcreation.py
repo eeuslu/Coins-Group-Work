@@ -84,6 +84,7 @@ def createImageRatings(df_images, train):
 
         # create dict for image file names and numbers
         imageNumbers = list(range(0, 147))
+
         imageDict = dict(zip(imageNumbers, uniqueImageNames))
 
         # create inverted image Dictionary
@@ -126,6 +127,13 @@ def createImageRatings(df_images, train):
     dfImageRatings.rename(columns={0:'user_id'}, inplace=True)
     dfImageRatings.fillna(value=0.0, inplace=True)
     dfImageRatings.dropna(inplace=True)
+
+    # create dict for image file names and numbers
+    imageNumbers = list(range(0, 147))
+    imageNumbers = list(map(str, imageNumbers))
+    imageNumbers = ["user_id"] + imageNumbers
+
+    dfImageRatings.columns = imageNumbers
     
     return dfImageRatings
 

@@ -1,859 +1,733 @@
 ;attribute 1;attribute 2;p-value;correlation
-0;1;job_status_employed_parttime;0,0338;-0,10335210070782626
-1;1;registration_ageKat_30-39;0,0085;-0,1279348221857236
-2;1;registration_ageKat_50-59;0,0378;0,10115374874302724
-3;1;country_DE;0,0245;0,10948623174588093
-4;1;work_district_SG;0,0167;0,11646664949355762
-5;1;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0426;0,09875921046964714
-6;1;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0414;0,099330022387769
-7;2;job_status_employed_parttime;0,005;-0,13642260880328286
-8;2;work_district_SG;0,0085;-0,12793029365157443
-9;2;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0317;-0,104607557181869
-10;2;company_size_1.0;0,0051;0,13621669230351957
-11;2;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0148;-0,1186113151056814
-12;3;country_AT;0,023;-0,11064287150885685
-13;3;work_district_ZH;0,0323;-0,10422788201630435
-14;3;job_sector_Gesundheits- und Sozialwesen;0,0492;0,09580758397653075
-15;4;job_status_employed_fulltime;0,0414;0,09934131094089799
-16;4;job_status_selfemployed;0,0499;0,09550018976348555
-17;4;registration_ageKat_30-39;0,0391;-0,10046484081919198
-18;4;work_district_SG;0,0037;0,14097340819909118
-19;4;work_district_ZH;0,0489;-0,09593542172278448
-20;4;job_position_Fachspezialist/-in;0,0152;0,1180711475814885
-21;4;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0294;0,10607197738913095
-22;4;job_sector_Kunst, Unterhaltung und Erholung;0,0434;0,09837505438552537
-23;5;work_district_ZH;0,0315;-0,10469171605344882
-24;5;company_size_250.0;0,0473;0,09662225894477745
-25;5;company_size_49.0;0,0445;-0,09785045612783444
-26;5;company_size_9.0;0,003;-0,1439908289370931
-27;5;educational_achievement_obligatorische Schule;0,0095;-0,12607284412400127
-28;6;registration_ageKat_50-59;0,0072;0,1307368564737993
-29;6;country_DE;0,0198;0,11342617456311847
-30;6;country_IT;0,0317;-0,1046224198451923
-31;6;work_country_DE;0,0437;0,09823983166378006
-32;6;work_district_GR;0,0422;0,09894047406116192
-33;6;work_district_NI;0,0345;0,10296916187090585
-34;6;work_district_SG;0,0361;0,10207684796593681
-35;6;work_district_SO;0,0299;-0,10571007143068746
-36;6;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0367;0,10172166344226878
-37;7;job_status_employed_parttime;0,0107;-0,12409394916649318
-38;7;work_district_GR;0,0085;0,12793576970187084
-39;7;company_size_1.0;0,0497;0,09561241929486836
-40;8;job_status_selfemployed;0,0148;0,11862402470004729
-41;8;registration_ageKat_40-49;0,027;0,10764801789024322
-42;8;country_CH;0,0204;-0,11286064142608115
-43;8;country_DE;0,0209;0,11241773991470337
-44;8;work_district_GR;0,0021;0,14953354955932896
-45;8;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0044;0,13845458695003676
-46;8;job_sector_Kunst, Unterhaltung und Erholung;0,0418;0,09911979615766371
-47;9;registration_ageKat_30-39;0,013;-0,12078935200571278
-48;9;country_CH;0,0033;-0,1427800369574036
-49;9;country_DE;0,0027;0,14571529520028137
-50;9;work_country_DE;0,0146;0,11877186376731438
-51;9;work_district_AG;0,0299;-0,10572614033210433
-52;9;work_district_HE;0,0469;0,09681586309455636
-53;9;work_district_SG;0,0299;0,10574341811340007
-54;9;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0329;0,10387731325920034
-55;10;job_status_houskeeping;0,0172;-0,11593184732463992
-56;10;educational_achievement_Berufliche Grundbildung;0,0018;0,15190873958974874
-57;11;job_status_employed_parttime;0,0289;-0,1063490899673947
-58;11;gender_f;0,0027;-0,14586311352989598
-59;11;gender_m;0,0016;0,15300759555632995
-60;11;work_district_HE;0,0084;0,1280926800510213
-61;11;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0493;0,0957635680188
-62;11;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0342;-0,10312997054216619
-63;11;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0221;0,11142646946025479
-64;12;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0028;0,14511767812052948
-65;12;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0031;0,1435022579651684
-66;12;educational_achievement_obligatorische Schule;0,0326;-0,10403860886763643
-67;13;job_status_edu_fulltime;0,0073;0,13032114539229747
-68;13;work_district_HE;0,0014;-0,15491631259351632
-69;13;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0161;-0,11709945105492608
-70;13;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0098;0,12561819655728057
-71;13;job_sector_Erziehung und Unterricht;0,0336;-0,10346850379020461
-72;14;country_AT;0,0364;0,10189957014578084
-73;14;work_district_GR;0,0029;0,1448022533234752
-74;14;work_district_SG;0,0017;-0,15216289387612467
-75;15;job_status_edu_fulltime;0,0237;-0,110129738068264
-76;15;gender_f;0,0181;0,11503123722150188
-77;15;gender_m;0,0116;-0,12275566402776895
-78;15;work_district_HE;0,0205;-0,11275874152443466
-79;15;work_district_NI;0,0147;-0,11871080257314523
-80;15;work_district_ZG;0,0358;0,10220162418060337
-81;15;educational_achievement_obligatorische Schule;0,0101;-0,12508547685420573
-82;16;job_status_edu_parttime;0,0112;-0,12338884859245196
-83;16;job_status_employed_parttime;0,0018;-0,15113733726180123
-84;16;job_status_employed_fulltime;0,0016;0,15354289528119236
-85;16;gender_f;0,0285;-0,10661708056088548
-86;16;gender_m;0,0148;0,11856540768688455
-87;16;registration_ageKat_40-49;0,0399;-0,10009366990813343
-88;16;work_country_CH;0,0359;-0,10219275551901248
-89;16;work_country_DE;0,0373;0,10142070106531291
-90;16;job_sector_Erziehung und Unterricht;0,0489;-0,09593799715692224
-91;16;educational_achievement_Berufliche Grundbildung;0,0247;0,10934087611229952
-92;17;job_status_selfemployed;0,0114;0,12304237293245816
-93;17;registration_ageKat_50-59;0,0459;0,0972321339061717
-94;17;country_CH;0,0406;-0,09972873507813268
-95;17;country_DE;0,0302;0,10553995724593629
-96;17;job_position_Fachspezialist/-in;0,0371;0,10153506148740711
-97;17;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0334;-0,10356930675560647
-98;18;job_status_selfemployed;0,0301;0,10561688004215715
-99;18;registration_ageKat_50-59;0,0397;0,10017225996141531
-100;18;country_DE;0,0259;0,10842389337943487
-101;18;work_district_NI;0,0481;0,09628381990777439
-102;18;work_district_SG;0,0178;0,11533658055068283
-103;19;job_status_edu_parttime;0,01;-0,1252121243006258
-104;19;work_district_GR;0,0232;0,1105079997389418
-105;19;work_district_SG;0,0132;0,12054340802288084
-106;19;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0412;-0,09943680543131123
-107;19;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0272;0,10755146903603964
-108;20;registration_ageKat_30-39;0,0138;-0,11980637239367996
-109;20;country_DE;0,0381;0,10099791499638679
-110;20;country_IT;0,0184;-0,11471986730318105
-111;20;work_country_CH;0,0417;-0,09918171975274666
-112;20;work_district_SG;0,0122;0,12196706733773599
-113;20;work_district_SO;0,0147;-0,11869543340830317
-114;20;job_position_Fachspezialist/-in;0,0079;0,12904823208949978
-115;20;job_sector_Kunst, Unterhaltung und Erholung;0,0385;0,10078247374607986
-116;21;job_status_employed_parttime;0,0016;-0,1529622066682378
-117;21;job_status_employed_fulltime;0,0072;0,13061472825882664
-118;21;job_status_selfemployed;0,0443;0,09795658848609204
-119;21;registration_ageKat_30-39;0,0241;-0,10975308653239417
-120;21;country_DE;0,0456;0,09737119141885321
-121;21;work_district_GR;0,0278;0,1070830392837376
-122;21;work_district_SG;0,0188;0,11436622036640291
-123;21;work_district_ZH;0,021;-0,11229601518189598
-124;21;job_sector_Information und Kommunikation;0,0426;-0,09874926777586744
-125;21;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0287;0,10648389621088464
-126;21;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0416;0,09923490451455445
-127;22;job_status_selfemployed;0,0179;0,1152146428437226
-128;22;registration_ageKat_50-59;0,031;0,10500066661820069
-129;22;work_district_GR;0,0026;0,1464585583845747
-130;22;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0279;0,10707203730740882
-131;23;job_status_selfemployed;0,0308;-0,10512179072472762
-132;23;country_DE;0,0442;-0,09802423975781263
-133;23;work_country_CH;0,029;0,10633459024958992
-134;23;work_country_DE;0,0232;-0,11053548478806763
-135;23;work_district_HE;0,0138;-0,11976443816324053
-136;23;work_district_SG;0,001;-0,15943062540039532
-137;23;work_district_ZH;0,0087;0,12751999197248795
-138;23;job_position_Sachbearbeiter/-in;0,0299;0,10575174583409441
-139;24;registration_ageKat_50-59;0,0383;0,10089382035156978
-140;24;country_CH;0,0318;-0,10450483105344911
-141;24;country_DE;0,0159;0,11730216842599585
-142;24;work_district_GR;0,0044;0,13846260428845092
-143;24;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0368;0,10167027442058799
-144;25;work_district_NI;0,0348;-0,10277466213190645
-145;25;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,016;-0,11725133906721867
-146;25;educational_achievement_obligatorische Schule;0,0361;-0,10207597331593472
-147;26;country_IT;0,0311;-0,10498423231718894
-148;26;work_district_GR;0,0334;0,10358480021530203
-149;26;work_district_SG;0,0259;0,10843255119752528
-150;26;work_district_SO;0,0301;-0,10560414584149631
-151;26;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,031;0,10504479951876546
-152;27;country_DE;0,0248;-0,10927575985458791
-153;27;work_district_AG;0,0164;0,11678598491698641
-154;27;work_district_NI;0,016;-0,11719541152213182
-155;28;job_status_edu_parttime;0,0265;-0,10797910182273536
-156;28;country_CH;0,0134;-0,12031359483501285
-157;28;country_DE;0,0179;0,11521877777991721
-158;28;work_country_CH;0,0119;-0,12235425424627348
-159;28;work_country_DE;0,0094;0,12622248757676827
-160;28;work_district_ZH;0,0038;-0,14071932216337596
-161;28;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0417;0,09916983136290584
-162;29;work_district_ZH;0,0414;-0,09934431080544222
-163;29;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0416;-0,09923157541696608
-164;29;educational_achievement_Berufliche Grundbildung;0,0364;0,10188786097650916
-165;29;educational_achievement_obligatorische Schule;0,0141;-0,11942319874593188
-166;30;country_CH;0,0274;-0,10736220269584694
-167;30;country_DE;0,0262;0,1082109138374511
-168;30;work_country_CH;0,0413;-0,09935836176392934
-169;30;work_country_DE;0,028;0,10699498797455423
-170;30;work_district_GR;0,0412;0,09944621951208911
-171;31;job_status_unemployed;0,0434;0,09836162781917379
-172;31;work_district_GR;0,0083;0,12839548560038036
-173;31;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0197;0,11348582597136544
-174;32;job_status_selfemployed;0,0264;0,10805237456554535
-175;32;country_DE;0,0216;0,11179852072738085
-176;32;work_district_SG;0,0332;0,10372679837109952
-177;32;work_district_ZH;0,0436;-0,09827336530691698
-178;33;job_status_selfemployed;0,016;0,1172482308456618
-179;33;country_IT;0,0236;-0,1102172911589689
-180;33;work_district_SO;0,0204;-0,11287044571697734
-181;33;job_position_Fachspezialist/-in;0,0401;0,0999870084774354
-182;33;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,045;0,09766227196330811
-183;34;job_status_employed_parttime;0,045;-0,09764505221228699
-184;34;gender_f;0,0447;-0,09776177691137927
-185;34;gender_m;0,0262;0,10819907107714137
-186;34;work_country_DE;0,0469;0,09681134804913855
-187;34;work_district_NW;0,0204;0,11287748409719171
-188;34;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0075;0,13006321705369708
-189;34;company_size_1.0;0,0239;0,10993145042756707
-190;34;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0466;-0,09692717667645245
-191;35;work_district_SG;0,0209;-0,11245869554802874
-192;35;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0198;-0,11341525600801537
-193;35;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,033;-0,10378920358512772
-194;35;company_size_1.0;0,0482;0,09622964705286359
-195;35;educational_achievement_obligatorische Schule;0,0133;-0,12039769561682974
-196;36;work_district_SG;0,0126;-0,12136365708764713
-197;36;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0249;0,10918485261634178
-198;36;job_sector_Kunst, Unterhaltung und Erholung;0,022;-0,11146083064504736
-199;37;work_district_TG;0,0345;0,10297227950513901
-200;37;job_position_Fachspezialist/-in;0,038;-0,1010621023369572
-201;37;educational_achievement_Berufliche Grundbildung;0,0105;0,12440907862977091
-202;37;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0357;0,10226959646985846
-203;37;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0101;-0,12509750869945402
-204;37;educational_achievement_obligatorische Schule;0,0062;-0,13314577663343347
-205;38;registration_ageKat_50-59;0,0184;0,11472611884512599
-206;38;work_district_GR;0,0105;0,12438593570779677
-207;38;educational_achievement_Berufliche Grundbildung;0,0314;0,10477436544366212
-208;39;job_status_unemployed;0,0304;0,10539837875913122
-209;39;work_district_BL;0,0487;-0,09602891941813721
-210;39;work_district_GR;0,0012;0,1573466053996565
-211;39;work_district_SG;0,0379;-0,10110081726140599
-212;39;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0498;0,09557381568243346
-213;39;educational_achievement_obligatorische Schule;0,0204;-0,1128712296144473
-214;40;job_status_unemployed;0,0299;0,10575064599423536
-215;40;work_district_GR;0,0367;-0,10174563922013424
-216;40;work_district_TG;0,0254;-0,10881335881276573
-217;41;job_status_employed_parttime;0,0007;-0,1645536490746433
-218;41;job_status_employed_fulltime;0,0099;0,12540624885237361
-219;41;job_status_unemployed;0,0368;0,10169772302132013
-220;41;gender_f;0,0446;-0,0978416294967725
-221;41;gender_m;0,024;0,10989871851371123
-222;41;country_CH;0,0037;-0,1412101924427204
-223;41;country_DE;0,0008;0,16270747916719086
-224;41;work_country_DE;0,0242;0,10967610185540767
-225;41;work_district_GR;0,0211;0,11222410033418975
-226;41;work_district_HE;0,0077;0,12946920747719054
-227;41;work_district_NI;0,0097;0,1257745295429959
-228;41;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,018;-0,11508232227470175
-229;41;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0468;0,09683789322203955
-230;42;job_position_Fachspezialist/-in;0,0379;-0,10111418541166103
-231;42;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0147;-0,11873257885956232
-232;42;job_sector_Kunst, Unterhaltung und Erholung;0,0176;0,1154685275572313
-233;43;gender_f;0,0444;-0,0979250011448295
-234;43;work_district_SG;0,0077;-0,12957539633297244
-235;43;job_position_Fachspezialist/-in;0,0028;-0,14512130039804386
-236;43;job_position_Sachbearbeiter/-in;0,0054;0,135167862334579
-237;43;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0176;-0,11553644563762872
-238;43;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0081;0,12876754042826155
-239;43;educational_achievement_Berufliche Grundbildung;0,0076;0,12967272239271638
-240;44;job_status_selfemployed;0,0244;0,1095941066464784
-241;44;country_CH;0,0059;-0,13378400042342084
-242;44;country_DE;0,0085;0,12800573208118102
-243;44;work_district_NI;0,0152;0,11815164494636124
-244;44;work_district_SG;0,0026;0,14615962249482356
-245;44;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0248;0,10925266168447094
-246;45;job_status_selfemployed;0,0127;0,1212849079224625
-247;45;work_district_GR;0,0027;0,1458277467275494
-248;45;educational_achievement_Bachelor;0,045;-0,09763450281350275
-249;46;job_status_employed_fulltime;0,0473;0,09660001086069052
-250;46;country_DE;0,0226;0,11101360674254221
-251;46;country_IT;0,0448;-0,09771546278950616
-252;46;work_country_DE;0,0382;0,10092002517802329
-253;46;work_district_GR;0,0313;0,1048143057114899
-254;46;work_district_HE;0,044;0,09811505718609709
-255;46;work_district_SG;0,0206;0,11264725704170322
-256;46;work_district_SO;0,0456;-0,09737169841401304
-257;47;job_status_employed_parttime;0,0142;-0,11930979709084132
-258;47;job_status_selfemployed;0,0259;0,10843683017264036
-259;47;registration_ageKat_30-39;0,0425;-0,09882142266385195
-260;47;country_DE;0,0208;0,11249652901868408
-261;47;country_IT;0,0331;-0,10376493023283553
-262;47;work_district_NI;0,0266;0,10794990736735686
-263;47;work_district_SG;0,0068;0,13161864032776086
-264;47;work_district_SO;0,0323;-0,10425882345844333
-265;47;work_district_ZH;0,028;-0,10695057451312745
-266;48;job_status_employed_parttime;0,0324;-0,1041978875201972
-267;48;job_status_employed_fulltime;0,0241;0,10980968056596681
-268;48;work_district_BL;0,045;-0,09765484958893281
-269;48;work_district_GR;0,0065;0,13234582721859675
-270;48;work_district_HE;0,045;-0,0976548495889327
-271;48;job_sector_Kunst, Unterhaltung und Erholung;0,0001;-0,19535131882784698
-272;48;educational_achievement_Berufliche Grundbildung;0,0028;0,14499295371798007
-273;48;educational_achievement_obligatorische Schule;0,0214;-0,11197568670812535
-274;49;gender_f;0,0008;-0,16281307472454973
-275;49;gender_m;0,0017;0,15240654424666553
-276;50;gender_f;0,0112;-0,12332495686030547
-277;50;gender_m;0,0204;0,11285378311798723
-278;50;work_district_GR;0,0127;0,12117537942904878
-279;50;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0015;0,15435711959645987
-280;50;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0254;-0,10883303523981144
-281;50;job_sector_Information und Kommunikation;0,0316;-0,10464264432867873
-282;50;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0033;0,14267845968169848
-283;51;work_district_HE;0,0014;-0,15468139255532698
-284;51;work_district_NW;0,003;-0,14424156752887254
-285;51;work_district_TG;0,0458;0,09727012175199942
-286;51;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0077;0,12964541628790477
-287;51;educational_achievement_Gymnasiale Maturität, Lehrkräfte-Seminar;0,0041;-0,1392963120903782
-288;52;registration_ageKat_50-59;0,0129;0,12091225171974485
-289;52;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0064;-0,13246227661186044
-290;52;company_size_249.0;0,01;0,1252670925232123
-291;53;job_status_edu_parttime;0,0326;0,10405791941551631
-292;53;job_status_selfemployed;0,0449;-0,09767832956623036
-293;53;registration_ageKat_30-39;0,0358;0,10222713615177778
-294;53;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0295;-0,10594761509579591
-295;54;job_status_edu_parttime;0,0142;-0,11933099906225103
-296;54;job_status_employed_parttime;0,0465;-0,096954411897774
-297;54;country_CH;0,0135;-0,12015273812103726
-298;54;country_DE;0,0305;0,1053267110446551
-299;54;work_district_GR;0,0361;0,10207046857974617
-300;54;work_district_HE;0,048;-0,09630262919967919
-301;54;work_district_NI;0,0283;0,10674440472083307
-302;54;work_district_SG;0,0251;0,10901272302854902
-303;54;work_district_ZH;0,0168;-0,11634911878619919
-304;54;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0371;0,10149937147042369
-305;54;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0232;0,11048017412396192
-306;55;job_status_selfemployed;0,0315;0,10472324200411208
-307;55;gender_f;0,0022;0,14884269161649116
-308;55;gender_m;0,0013;-0,15651304862202936
-309;55;work_district_GR;0,0237;0,11011250029542557
-310;55;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0063;-0,13283740525361817
-311;55;job_sector_Kunst, Unterhaltung und Erholung;0,0057;0,13439462294194754
-312;56;gender_f;0,0413;-0,09938854227366635
-313;56;work_district_TG;0,0302;0,10555606553367447
-314;56;company_size_249.0;0,007;0,13108755939193661
-315;56;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0062;0,13299172437174328
-316;56;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0198;-0,1134291703869073
-317;57;registration_ageKat_30-39;0,0352;-0,1025498543790273
-318;57;registration_ageKat_50-59;0,002;0,14968716296720755
-319;57;country_IT;0,0465;-0,09697422718302906
-320;57;work_district_GR;0,0095;0,1261903575314126
-321;57;educational_achievement_Doktorat, Habilitation;0,0392;0,10043858978990697
-322;58;job_status_employed_parttime;0,006;-0,1335067391854802
-323;58;job_status_employed_fulltime;0,0001;0,1842720107792645
-324;58;gender_f;0,0187;-0,11440776109154854
-325;58;gender_m;0,0274;0,10741710132176495
-326;58;work_district_HE;0,0072;-0,13071373733824052
-327;58;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0113;0,12317115377836288
-328;59;country_DE;0,0487;-0,09599879861397177
-329;59;work_district_NW;0,0049;-0,13680495130284592
-330;59;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0365;-0,10181603555746224
-331;59;educational_achievement_obligatorische Schule;0,0459;-0,0972297186260842
-332;60;job_status_employed_parttime;0,0427;-0,09869831447853669
-333;60;job_status_unemployed;0,0123;0,12179072170406227
-334;60;gender_f;0,0002;-0,18277377510629383
-335;60;gender_m;0,0001;0,1879134379318044
-336;60;country_AT;0,0067;0,13187338349437255
-337;60;country_DE;0,0358;-0,10220918409960073
-338;60;work_country_DE;0,045;-0,09764891675817869
-339;60;job_position_Fachspezialist/-in;0,0003;-0,1753168529568822
-340;60;job_sector_Gesundheits- und Sozialwesen;0,0416;-0,09922883203132196
-341;60;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0387;-0,10067646576396573
-342;60;educational_achievement_Berufliche Grundbildung;0,0042;0,13891184579810648
-343;61;job_status_unemployed;0,0498;0,09557624153640568
-344;61;gender_f;0,0187;-0,1144555249717045
-345;61;gender_m;0,0305;0,10532014575610332
-346;61;country_CH;0,0282;-0,10682503563402385
-347;61;work_district_BL;0,0431;-0,09853453172478328
-348;61;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0066;-0,1319459551259527
-349;61;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0403;-0,09987439494357499
-350;62;job_status_employed_parttime;0,0251;-0,10904331193748869
-351;62;job_status_employed_fulltime;0,0312;0,10492743507700912
-352;62;registration_ageKat_30-39;0,0096;-0,12587199664333004
-353;62;registration_ageKat_50-59;0,0018;0,1517671066400426
-354;62;country_CH;0,0078;-0,12944177265811638
-355;62;country_DE;0,0017;0,15193082142921996
-356;62;work_country_CH;0,0074;-0,13030996048902752
-357;62;work_country_DE;0,0043;0,13872050631113952
-358;62;work_district_GR;0,0078;0,12945730067495156
-359;62;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0224;-0,1111425239297203
-360;62;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0482;0,0962459516176421
-361;62;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,018;0,11508513951335482
-362;63;job_status_employed_parttime;0,0388;-0,10064476859585648
-363;63;job_status_employed_fulltime;0,0281;0,1069278351232595
-364;63;work_district_GR;0,0211;0,1122238291920947
-365;63;job_sector_Kunst, Unterhaltung und Erholung;0,0052;0,13580631822218633
-366;63;educational_achievement_obligatorische Schule;0,0067;-0,13187916233873878
-367;64;gender_f;0,0402;-0,0999391731566484
-368;64;gender_m;0,0265;0,10802899615559446
-369;64;registration_ageKat_30-39;0,0381;0,10099015334083822
-370;64;country_AT;0,0245;0,10948848558647865
-371;64;country_CH;0,0099;0,1255109676790719
-372;64;country_DE;0,002;-0,1501203825882903
-373;64;work_country_DE;0,0395;-0,10028940463955643
-374;64;work_district_SG;0,0031;-0,14378083082970808
-375;64;company_size_1.0;0,0334;0,10360316484233024
-376;64;company_size_250.0;0,0133;-0,12043724916750331
-377;64;educational_achievement_obligatorische Schule;0,0426;-0,0987673174699557
-378;65;registration_ageKat_30-39;0,0123;-0,12177766161851883
-379;65;registration_ageKat_50-59;0,041;0,09954556664229249
-380;65;work_district_SG;0,0143;0,11917622987744671
-381;65;job_position_Fachspezialist/-in;0,0142;0,11927996182901195
-382;66;job_status_employed_parttime;0,0144;-0,11900863795970888
-383;66;job_status_employed_fulltime;0,0139;0,11965850597183667
-384;66;country_CH;0,0129;-0,12095342765989064
-385;66;country_DE;0,0169;0,11623997385890729
-386;66;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0199;0,11326652300048712
-387;66;job_sector_Kunst, Unterhaltung und Erholung;0,0384;0,1008465551355258
-388;66;educational_achievement_Bachelor;0,0246;-0,10939615139329678
-389;67;work_district_ZH;0,0347;0,10282046267977636
-390;67;company_size_249.0;0,0129;-0,12097653047199293
-391;67;company_size_9.0;0,0306;0,10524863248622317
-392;67;educational_achievement_Berufs- oder Fachmaturität;0,0006;0,16746701134148156
-393;68;job_status_employed_fulltime;0,0021;-0,14900873966734088
-394;68;job_status_houskeeping;0,0073;0,13053775155943553
-395;68;gender_f;0,0;0,22575656928977372
-396;68;gender_m;0,0;-0,23249563505364157
-397;68;educational_achievement_Berufs- oder Fachmaturität;0,0315;0,10469296824243199
-398;69;gender_f;0,0034;0,1421246149475841
-399;69;gender_m;0,0025;-0,1468487130955746
-400;69;work_district_BS;0,0368;-0,10169067665138806
-401;69;work_district_TG;0,0093;-0,12643319855572546
-402;69;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0014;-0,1549602680933585
-403;69;job_position_untere Führungsstufe (z.B. Teamleitung);0,03;0,10562618268820946
-404;69;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0288;0,10643012840779244
-405;69;job_sector_Kunst, Unterhaltung und Erholung;0,0489;-0,09591889577746772
-406;70;job_status_employed_parttime;0,0243;-0,1096375906340644
-407;70;job_status_unemployed;0,0168;0,11639023264145235
-408;70;gender_f;0,0;-0,20920647113392224
-409;70;gender_m;0,0;0,20782411958683508
-410;70;job_position_untere Führungsstufe (z.B. Teamleitung);0,0174;0,11571720749985621
-411;70;job_sector_Gesundheits- und Sozialwesen;0,0371;-0,10151343280101194
-412;70;job_sector_Information und Kommunikation;0,0162;0,11700137521827729
-413;70;company_size_1.0;0,0216;0,11184266948777256
-414;70;educational_achievement_Bachelor;0,012;-0,12216991436251474
-415;71;work_district_ZH;0,0144;0,1190389405415429
-416;71;job_position_Fachspezialist/-in;0,0032;-0,14323381302635094
-417;71;job_sector_Energieversorgung;0,0249;-0,10917894482930086
-418;71;educational_achievement_Berufliche Grundbildung;0,0097;0,125702998112616
-419;71;educational_achievement_Berufs- oder Fachmaturität;0,05;0,09547936306825887
-420;71;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,007;-0,13116751376569336
-421;72;registration_ageKat_30-39;0,0252;-0,10892914354555595
-422;72;country_AT;0,0366;-0,10176023626911673
-423;72;job_sector_Erbringung von sonstigen Dienstleistungen;0,0309;-0,10509559683233019
-424;72;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0368;0,10166300304886688
-425;73;job_position_Fachspezialist/-in;0,0108;-0,12396870403864228
-426;73;company_size_249.0;0,0361;-0,10208199822084425
-427;73;educational_achievement_Berufs- oder Fachmaturität;0,0009;0,16091523644706593
-428;74;gender_f;0,0001;0,19529661381984154
-429;74;gender_m;0,0;-0,2028414511716031
-430;74;work_district_BS;0,0276;-0,10726383590632213
-431;74;job_sector_Baugewerbe/Bau;0,0419;0,09908664900727619
-432;75;job_status_selfemployed;0,0295;-0,10600966614408587
-433;75;registration_ageKat_30-39;0,0278;0,1070921526436852
-434;75;registration_ageKat_40-49;0,0338;-0,10336993265979759
-435;75;job_position_Fachspezialist/-in;0,0023;-0,14825288537531997
-436;75;job_position_Sachbearbeiter/-in;0,0046;0,13753939922611635
-437;75;educational_achievement_Doktorat, Habilitation;0,0254;-0,1088189216468398
-438;76;work_district_BS;0,0306;0,105301190743051
-439;77;gender_f;0,0037;-0,1409945862161264
-440;77;gender_m;0,0038;0,1407486959474419
-441;77;registration_ageKat_30-39;0,0241;0,10982288064248509
-442;77;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0195;0,11365557705523296
-443;77;job_sector_Verkehr und Lagerei;0,0348;0,10278180398552705
-444;77;company_size_250.0;0,0417;-0,09920065485557093
-445;77;company_size_9.0;0,0009;0,16073981050768177
-446;77;educational_achievement_Berufs- oder Fachmaturität;0,024;0,10984180881584352
-447;77;educational_achievement_Doktorat, Habilitation;0,013;-0,12086406516684614
-448;78;registration_ageKat_20-29;0,0243;0,10966188476986559
-449;78;work_district_SO;0,04;0,10003130401720854
-450;78;job_sector_Energieversorgung;0,0031;-0,14360245621509923
-451;78;company_size_49.0;0,0419;0,09907695444669941
-452;79;registration_ageKat_10-19;0,0482;-0,096212482939342
-453;79;country_AT;0,0173;-0,11579526278642821
-454;80;job_status_employed_fulltime;0,0478;0,09638879408596328
-455;80;gender_f;0,0019;-0,15042323880296707
-456;80;gender_m;0,0028;0,144946855827153
-457;80;registration_ageKat_30-39;0,0409;0,09956036546195336
-458;80;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0124;0,12165829233593163
-459;81;gender_f;0,0108;-0,12405175773550811
-460;81;gender_m;0,0181;0,11499727544621619
-461;81;country_IT;0,0359;0,10216157317877624
-462;81;job_sector_Energieversorgung;0,0136;-0,12001784367630333
-463;81;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0498;0,09555408143085359
-464;82;job_status_edu_fulltime;0,0203;0,11294245513502803
-465;82;gender_f;0,015;-0,11834572704389974
-466;82;gender_m;0,0155;0,11773763487367632
-467;82;country_DE;0,0393;-0,10038846331488306
-468;82;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0084;-0,12814309891012798
-469;82;educational_achievement_Berufliche Grundbildung;0,0034;0,14249098325673523
-470;83;job_status_employed_parttime;0,0021;-0,14962743285209607
-471;83;job_status_employed_fulltime;0,0105;0,12447625266777351
-472;83;gender_f;0,0416;-0,09924483996939903
-473;83;gender_m;0,0399;0,10006827210942798
-474;83;job_sector_Baugewerbe/Bau;0,0017;0,1519918860804471
-475;84;registration_ageKat_30-39;0,0026;0,1465191595832585
-476;84;country_AT;0,0417;-0,09919589669491177
-477;84;country_DE;0,0349;-0,10269719543751865
-478;84;work_country_CH;0,0104;0,12458194364333491
-479;84;work_country_DE;0,016;-0,11722298095779611
-480;84;work_district_NI;0,0148;-0,11853204951829882
-481;84;job_position_Fachspezialist/-in;0,0278;-0,10713057739243123
-482;84;job_sector_Energieversorgung;0,0446;0,09784143295085918
-483;84;educational_achievement_Berufs- oder Fachmaturität;0,0345;0,1029468237710637
-484;84;educational_achievement_Doktorat, Habilitation;0,0157;-0,11752562762241711
-485;85;country_DE;0,0415;-0,09929212342089955
-486;85;work_country_CH;0,0137;0,1199743151286473
-487;85;work_country_DE;0,0048;-0,13716195220956146
-488;85;work_district_LU;0,044;0,09811950296253821
-489;85;job_position_Fachspezialist/-in;0,0045;-0,13797428039246065
-490;85;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0346;0,1029036843650478
-491;86;job_status_edu_parttime;0,0008;-0,16337477194541078
-492;86;job_status_employed_parttime;0,0;-0,19616175534809613
-493;86;job_status_employed_fulltime;0,0034;0,1423036315120131
-494;86;job_status_unemployed;0,0031;0,1438185200219103
-495;86;gender_f;0,0;-0,299323250867596
-496;86;gender_m;0,0;0,29609964254078663
-497;86;registration_ageKat_40-49;0,0419;0,0990833180816753
-498;86;job_position_Sachbearbeiter/-in;0,0083;-0,12841840032943216
-499;86;job_sector_Baugewerbe/Bau;0,006;0,13361200520806044
-500;86;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0095;0,12605402446351086
-501;86;job_sector_Erziehung und Unterricht;0,0307;-0,10518580458761903
-502;87;gender_f;0,0003;-0,17594871692281042
-503;87;gender_m;0,0003;0,17396391665089986
-504;87;country_IT;0,0265;0,1080017294422969
-505;87;job_position_Fachspezialist/-in;0,0062;-0,13292432438478335
-506;87;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0408;0,09960287918635474
-507;87;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0055;0,13493060744860225
-508;88;job_status_edu_fulltime;0,038;-0,10102087282023905
-509;88;gender_f;0,0055;-0,1348565387362767
-510;88;gender_m;0,0099;0,12545868601117438
-511;88;registration_ageKat_20-29;0,0193;-0,1138970102229252
-512;88;work_district_SO;0,0094;0,1263263928227388
-513;88;job_sector_Information und Kommunikation;0,0317;0,10461030615483294
-514;88;company_size_1.0;0,0338;0,10334541831178752
-515;88;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0059;0,1338832795440052
-516;89;gender_f;0,0005;-0,16931878986160756
-517;89;gender_m;0,0004;0,1702026712218943
-518;89;job_position_Fachspezialist/-in;0,0199;-0,11328418795815379
-519;89;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0283;0,10674984081791822
-520;89;job_sector_Erziehung und Unterricht;0,0346;-0,10286575882920422
-521;89;job_sector_Information und Kommunikation;0,0283;0,10674984081791825
-522;89;company_size_9.0;0,0202;0,1130146878101354
-523;89;educational_achievement_Berufliche Grundbildung;0,0487;-0,09599971246486032
-524;90;job_status_employed_parttime;0,0002;-0,18322318988941486
-525;90;job_status_employed_fulltime;0,0114;0,12306414316491569
-526;90;job_status_unemployed;0,0222;0,11129567529185214
-527;90;gender_f;0,0;-0,26555025797922693
-528;90;gender_m;0,0;0,2614069533687158
-529;90;registration_ageKat_50-59;0,0137;0,11991167427000735
-530;90;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0149;0,11840541512941113
-531;90;educational_achievement_Bachelor;0,0195;-0,11371925898080386
-532;90;educational_achievement_Berufliche Grundbildung;0,0139;0,11963355222765346
-533;90;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0105;0,12446502758537008
-534;91;gender_f;0,02;-0,11326005630922459
-535;91;gender_m;0,0207;0,11257283334387809
-536;91;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0059;-0,13383939203547127
-537;91;company_size_1.0;0,0422;0,09893631212855702
-538;91;company_size_49.0;0,0253;-0,10890241125295276
-539;91;company_size_9.0;0,0068;0,13151402709809387
-540;91;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,008;0,12898203435377434
-541;92;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0072;0,1306057169650941
-542;92;job_sector_Gesundheits- und Sozialwesen;0,021;0,11232952818508068
-543;92;educational_achievement_Berufliche Grundbildung;0,0028;0,14495412944047184
-544;92;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0241;-0,10981795904830877
-545;93;job_status_employed_parttime;0,0128;-0,12113156555856212
-546;93;job_status_unemployed;0,0055;0,13485134735279805
-547;93;gender_f;0,0;-0,37358658056470073
-548;93;gender_m;0,0;0,37243335250753534
-549;93;work_district_ZH;0,0492;0,0957962993777125
-550;93;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0193;0,11390626743356648
-551;93;job_sector_Erziehung und Unterricht;0,0261;-0,10826770979489768
-552;94;job_status_employed_parttime;0,0402;0,09993306790763862
-553;94;work_district_AG;0,0424;0,09886394114183134
-554;94;educational_achievement_Berufliche Grundbildung;0,0384;-0,10083524534003237
-555;94;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0006;0,16552425023412504
-556;95;job_status_edu_parttime;0,0049;-0,13678283001120242
-557;95;job_status_employed_parttime;0,0014;-0,15486468024362626
-558;95;job_status_employed_fulltime;0,0039;0,14038094465230455
-559;95;gender_f;0,0001;-0,1940736605690304
-560;95;gender_m;0,0001;0,1893759065082168
-561;95;country_CH;0,0076;-0,12981019253712858
-562;95;country_DE;0,026;0,10840294150802943
-563;95;job_position_Sachbearbeiter/-in;0,0033;-0,14274296898823655
-564;95;job_sector_Baugewerbe/Bau;0,0163;0,11692246052520873
-565;95;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0373;0,1014290741909562
-566;95;job_sector_Kunst, Unterhaltung und Erholung;0,038;0,10105049378792053
-567;95;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,036;0,10213488412685161
-568;96;country_CH;0,012;-0,12218035425512576
-569;96;country_DE;0,0259;0,10840970337418414
-570;96;work_country_CH;0,0192;-0,11395953575145476
-571;96;work_district_SO;0,0327;-0,10400357518434708
-572;96;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0372;-0,10146403583559131
-573;96;job_position_untere Führungsstufe (z.B. Teamleitung);0,0233;0,1104382122489501
-574;96;job_sector_Gesundheits- und Sozialwesen;0,04;0,10003102964316467
-575;97;job_status_unemployed;0,0453;0,09752530477840612
-576;97;registration_ageKat_20-29;0,0038;0,14076027937673488
-577;97;registration_ageKat_50-59;0,0155;-0,11777400812754042
-578;97;job_sector_Erziehung und Unterricht;0,0217;-0,11170486939473719
-579;97;company_size_250.0;0,049;0,09587743445444141
-580;98;registration_ageKat_20-29;0,0104;0,12461182171940943
-581;98;country_IT;0,0234;-0,11030566356928949
-582;98;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0115;-0,122914544847895
-583;98;educational_achievement_Berufs- oder Fachmaturität;0,0221;0,11138651325420039
-584;99;job_status_employed_parttime;0,0197;-0,11348648963831359
-585;99;gender_f;0,0044;-0,13848926375498852
-586;99;gender_m;0,0057;0,13424719577836675
-587;99;country_AT;0,0191;-0,11408944441249554
-588;99;work_district_BE;0,0055;-0,13481534607630433
-589;99;job_position_Fachspezialist/-in;0,0117;-0,12257513546424491
-590;99;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0073;0,13033251539833654
-591;99;educational_achievement_Berufs- oder Fachmaturität;0,0255;0,10873769553703393
-592;100;gender_f;0,0008;-0,16202619157269144
-593;100;gender_m;0,0012;0,15671566693650998
-594;100;registration_ageKat_50-59;0,0474;-0,09658017569226256
-595;100;country_DE;0,0387;-0,10066176389930963
-596;100;educational_achievement_Bachelor;0,0349;-0,1027007868331627
-597;101;gender_f;0,0241;-0,10976332863138888
-598;101;gender_m;0,023;0,1106245977345716
-599;101;registration_ageKat_30-39;0,0166;0,11654786319481954
-600;101;registration_ageKat_50-59;0,0178;-0,11529427816789553
-601;101;job_sector_Information und Kommunikation;0,0483;0,09618767237173945
-602;101;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0448;-0,09774447222234724
-603;102;job_sector_Energieversorgung;0,0019;-0,15039644833094792
-604;102;educational_achievement_Berufs- oder Fachmaturität;0,0108;0,12395860693625095
-605;102;educational_achievement_Doktorat, Habilitation;0,0256;-0,10866887779703878
-606;103;registration_ageKat_20-29;0,0085;0,12795518925465477
-607;103;registration_ageKat_30-39;0,0463;-0,09705390155795174
-608;103;work_district_SO;0,0053;0,1355883374137621
-609;103;job_position_Fachspezialist/-in;0,0234;-0,11034892009860639
-610;103;job_position_Sachbearbeiter/-in;0,001;0,1592805119765552
-611;103;educational_achievement_Berufs- oder Fachmaturität;0,0021;0,14927643872563662
-612;103;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0134;-0,12035014006120594
-613;104;country_DE;0,0451;0,09758206810662198
-614;104;work_district_SO;0,0438;0,09817513910700612
-615;104;educational_achievement_Berufliche Grundbildung;0,0048;-0,1369950704608734
-616;104;educational_achievement_Gymnasiale Maturität, Lehrkräfte-Seminar;0,0256;0,10864470382137922
-617;105;job_status_selfemployed;0,0441;0,09803313382438875
-618;105;registration_ageKat_30-39;0,0175;-0,1156498861363828
-619;105;job_sector_Erbringung von sonstigen Dienstleistungen;0,002;-0,14982815018581813
-620;106;work_district_AG;0,0213;0,11204237427015445
-621;106;educational_achievement_Berufs- oder Fachmaturität;0,0442;0,0980161440452623
-622;106;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0307;0,10524294226717576
-623;107;registration_ageKat_20-29;0,012;0,12213957041992753
-624;107;job_position_Fachspezialist/-in;0,0067;-0,13173468807094985
-625;107;job_position_untere Führungsstufe (z.B. Teamleitung);0,0459;0,09722712028287323
-626;107;job_sector_Energieversorgung;0,0073;-0,1303587155009585
-627;107;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0117;0,1226330575558857
-628;107;company_size_249.0;0,0109;-0,12389565216424041
-629;108;country_AT;0,0293;-0,10613248881608794
-630;108;work_district_AG;0,0187;0,1144162326769728
-631;108;job_sector_Baugewerbe/Bau;0,0215;0,11185978661426453
-632;109;job_position_Fachspezialist/-in;0,035;-0,10264858590579766
-633;109;job_sector_Verkehr und Lagerei;0,0198;-0,11336626921116824
-634;110;country_AT;0,0249;-0,1091561828847313
-635;110;work_district_AG;0,0424;0,09886982037342906
-636;110;work_district_GR;0,0444;-0,09789544425100763
-637;110;job_sector_Verkehr und Lagerei;0,0106;-0,12421375970712997
-638;110;educational_achievement_Bachelor;0,0347;0,10281269519423039
-639;110;educational_achievement_Berufliche Grundbildung;0,022;-0,11146085828027669
-640;111;gender_f;0,0236;-0,11014142808888494
-641;111;gender_m;0,0243;0,10966937711326309
-642;111;country_CH;0,0474;0,09656453536535495
-643;111;work_district_ZH;0,004;0,13977604101114402
-644;111;job_sector_Erziehung und Unterricht;0,0303;-0,10548766746059333
-645;112;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0443;-0,09793824976029009
-646;113;registration_ageKat_30-39;0,0196;0,11355598569971222
-647;113;country_CH;0,0221;0,11142110707684977
-648;113;work_country_CH;0,0371;0,101542054809397
-649;113;work_district_ZH;0,0384;0,10084397969433516
-650;113;job_position_Fachspezialist/-in;0,0177;-0,11544319998971883
-651;113;educational_achievement_Berufs- oder Fachmaturität;0,0365;0,1018342374772845
-652;114;gender_f;0,029;0,1063031509387541
-653;114;gender_m;0,0265;-0,10802856651231693
-654;114;educational_achievement_Berufs- oder Fachmaturität;0,027;0,10769085743693846
-655;115;registration_ageKat_30-39;0,0001;0,18980448503450464
-656;115;registration_ageKat_50-59;0,0012;-0,15691741468231626
-657;115;country_CH;0,0009;0,16037077510491607
-658;115;country_DE;0,029;-0,1063114922807864
-659;115;work_country_CH;0,0238;0,10998789636364735
-660;115;work_district_TG;0,0177;-0,11536705144968437
-661;115;work_district_ZH;0,0215;0,11191546299894677
-662;116;registration_ageKat_30-39;0,0415;0,09926239391783005
-663;116;country_CH;0,0252;0,10892381935076549
-664;116;country_DE;0,0114;-0,12299772299655506
-665;116;work_country_CH;0,0151;0,1182517779110148
-666;116;work_country_DE;0,0207;-0,11254918940292324
-667;116;work_district_AG;0,0497;0,09561087420851291
-668;116;work_district_NI;0,0231;-0,11053855273046154
-669;116;job_position_Fachspezialist/-in;0,0053;-0,13539646364958735
-670;116;job_sector_Kunst, Unterhaltung und Erholung;0,0369;-0,10162681625009305
-671;117;registration_ageKat_30-39;0,026;0,10838106043090708
-672;117;registration_ageKat_50-59;0,0202;-0,11306710868224715
-673;117;country_CH;0,0064;0,13252267037915672
-674;117;country_DE;0,006;-0,1335204507279215
-675;117;work_country_CH;0,0092;0,12671713960458197
-676;117;work_country_DE;0,0057;-0,13444829210508902
-677;117;work_district_ZH;0,0247;0,10936474485112803
-678;117;job_position_Fachspezialist/-in;0,0103;-0,12475386890950174
-679;117;job_position_Sachbearbeiter/-in;0,0005;0,16944776332903577
-680;117;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0288;0,10646491267707325
-681;118;job_status_employed_fulltime;0,0097;-0,12574062699940938
-682;118;country_CH;0,013;0,12088261144912107
-683;118;work_district_LU;0,0457;-0,0973323864260163
-684;118;job_position_Fachspezialist/-in;0,0332;-0,10367421047092552
-685;118;job_position_Sachbearbeiter/-in;0,0343;0,10308799202372165
-686;118;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0231;0,11057179869055983
-687;119;gender_f;0,0322;-0,10428509751864133
-688;119;gender_m;0,0323;0,10421439213230584
-689;119;registration_ageKat_30-39;0,0074;0,1302046409245981
-690;119;country_CH;0,0162;0,11700056411423547
-691;119;work_country_CH;0,0482;0,09623819310731642
-692;119;work_district_ZH;0,0196;0,11361555920234509
-693;119;job_position_Fachspezialist/-in;0,0015;-0,153836320285257
-694;119;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0418;0,09912080511130737
-695;119;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0355;0,10239867877808914
-696;119;job_sector_Kunst, Unterhaltung und Erholung;0,0409;-0,09959385009549049
-697;119;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0241;-0,10980067238721823
-698;120;job_status_selfemployed;0,0236;-0,11019421678768575
-699;120;registration_ageKat_30-39;0,0329;0,1038703834247365
-700;120;registration_ageKat_50-59;0,0014;-0,15532334927863312
-701;120;work_district_TG;0,0449;-0,09769425279131597
-702;120;job_position_Sachbearbeiter/-in;0,0018;0,15188139852411348
-703;120;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0023;-0,14781442675973705
-704;120;job_sector_Kunst, Unterhaltung und Erholung;0,0225;-0,11104276640417854
-705;121;job_status_edu_parttime;0,0461;0,09715698412597436
-706;121;job_status_employed_fulltime;0,0304;-0,10537163775762443
-707;121;job_position_Fachspezialist/-in;0,0223;-0,11122635768285088
-708;121;job_position_Sachbearbeiter/-in;0,0195;0,1136663550188482
-709;121;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0124;0,12157435102101433
-710;121;educational_achievement_Berufs- oder Fachmaturität;0,0064;0,13252548190389024
-711;121;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0237;-0,11009619816450032
-712;122;job_status_selfemployed;0,0112;-0,12340227122224556
-713;122;registration_ageKat_30-39;0,0214;0,11198584081580464
-714;122;job_position_Sachbearbeiter/-in;0,0398;0,10010987868067493
-715;122;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0094;-0,126221797177288
-716;122;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0396;-0,10020802875029966
-717;123;job_status_employed_fulltime;0,0426;-0,09873217830589888
-718;123;job_position_Fachspezialist/-in;0,0186;-0,11452648290391285
-719;123;"job_sector_Handel; Instandhaltung und Reparatur von Kraftfahrzeugen";0,0315;-0,10469775720449179
-720;124;gender_f;0,0069;-0,1312179419512406
-721;124;gender_m;0,0056;0,1346002479517949
-722;124;country_AT;0,019;-0,11412564548705018
-723;124;work_district_SO;0,0285;0,1066428540571748
-724;124;educational_achievement_Bachelor;0,0025;0,14693875375659024
-725;124;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0045;-0,13806668891885696
-726;125;job_position_Fachspezialist/-in;0,0033;-0,14269299076178
-727;125;job_sector_Gesundheits- und Sozialwesen;0,0393;0,10036674897368932
-728;125;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,015;-0,11835468762619737
-729;126;gender_f;0,0091;-0,12679639922959327
-730;126;gender_m;0,0111;0,12358035062615337
-731;126;registration_ageKat_10-19;0,0242;-0,10973166921397659
-732;126;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0194;0,11374216204599223
-733;126;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0071;-0,13078574389274156
-734;127;job_status_edu_parttime;0,0297;0,10583770417010704
-735;127;job_status_employed_parttime;0,0115;0,12296857312986652
-736;127;job_status_employed_fulltime;0,0418;-0,09914770510082933
-737;127;country_CH;0,048;0,09630692077652443
-738;127;country_DE;0,0118;-0,12253054467297078
-739;127;work_country_CH;0,0154;0,1179099727065988
-740;127;work_country_DE;0,0058;-0,13412189985734463
-741;128;work_country_CH;0,0309;0,10509335752271129
-742;128;job_position_Fachspezialist/-in;0,0074;-0,1301286775164594
-743;129;job_status_employed_fulltime;0,0149;-0,11851044959237289
-744;129;registration_ageKat_10-19;0,027;-0,10765744374832509
-745;129;country_CH;0,0354;0,10242005668309187
-746;129;work_district_SO;0,0255;0,10875421183328879
-747;129;job_position_Fachspezialist/-in;0,031;-0,1050361827251177
-748;129;company_size_9.0;0,002;0,1498987367657306
-749;129;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0331;0,10377022058429042
-750;130;job_status_edu_parttime;0,038;0,10104791840556623
-751;130;registration_ageKat_10-19;0,0258;-0,10848713977376986
-752;130;country_CH;0,029;0,1062877447167995
-753;130;company_size_9.0;0,0499;0,09549986704536736
-754;131;job_status_employed_parttime;0,0253;0,10886708091692165
-755;131;job_status_employed_fulltime;0,002;-0,15014528514501418
-756;131;job_status_houskeeping;0,0063;0,13289445693774052
-757;131;gender_f;0,0002;0,18342790667220027
-758;131;gender_m;0,0001;-0,1886078667836104
-759;132;registration_ageKat_10-19;0,0356;-0,10235484058341034
-760;132;country_CH;0,0481;0,0962613543373053
-761;132;country_DE;0,0458;-0,09727016180858794
-762;132;work_district_BE;0,0363;0,10197333793792696
-763;132;job_position_Sachbearbeiter/-in;0,0142;0,1193504193731694
-764;132;job_sector_Erbringung von sonstigen Dienstleistungen;0,0462;-0,09710853221868423
-765;132;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0263;0,10816966683494415
-766;133;job_status_employed_parttime;0,0087;0,12748077828022808
-767;133;job_status_employed_fulltime;0,0184;-0,11476440534188144
-768;133;job_status_houskeeping;0,0386;0,10075743300213105
-769;133;registration_ageKat_30-39;0,0184;0,11467922455253832
-770;133;job_sector_Gastgewerbe/Beherbergung und Gastronomie;0,0049;0,13656723354043582
-771;134;gender_f;0,0019;0,15086072010029977
-772;134;gender_m;0,0022;-0,148442863551975
-773;134;country_CH;0,0481;0,0962968312801781
-774;134;job_position_Fachspezialist/-in;0,0096;-0,12594468974139725
-775;134;job_position_Sachbearbeiter/-in;0,024;0,10986515629258786
-776;134;company_size_49.0;0,0372;0,10145127265779709
-777;134;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0372;-0,10148088266848108
-778;135;job_status_employed_parttime;0,0035;0,14188136383579641
-779;135;registration_ageKat_30-39;0,0498;0,09557795333373911
-780;135;work_district_BS;0,0069;-0,13136579798246248
-781;135;company_size_49.0;0,0384;0,10081283928112802
-782;135;educational_achievement_Berufliche Grundbildung;0,0001;-0,18635537181217593
-783;135;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0451;0,09761060948957041
-784;136;registration_ageKat_20-29;0,0123;0,12171724158957317
-785;136;work_district_BS;0,0424;-0,09885154659263454
-786;136;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0398;-0,10010466859765887
-787;136;educational_achievement_Berufs- oder Fachmaturität;0,0014;0,15483860471403255
-788;136;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0094;-0,12636908883855497
-789;137;job_status_edu_parttime;0,014;0,11955745844326404
-790;137;registration_ageKat_30-39;0,0299;0,10573537878676066
-791;137;country_CH;0,0325;0,10413676015789808
-792;137;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0139;-0,11967110863525046
-793;137;job_sector_Erbringung von sonstigen Dienstleistungen;0,0369;0,10162930023343374
-794;137;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0155;0,11780869827460663
-795;137;job_sector_Erziehung und Unterricht;0,0085;-0,12791756669957025
-796;138;registration_ageKat_30-39;0,0026;0,14597656916602084
-797;138;registration_ageKat_50-59;0,0202;-0,11300384675875948
-798;138;country_CH;0,0096;0,12595552637848292
-799;138;country_DE;0,0199;-0,1133431375318403
-800;138;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0024;-0,14725493194715736
-801;139;job_status_edu_parttime;0,0119;0,12238655761467504
-802;139;job_status_employed_fulltime;0,0347;-0,10283609946039289
-803;139;registration_ageKat_30-39;0,002;0,15002598490103308
-804;139;registration_ageKat_50-59;0,0002;-0,18209599879410612
-805;139;job_sector_Erbringung von sonstigen wirtschaftlichen Dienstleistungen;0,0194;0,11372309168449951
-806;139;job_sector_Erziehung und Unterricht;0,0239;-0,10994331846165217
-807;139;company_size_9.0;0,0368;0,10168652761628501
-808;139;educational_achievement_Berufliche Grundbildung;0,0437;0,0982299650568553
-809;140;job_status_employed_parttime;0,0351;-0,10262459907883824
-810;140;gender_f;0,0019;-0,15075347684751395
-811;140;gender_m;0,0024;0,14743449987836152
-812;140;registration_ageKat_10-19;0,0287;-0,10650547951115542
-813;140;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0195;0,11369907286579561
-814;140;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0468;-0,09684940764794647
-815;141;job_status_unemployed;0,0226;0,11096352278760577
-816;141;gender_f;0,0012;-0,15734051392116133
-817;141;gender_m;0,001;0,16026438703267298
-818;141;country_AT;0,0323;-0,10420668526932238
-819;141;work_district_BE;0,0392;0,10044731999925
-820;141;work_district_ZG;0,0005;-0,169922501458677
-821;141;job_sector_Erziehung und Unterricht;0,0232;-0,1105229650186032
-822;141;job_sector_Verkehr und Lagerei;0,0254;0,10879843556294144
-823;142;job_status_selfemployed;0,0452;-0,0975352865855342
-824;142;gender_f;0,0471;0,09671751710668941
-825;142;work_district_BL;0,0268;-0,10779633852430588
-826;142;job_position_Sachbearbeiter/-in;0,0006;0,1674003589778178
-827;142;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0074;-0,13020545042692194
-828;142;educational_achievement_Berufliche Grundbildung;0,0282;0,10685249737101048
-829;142;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0034;-0,14243814866124668
-830;143;registration_ageKat_30-39;0,0017;0,15271384737209295
-831;143;registration_ageKat_50-59;0,0035;-0,14184822698714342
-832;143;educational_achievement_Berufs- oder Fachmaturität;0,011;0,12360983028445607
-833;144;job_status_employed_parttime;0,0278;0,10712916134826933
-834;144;registration_ageKat_10-19;0,0369;-0,1016409955421664
-835;145;gender_f;0,0064;0,13242815425598503
-836;145;gender_m;0,007;-0,13116866739762317
-837;145;job_position_untere Führungsstufe (z.B. Teamleitung);0,0268;0,10783299794561116
-838;145;job_sector_Erziehung und Unterricht;0,0047;-0,13737845310807342
-839;146;job_status_edu_parttime;0,0;0,19751513942931972
-840;146;job_status_employed_parttime;0,009;0,1270736979517082
-841;146;job_status_selfemployed;0,0453;-0,0974923313394618
-842;146;registration_ageKat_20-29;0,0368;0,10168684385884713
-843;146;country_CH;0,0271;0,10756792590447743
-844;146;country_DE;0,0266;-0,10791653607170033
-845;146;job_position_Sachbearbeiter/-in;0,0022;0,14893107391353602
-846;146;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;0,0217;-0,11169500672714629
-847;146;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0291;-0,10622129652713949
-848;146;educational_achievement_Berufs- oder Fachmaturität;0,0491;0,09586988240814014
-849;147;job_status_houskeeping;0,01;0,12524619631963552
-850;147;country_DE;0,0075;0,12998219586500237
-851;147;work_country_CH;0,0177;-0,1154297190916487
-852;147;work_country_DE;0,0097;0,1257661533361636
-853;147;work_district_GR;0,0184;0,11473144985303148
-854;147;work_district_NW;0,0373;0,10140604396301037
-855;147;job_sector_Kunst, Unterhaltung und Erholung;0,0373;0,10140604396300966
-856;147;educational_achievement_2- bis 3-jährige Diplommittelschule, Verkehrsschule, Fachmittelschule FMS;0,0258;0,10853131386574807
-857;147;educational_achievement_Bachelor;0,0055;-0,13481186838462308
+0;0;registration_ageKat_30-39;0,0024;-0,13897553658859835
+1;0;registration_ageKat_50-59;0,0044;0,13058848010696317
+2;0;work_district_SG;0,0014;0,14661552191991833
+3;0;job_position_Fachspezialist/-in;0,0469;0,0912464876351933
+4;1;job_status_employed_parttime;0,002;-0,14113773818255101
+5;1;registration_ageKat_50-59;0,0096;-0,11870064241044444
+6;1;work_district_SG;0,0064;-0,12491616441634781
+7;1;job_position_Fachspezialist/-in;0,0302;-0,09947501722704667
+8;1;job_position_Sachbearbeiter/-in;0,0491;0,09032829373672875
+9;2;registration_ageKat_50-59;0,031;0,09898039572507247
+10;2;work_district_ZH;0,0122;-0,11490834490378103
+11;2;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,049;-0,09038426150082976
+12;2;job_sector_Gesundheits- und Sozialwesen;0,0143;0,11235812172921063
+13;3;job_status_employed_fulltime;0,0408;0,09388103203711397
+14;3;registration_ageKat_30-39;0,0153;-0,11122389195645979
+15;3;work_district_SG;0,0002;0,1681133053801262
+16;3;work_district_ZH;0,0336;-0,09751422887033956
+17;3;job_position_Fachspezialist/-in;0,0012;0,14839695203362693
+18;3;job_position_Sachbearbeiter/-in;0,017;-0,10945926146730564
+19;3;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0462;0,09150105662167705
+20;3;educational_achievement_Berufs- oder Fachmaturität;0,0456;-0,09176408561962225
+21;4;work_district_ZH;0,0277;-0,10102077359348259
+22;4;company_size_9.0;0,0013;-0,1467357033511445
+23;4;company_size_250.0;0,035;0,09677101326902825
+24;5;job_status_edu_parttime;0,037;-0,0957457966531063
+25;5;job_status_houskeeping;0,0265;0,10182141879274242
+26;5;registration_ageKat_50-59;0,0023;0,1392794998475115
+27;5;country_DE;0,0451;0,0919988215624519
+28;5;work_country_DE;0,0466;0,0913676683154724
+29;5;work_district_SG;0,0029;0,13647245064748145
+30;5;job_position_Fachspezialist/-in;0,0182;0,10827929431596478
+31;6;job_status_employed_parttime;0,026;-0,1021742896410259
+32;7;job_status_selfemployed;0,0437;0,09257830711641311
+33;7;registration_ageKat_40-49;0,0325;0,09810574773822445
+34;8;registration_ageKat_30-39;0,0057;-0,12673444956739857
+35;8;registration_ageKat_50-59;0,0191;0,10748614734613766
+36;8;country_CH;0,0392;-0,09466597080656165
+37;8;country_DE;0,0096;0,11878084767180394
+38;8;work_country_DE;0,0181;0,10840071302713157
+39;8;work_district_SG;0,0096;0,11867538413580553
+40;9;job_status_houskeeping;0,0188;-0,10780499692230872
+41;9;educational_achievement_Berufliche Grundbildung;0,0007;0,15551022959925695
+42;10;job_status_employed_parttime;0,0178;-0,1086704436725931
+43;10;gender_f;0,0019;-0,14242363877037914
+44;10;gender_m;0,0013;0,14760820628750299
+45;10;work_district_SG;0,012;-0,11514017309072706
+46;10;job_sector_Gesundheits- und Sozialwesen;0,0141;-0,1125891271910306
+47;12;job_status_houskeeping;0,0349;0,0968308233871481
+48;12;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0324;-0,0982131719307263
+49;12;job_sector_Erziehung und Unterricht;0,0363;-0,09610447945727323
+50;13;work_district_BE;0,0421;-0,09331447280876758
+51;13;work_district_SG;0,0008;-0,15407458314522612
+52;14;gender_f;0,0035;0,13361301293985864
+53;14;gender_m;0,0023;-0,1398272310799518
+54;15;job_status_edu_parttime;0,0136;-0,11315599577525914
+55;15;job_status_employed_parttime;0,0014;-0,14640320034385088
+56;15;job_status_employed_fulltime;0,0017;0,1432747894950266
+57;15;gender_f;0,0293;-0,10002605275464728
+58;15;gender_m;0,0151;0,11143798220961885
+59;15;work_country_CH;0,0355;-0,09647829167102366
+60;15;work_country_DE;0,0338;0,09741151235445625
+61;15;job_sector_Erziehung und Unterricht;0,0081;-0,12128334139760627
+62;15;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0376;0,095443668065828
+63;15;company_size_250.0;0,0248;0,10300484909404405
+64;15;educational_achievement_Bachelor;0,0324;-0,09817514622930598
+65;15;educational_achievement_Berufliche Grundbildung;0,0107;0,11703317111838143
+66;16;job_status_edu_parttime;0,0402;-0,09416815404857139
+67;16;registration_ageKat_30-39;0,0245;-0,10320419654418381
+68;16;registration_ageKat_50-59;0,0046;0,12977768022736938
+69;16;work_district_SG;0,0054;0,1274669334419194
+70;16;job_position_Fachspezialist/-in;0,0084;0,12088951979856419
+71;16;job_position_Sachbearbeiter/-in;0,0335;-0,09755996807464896
+72;16;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0338;-0,09742450435443
+73;17;registration_ageKat_50-59;0,0067;0,12425247048527593
+74;17;work_district_SG;0,0049;0,12895435148478843
+75;17;job_position_Fachspezialist/-in;0,0088;0,12014634221591024
+76;18;job_status_edu_parttime;0,0039;-0,1322664582459732
+77;18;registration_ageKat_30-39;0,0487;-0,09049823553435742
+78;18;registration_ageKat_50-59;0,0259;0,102182759919508
+79;18;work_district_SG;0,0036;0,13318652580328963
+80;18;job_sector_Information und Kommunikation;0,0201;-0,10662576562749473
+81;18;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0374;0,09554476899331439
+82;19;registration_ageKat_30-39;0,0095;-0,11885820930053048
+83;19;registration_ageKat_40-49;0,0495;0,0901730575409532
+84;19;registration_ageKat_50-59;0,0416;0,09352557355097692
+85;19;work_country_CH;0,0469;-0,0912322175876405
+86;19;work_district_SG;0,0135;0,11323035130925314
+87;19;job_position_Fachspezialist/-in;0,0009;0,1519153567546775
+88;19;job_position_Sachbearbeiter/-in;0,0231;-0,10422750485283085
+89;19;job_sector_Baugewerbe/Bau;0,0355;-0,09649629288678568
+90;20;job_status_employed_parttime;0,009;-0,1197143713404106
+91;20;job_status_employed_fulltime;0,0091;0,11963659922251772
+92;20;registration_ageKat_30-39;0,0122;-0,11488594351774407
+93;20;work_district_SG;0,0053;0,12772117259446697
+94;20;work_district_ZH;0,0162;-0,11022566474756541
+95;20;job_sector_Information und Kommunikation;0,0116;-0,1156900676762359
+96;20;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0268;0,10158059553968403
+97;21;registration_ageKat_50-59;0,0101;0,11791124044910144
+98;21;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0123;-0,11481832183040819
+99;22;country_DE;0,041;-0,09381934860627414
+100;22;work_country_CH;0,0222;0,10490029500745753
+101;22;work_country_DE;0,016;-0,11049927864896557
+102;22;work_district_SG;0,0006;-0,1573332273519609
+103;22;work_district_ZH;0,0062;0,1255347760856452
+104;22;job_position_Sachbearbeiter/-in;0,0371;0,0957001662525459
+105;22;job_sector_Gesundheits- und Sozialwesen;0,0441;0,09243295377796037
+106;23;gender_m;0,0477;-0,09090262353386527
+107;23;registration_ageKat_50-59;0,0263;0,10192501908310914
+108;23;country_DE;0,0349;0,09681376639473246
+109;24;job_status_employed_fulltime;0,042;-0,09333218649687697
+110;24;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0251;-0,1027993410342399
+111;25;registration_ageKat_20-29;0,0494;-0,09021041237280397
+112;25;registration_ageKat_50-59;0,0217;0,10531634704207339
+113;25;work_district_SG;0,0015;0,14546247588516578
+114;25;work_district_ZH;0,0323;-0,09821534503272979
+115;25;job_position_Fachspezialist/-in;0,022;0,10507608767623143
+116;26;registration_ageKat_30-39;0,0478;0,09085964423237165
+117;26;country_DE;0,0477;-0,0908915800294438
+118;26;work_district_SG;0,0311;-0,09894828121074344
+119;27;job_status_edu_parttime;0,0159;-0,11063418956306281
+120;27;country_DE;0,0312;0,09884573888124991
+121;27;work_country_CH;0,0127;-0,11431957546236703
+122;27;work_country_DE;0,0079;0,12180448924736115
+123;27;work_district_SG;0,0189;0,10767580977927795
+124;27;work_district_ZH;0,0014;-0,14573576488305034
+125;27;job_position_Fachspezialist/-in;0,0114;0,11597098121715897
+126;28;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0298;-0,0996935285331759
+127;28;company_size_9.0;0,0445;-0,09224888795432505
+128;28;educational_achievement_Berufliche Grundbildung;0,0132;0,11367448954501284
+129;28;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0309;0,09904159454938144
+130;29;country_CH;0,0441;-0,09241365230412225
+131;29;country_DE;0,0344;0,09706548876936259
+132;29;work_country_CH;0,0473;-0,09107756315131602
+133;29;work_country_DE;0,0307;0,09914843905866319
+134;30;job_status_houskeeping;0,0407;0,09395882428239505
+135;30;registration_ageKat_50-59;0,0379;0,09528723428621311
+136;31;job_status_edu_parttime;0,0351;-0,09673702055241871
+137;31;country_DE;0,0397;0,09439507305284474
+138;31;work_district_SG;0,0026;0,1380700944957067
+139;31;work_district_ZH;0,0104;-0,11741858054054641
+140;31;job_position_Fachspezialist/-in;0,0177;0,10876323812280704
+141;32;registration_ageKat_30-39;0,0432;-0,09282409137306251
+142;32;registration_ageKat_50-59;0,0083;0,12098228475812293
+143;32;work_district_SG;0,008;0,12155253620222664
+144;32;job_position_Fachspezialist/-in;0,007;0,12352888629915945
+145;33;job_status_employed_parttime;0,0217;-0,10528328548432948
+146;33;gender_f;0,0088;-0,11999704890682991
+147;33;gender_m;0,0046;0,12982331822963625
+148;33;work_country_DE;0,0362;0,09612193598843252
+149;33;work_district_SG;0,0305;-0,09926057333078467
+150;33;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0408;0,09388206105372075
+151;33;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0168;-0,10967364573908071
+152;34;gender_f;0,0359;0,09627737578268966
+153;34;gender_m;0,0207;-0,1061123995229014
+154;34;work_district_SG;0,0071;-0,1233288567138447
+155;34;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0078;-0,12200895244610624
+156;34;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0085;-0,12059854168098112
+157;34;company_size_249.0;0,0374;0,09552177644250855
+158;35;work_district_SG;0,0006;-0,1567805627824766
+159;36;gender_f;0,0258;0,10226999748055465
+160;36;gender_m;0,0461;-0,0915701804532234
+161;36;educational_achievement_Berufliche Grundbildung;0,0274;0,10120417268542364
+162;36;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0233;0,10410364151054081
+163;36;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0117;-0,11552400280838723
+164;37;registration_ageKat_50-59;0,0059;0,12621613073136356
+165;37;company_size_249.0;0,0482;0,09070482766480424
+166;37;educational_achievement_Berufliche Grundbildung;0,0382;0,09515513190163055
+167;38;job_status_unemployed;0,0354;0,09653952477443443
+168;38;work_district_SG;0,0056;-0,12681843746229363
+169;38;work_district_ZH;0,0479;0,09083898220948589
+170;38;job_sector_Gesundheits- und Sozialwesen;0,0337;-0,09744707000004812
+171;39;job_status_unemployed;0,0418;0,09344796346674034
+172;39;gender_f;0,0228;0,10447764165205352
+173;39;gender_m;0,0137;-0,11301697893712717
+174;40;job_status_employed_parttime;0,0063;-0,12521300728516022
+175;40;job_status_employed_fulltime;0,0352;0,09664932242375603
+176;40;gender_m;0,0308;0,09912364798546347
+177;40;country_CH;0,0201;-0,10665267731665777
+178;40;country_DE;0,0026;0,1377422561256757
+179;40;work_country_DE;0,0335;0,0975938316747109
+180;40;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0216;0,10535902669975367
+181;41;work_district_SG;0,0306;-0,09923728151068094
+182;41;work_district_ZH;0,0432;0,0927927238633074
+183;41;job_position_Fachspezialist/-in;0,024;-0,10355070349612447
+184;41;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0331;-0,09776788991443593
+185;42;registration_ageKat_30-39;0,0328;0,09794247039261013
+186;42;work_district_SG;0,0004;-0,16264557420782566
+187;42;job_position_Fachspezialist/-in;0,0006;-0,15735596525422468
+188;42;job_position_Sachbearbeiter/-in;0,0017;0,14348719163557214
+189;42;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0216;-0,10535659020683681
+190;42;educational_achievement_Berufliche Grundbildung;0,0069;0,12383091405604489
+191;43;job_status_selfemployed;0,0471;0,09113140373423684
+192;43;registration_ageKat_30-39;0,0274;-0,10124033729005497
+193;43;registration_ageKat_50-59;0,0446;0,09218016693374226
+194;43;country_DE;0,0261;0,10209949875866607
+195;43;work_district_SG;0,0006;0,15607511485957568
+196;43;company_size_249.0;0,0462;0,09153898618024833
+197;44;job_status_selfemployed;0,0204;0,1063886174393305
+198;44;registration_ageKat_50-59;0,0468;0,09126743934257278
+199;45;registration_ageKat_50-59;0,0461;0,0915681190834252
+200;45;work_country_DE;0,0424;0,09318595561072042
+201;45;work_district_SG;0,0197;0,10698858799740033
+202;45;work_district_ZH;0,0302;-0,09948721131964126
+203;45;job_position_Fachspezialist/-in;0,005;0,12851914699059366
+204;46;registration_ageKat_30-39;0,0192;-0,1074140668788143
+205;46;registration_ageKat_50-59;0,0029;0,13642351537062897
+206;46;work_district_SG;0,0004;0,16176537975607203
+207;46;work_district_ZH;0,0031;-0,1352188797421139
+208;47;job_status_employed_parttime;0,0468;-0,09127102224899057
+209;47;job_status_employed_fulltime;0,0332;0,09775389281737827
+210;47;job_sector_Information und Kommunikation;0,0474;0,09101456223521338
+211;47;educational_achievement_Berufliche Grundbildung;0,002;0,1415611976376889
+212;48;gender_f;0,002;-0,14116258617461472
+213;48;gender_m;0,0042;0,13128327351627606
+214;48;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0352;0,09665492487924737
+215;49;gender_f;0,0128;-0,11419900897162026
+216;49;gender_m;0,0229;0,10438698173086167
+217;49;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0052;0,12815908753915953
+218;51;job_status_employed_fulltime;0,0209;-0,10592097688329812
+219;51;registration_ageKat_50-59;0,0045;0,13027680623697108
+220;51;company_size_49.0;0,0428;-0,0929965947697237
+221;51;company_size_249.0;0,002;0,14167123671481333
+222;52;job_status_edu_parttime;0,0108;0,11690714217736461
+223;52;registration_ageKat_30-39;0,0096;0,11873868388580254
+224;52;work_district_SG;0,0132;-0,11365394669971629
+225;52;job_position_Fachspezialist/-in;0,0113;-0,1161640568826485
+226;53;job_status_edu_parttime;0,004;-0,13184648572551994
+227;53;registration_ageKat_50-59;0,0246;0,10315485399235798
+228;53;work_district_SG;0,0024;0,13924047925931518
+229;53;work_district_ZH;0,0058;-0,12642587058167218
+230;53;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0189;0,10771727128169015
+231;54;job_status_selfemployed;0,0303;0,09938624390177957
+232;54;job_status_houskeeping;0,0362;0,09613388719269342
+233;54;gender_f;0,0003;0,16505987156742552
+234;54;gender_m;0,0002;-0,17079354720406598
+235;54;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0093;-0,11929651899597256
+236;55;gender_f;0,049;-0,09037635399263
+237;55;registration_ageKat_50-59;0,0448;0,09210929365320518
+238;55;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0489;0,0904289811854347
+239;55;company_size_249.0;0,0028;0,13690570049722617
+240;55;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0124;-0,1146014701476938
+241;56;registration_ageKat_30-39;0,031;-0,09897618952751513
+242;56;registration_ageKat_50-59;0,0002;0,16936072975073213
+243;56;job_position_Fachspezialist/-in;0,0356;0,09646058444841131
+244;57;job_status_employed_parttime;0,0081;-0,12141007584635406
+245;57;job_status_employed_fulltime;0,0002;0,16864781335360582
+246;57;gender_f;0,0403;-0,09415126647450764
+247;57;company_size_9.0;0,0186;-0,1079078365643867
+248;58;country_DE;0,0368;-0,0958122809192252
+249;58;work_country_DE;0,0485;-0,09058397584400821
+250;58;work_district_SG;0,0075;-0,1224617272377685
+251;58;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0303;-0,09938078727067426
+252;59;job_status_employed_parttime;0,0111;-0,11642968825486553
+253;59;job_status_unemployed;0,007;0,12356022859184773
+254;59;gender_f;0,0;-0,1856189400662192
+255;59;gender_m;0,0;0,18852508117778413
+256;59;registration_ageKat_50-59;0,0255;-0,10251289300257255
+257;59;job_position_Fachspezialist/-in;0,0;-0,19529214773517242
+258;59;job_position_Sachbearbeiter/-in;0,0078;0,12188168845467204
+259;59;job_sector_Gesundheits- und Sozialwesen;0,0029;-0,13638858682817334
+260;59;educational_achievement_Berufliche Grundbildung;0,0011;0,1492612326511575
+261;60;job_status_unemployed;0,0439;0,09250040344513608
+262;60;gender_f;0,0135;-0,11331310028982676
+263;60;gender_m;0,0222;0,10492985642499543
+264;60;country_CH;0,0265;-0,10181836617510905
+265;60;work_district_SG;0,0262;-0,1020418830999567
+266;60;job_sector_Information und Kommunikation;0,0237;0,10377204634975476
+267;60;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0284;-0,10056260172249704
+268;61;registration_ageKat_30-39;0,0135;-0,1132890329243247
+269;61;registration_ageKat_50-59;0,0011;0,1494930673556082
+270;61;country_CH;0,0307;-0,09916335348803142
+271;61;country_DE;0,0035;0,1339224708718711
+272;61;work_country_CH;0,0084;-0,12078829112043846
+273;61;work_country_DE;0,0041;0,13149199546828377
+274;61;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0201;-0,10659550244372101
+275;61;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0067;0,12419126481395949
+276;63;job_status_employed_parttime;0,0212;-0,10569330465275577
+277;63;gender_f;0,0332;-0,09774515927388311
+278;63;gender_m;0,0228;0,10444876734770007
+279;63;registration_ageKat_30-39;0,0386;0,09496154696130729
+280;63;country_CH;0,0277;0,10104247858652375
+281;63;country_DE;0,0041;-0,13156423976198475
+282;63;work_country_DE;0,0462;-0,09153617835749087
+283;63;work_district_SG;0,0004;-0,16177665735359267
+284;63;company_size_250.0;0,0358;-0,09636765299044847
+285;63;educational_achievement_Berufliche Grundbildung;0,0495;0,09017429500828164
+286;64;registration_ageKat_30-39;0,0035;-0,13370856443570736
+287;64;registration_ageKat_50-59;0,0027;0,1375205162974947
+288;64;work_district_SG;0,0012;0,14788577108758738
+289;64;work_district_ZH;0,0411;-0,09375527952327153
+290;64;job_position_Fachspezialist/-in;0,0015;0,1454982013935153
+291;64;job_position_Sachbearbeiter/-in;0,0287;-0,10036093032052941
+292;64;educational_achievement_Berufs- oder Fachmaturität;0,0418;-0,09344152914382714
+293;65;job_status_employed_fulltime;0,0281;0,1007870929526035
+294;65;country_CH;0,032;-0,09841433687712481
+295;65;country_DE;0,0234;0,10398993035260554
+296;65;educational_achievement_Bachelor;0,0096;-0,11870972265206536
+297;66;work_district_ZH;0,0353;0,09659777811001208
+298;66;company_size_9.0;0,0475;0,09096781703078034
+299;66;educational_achievement_Berufs- oder Fachmaturität;0,0001;0,18395408267555954
+300;67;job_status_employed_fulltime;0,0035;-0,13393296019420325
+301;67;job_status_houskeeping;0,0041;0,13140970381864978
+302;67;gender_f;0,0;0,22838982945464373
+303;67;gender_m;0,0;-0,24090200881045723
+304;67;educational_achievement_Berufs- oder Fachmaturität;0,0074;0,12276592426229302
+305;68;gender_f;0,0109;0,11674260556056595
+306;68;gender_m;0,0058;-0,12639835396156868
+307;68;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0104;-0,11752284758216268
+308;68;job_position_untere Führungsstufe (z.B. Teamleitung);0,0437;0,09257991481024166
+309;69;job_status_employed_parttime;0,0476;-0,09095403558168119
+310;69;job_status_unemployed;0,0113;0,11608709001279023
+311;69;gender_f;0,0;-0,2156609575258956
+312;69;gender_m;0,0;0,21365974669836754
+313;69;job_sector_Information und Kommunikation;0,0129;0,11403630491463435
+314;69;educational_achievement_Bachelor;0,0039;-0,13206004244337124
+315;70;registration_ageKat_20-29;0,0375;0,09548539510594728
+316;70;work_district_ZH;0,0095;0,11880805239736617
+317;70;job_position_Fachspezialist/-in;0,0019;-0,14186634590916627
+318;70;educational_achievement_Berufliche Grundbildung;0,0097;0,11853831565919722
+319;70;educational_achievement_Berufs- oder Fachmaturität;0,047;0,09119126601935759
+320;70;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0195;-0,10714384138689453
+321;71;registration_ageKat_30-39;0,043;-0,0928879052287511
+322;72;job_position_Fachspezialist/-in;0,0127;-0,11427198581135653
+323;72;job_position_untere Führungsstufe (z.B. Teamleitung);0,0323;0,09824848412684974
+324;72;company_size_249.0;0,036;-0,09622312814242433
+325;72;educational_achievement_Bachelor;0,0219;-0,10517649506825276
+326;72;educational_achievement_Berufs- oder Fachmaturität;0,0004;0,16167297203553302
+327;73;gender_f;0,0001;0,18330350354246927
+328;73;gender_m;0,0;-0,19690482529228748
+329;73;work_district_AG;0,0473;-0,09107310755567317
+330;74;job_status_selfemployed;0,0171;-0,10932487402219132
+331;74;registration_ageKat_30-39;0,0168;0,10967443704407731
+332;74;registration_ageKat_40-49;0,0298;-0,09971013314289723
+333;74;work_district_ZH;0,0266;0,1017284262039411
+334;74;job_position_Fachspezialist/-in;0,0023;-0,13939671046725605
+335;74;job_position_Sachbearbeiter/-in;0,0021;0,14072543674035357
+336;74;company_size_9.0;0,0212;0,10567716146957554
+337;74;educational_achievement_Berufliche Grundbildung;0,0413;-0,09365481398917007
+338;75;registration_ageKat_40-49;0,0259;-0,10222003237435948
+339;76;gender_f;0,0034;-0,134215664348009
+340;76;gender_m;0,0035;0,13374255705139868
+341;76;registration_ageKat_30-39;0,0158;0,11070750313650428
+342;76;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0139;0,11276352963011069
+343;76;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0188;-0,10775954431687808
+344;76;company_size_9.0;0,0001;0,17814804904111756
+345;76;company_size_250.0;0,0029;-0,13631494246988746
+346;76;educational_achievement_Berufs- oder Fachmaturität;0,0125;0,1145195379005556
+347;77;registration_ageKat_20-29;0,0226;0,10461404777415663
+348;77;company_size_49.0;0,028;0,10080397918742198
+349;77;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0296;0,09979798086935691
+350;78;job_status_edu_parttime;0,0478;0,09086896883981094
+351;78;job_position_Fachspezialist/-in;0,0456;-0,09177807972832784
+352;78;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0453;0,09191113071882118
+353;79;gender_f;0,0006;-0,1578364625135957
+354;79;gender_m;0,0013;0,14752078525260748
+355;79;registration_ageKat_40-49;0,0385;-0,09499887785204766
+356;79;job_sector_Gesundheits- und Sozialwesen;0,0401;0,09422302263832767
+357;80;gender_f;0,0008;-0,15395916924059272
+358;80;gender_m;0,0015;0,1452554046014165
+359;80;work_district_BE;0,0397;-0,0944237127617343
+360;81;gender_f;0,0057;-0,1266669083845157
+361;81;gender_m;0,0092;0,11944589442765567
+362;81;job_sector_Erziehung und Unterricht;0,0398;-0,09437740497877127
+363;81;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0323;-0,09824660164816017
+364;81;educational_achievement_Bachelor;0,0054;-0,12750380239391335
+365;81;educational_achievement_Berufliche Grundbildung;0,0015;0,14539014554906332
+366;82;job_status_employed_parttime;0,014;-0,1127240425012854
+367;82;job_sector_Baugewerbe/Bau;0,0002;0,1678755808528016
+368;82;educational_achievement_Berufs- oder Fachmaturität;0,0094;0,11902827698353079
+369;83;registration_ageKat_30-39;0,0005;0,15888486361328893
+370;83;registration_ageKat_40-49;0,0409;-0,09383538608687987
+371;83;work_country_CH;0,0053;0,127792478656551
+372;83;work_country_DE;0,0102;-0,11780346258916312
+373;83;work_district_ZH;0,0372;0,09562247053844611
+374;83;job_position_Fachspezialist/-in;0,0078;-0,12186562989056332
+375;83;job_position_Sachbearbeiter/-in;0,0386;0,09494810788190365
+376;83;educational_achievement_Berufs- oder Fachmaturität;0,0092;0,1194510614904186
+377;84;country_DE;0,016;-0,11046113225955194
+378;84;work_country_CH;0,0091;0,11950664757730052
+379;84;work_country_DE;0,0031;-0,13542870906416588
+380;84;job_position_Fachspezialist/-in;0,0125;-0,11456351061455025
+381;84;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,019;0,10759704253248475
+382;84;job_sector_Baugewerbe/Bau;0,035;0,0967716060250314
+383;85;job_status_edu_parttime;0,002;-0,14159550897596174
+384;85;job_status_employed_parttime;0,0001;-0,17550648165049634
+385;85;job_status_employed_fulltime;0,0023;0,1397011615241711
+386;85;job_status_unemployed;0,0053;0,12777139584346422
+387;85;gender_f;0,0;-0,29104074973772515
+388;85;gender_m;0,0;0,28650690364148135
+389;85;job_position_Sachbearbeiter/-in;0,0018;-0,1428169448379462
+390;85;job_sector_Baugewerbe/Bau;0,0204;0,10637997406126107
+391;85;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0069;0,12389992926940624
+392;85;company_size_249.0;0,0259;0,10224189726843341
+393;86;gender_f;0,0;-0,1903436854016788
+394;86;gender_m;0,0;0,18773599720862996
+395;86;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0334;0,09760197882280476
+396;86;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0289;0,10026520005856922
+397;87;job_status_selfemployed;0,0095;0,11883368145124992
+398;87;gender_f;0,0088;-0,12014049388650123
+399;87;gender_m;0,0156;0,11085485115115974
+400;87;registration_ageKat_20-29;0,0029;-0,13639486060062664
+401;87;job_sector_Information und Kommunikation;0,0284;0,10056317194676945
+402;87;company_size_250.0;0,043;-0,092881191703992
+403;87;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0051;0,1281843856852556
+404;88;gender_f;0,0002;-0,1727211592596654
+405;88;gender_m;0,0002;0,16749313097816207
+406;88;registration_ageKat_20-29;0,0481;-0,09073271897469726
+407;88;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0193;0,10734467215854972
+408;88;job_sector_Erziehung und Unterricht;0,0241;-0,10344960203201294
+409;88;job_sector_Information und Kommunikation;0,0148;0,11181862381113292
+410;88;company_size_9.0;0,0039;0,13220104358137855
+411;88;company_size_250.0;0,0312;-0,09887615004746547
+412;88;educational_achievement_Berufliche Grundbildung;0,0328;-0,09798774947589031
+413;89;job_status_edu_parttime;0,0471;-0,09114923623942756
+414;89;job_status_employed_parttime;0,0004;-0,16285289165158837
+415;89;job_status_employed_fulltime;0,0055;0,12728501719101717
+416;89;job_status_unemployed;0,0348;0,09685542736266188
+417;89;gender_f;0,0;-0,26427672137657937
+418;89;gender_m;0,0;0,26499356241712774
+419;89;registration_ageKat_30-39;0,0416;-0,0935201141747921
+420;89;registration_ageKat_50-59;0,0011;0,14905571973382084
+421;89;work_district_BE;0,0488;-0,09047292576175613
+422;89;job_position_Sachbearbeiter/-in;0,008;-0,12146928802188889
+423;89;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0208;0,1060149495474395
+424;89;company_size_249.0;0,0334;0,09762051627979584
+425;89;educational_achievement_Bachelor;0,0277;-0,10102162763874721
+426;89;educational_achievement_Berufliche Grundbildung;0,0173;0,10919622855621565
+427;89;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0173;0,10919622855621577
+428;90;gender_f;0,0037;-0,1329920851799258
+429;90;gender_m;0,0061;0,12578184101727283
+430;90;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0003;-0,16585701304748887
+431;90;company_size_9.0;0,0015;0,14525126636472305
+432;90;company_size_49.0;0,0251;-0,10279181417877445
+433;90;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0171;0,10936481116649306
+434;91;job_status_unemployed;0,0377;0,09540224369713789
+435;91;job_position_Fachspezialist/-in;0,0243;-0,10333849678461135
+436;91;job_sector_Gesundheits- und Sozialwesen;0,0263;0,10196769506906429
+437;91;educational_achievement_Berufliche Grundbildung;0,0051;0,1281784466926355
+438;92;job_status_employed_parttime;0,0034;-0,13399921110347693
+439;92;job_status_employed_fulltime;0,0422;0,09325085058209057
+440;92;job_status_unemployed;0,0044;0,13055979068816922
+441;92;gender_f;0,0;-0,3755725435071286
+442;92;gender_m;0,0;0,373609100039282
+443;92;job_position_Sachbearbeiter/-in;0,0164;-0,11010870980147287
+444;92;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0378;0,09533347276949708
+445;92;educational_achievement_Bachelor;0,0365;-0,0960036290726719
+446;93;job_status_employed_parttime;0,0204;0,10641727641133367
+447;93;educational_achievement_Berufliche Grundbildung;0,0266;-0,10174923752630236
+448;93;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0004;0,16145390934069917
+449;94;job_status_edu_parttime;0,0035;-0,13380745084831352
+450;94;job_status_employed_parttime;0,0047;-0,12959923426360562
+451;94;job_status_employed_fulltime;0,0019;0,14207555561174467
+452;94;gender_f;0,0;-0,21359998559025756
+453;94;gender_m;0,0;0,20734656753143105
+454;94;registration_ageKat_30-39;0,0475;-0,09098626373463968
+455;94;registration_ageKat_50-59;0,0073;0,12291609723331598
+456;94;country_CH;0,0267;-0,10165736892041621
+457;94;job_position_Sachbearbeiter/-in;0,0002;-0,1679519317721524
+458;94;job_sector_Baugewerbe/Bau;0,008;0,12160511076900844
+459;94;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0428;-0,09297238113665279
+460;95;work_country_CH;0,0309;-0,09904113308278012
+461;95;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0308;-0,09908877499218521
+462;95;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0468;-0,09125138104256152
+463;95;company_size_250.0;0,0381;-0,09517544934127783
+464;96;job_status_selfemployed;0,0456;-0,09175629260375466
+465;96;job_status_unemployed;0,012;0,11519489651844488
+466;96;registration_ageKat_20-29;0,0004;0,16326193616230342
+467;96;registration_ageKat_50-59;0,0191;-0,10748514816508782
+468;96;work_district_ZH;0,0095;0,11891312184657395
+469;96;job_position_Sachbearbeiter/-in;0,0289;0,10027763380653056
+470;96;job_sector_Erziehung und Unterricht;0,0455;-0,09181180907134587
+471;97;job_status_selfemployed;0,0228;-0,1044749898476741
+472;97;registration_ageKat_20-29;0,003;0,13602082174893299
+473;97;work_country_CH;0,0447;0,09215596725651427
+474;97;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0034;-0,13426667860508923
+475;97;company_size_9.0;0,0416;0,09351504606407604
+476;97;educational_achievement_Berufs- oder Fachmaturität;0,0258;0,10229862893715719
+477;98;gender_f;0,0009;-0,15132070420408622
+478;98;gender_m;0,0018;0,14251118210596292
+479;98;work_district_BE;0,0054;-0,1274475578425577
+480;98;work_district_ZH;0,047;0,0911884923720366
+481;98;job_position_Fachspezialist/-in;0,0323;-0,09825417709106554
+482;98;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0049;0,12886774083886174
+483;98;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,045;-0,09201222042404858
+484;98;educational_achievement_Berufs- oder Fachmaturität;0,0139;0,11282763272724226
+485;99;gender_f;0,0007;-0,15493375595748926
+486;99;gender_m;0,0009;0,1512167196661485
+487;99;country_DE;0,0239;-0,103636475461728
+488;99;educational_achievement_Bachelor;0,0222;-0,10488292744829811
+489;100;gender_f;0,0131;-0,11377484011666344
+490;100;gender_m;0,0178;0,10869636563171035
+491;100;registration_ageKat_50-59;0,0242;-0,10339117067317923
+492;100;job_sector_Information und Kommunikation;0,041;0,09381218203671862
+493;100;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0118;-0,11544827601610091
+494;101;job_status_houskeeping;0,0266;-0,10177479549974454
+495;101;registration_ageKat_40-49;0,0499;-0,09001463656452444
+496;101;work_district_ZH;0,0259;0,10223062819276642
+497;101;educational_achievement_Berufs- oder Fachmaturität;0,0071;0,12337148378958182
+498;102;gender_m;0,0286;-0,10044537538588097
+499;102;registration_ageKat_20-29;0,0035;0,13366637626193645
+500;102;job_position_Fachspezialist/-in;0,0333;-0,09766742301999472
+501;102;job_position_Sachbearbeiter/-in;0,0012;0,14823319297087137
+502;102;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0384;-0,09501645255355028
+503;102;educational_achievement_Berufs- oder Fachmaturität;0,0002;0,17078565443260424
+504;102;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0382;-0,09511729603339467
+505;103;country_DE;0,0437;0,09260200100928613
+506;103;educational_achievement_Berufliche Grundbildung;0,0035;-0,13386394204013974
+507;104;job_sector_Erbringung von sonstigen Dienstleistungen;0,0018;-0,14253704246720436
+508;104;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0366;0,09592263836155004
+509;105;job_status_employed_fulltime;0,0295;-0,09989346415581553
+510;105;educational_achievement_Berufs- oder Fachmaturität;0,0059;0,12617697901393218
+511;106;registration_ageKat_20-29;0,005;0,12862715586279375
+512;106;registration_ageKat_50-59;0,0268;-0,10162560490611112
+513;106;job_position_Fachspezialist/-in;0,0022;-0,14045864210883524
+514;106;job_position_untere Führungsstufe (z.B. Teamleitung);0,047;0,09118061453068116
+515;106;company_size_49.0;0,035;0,09677560413954103
+516;106;company_size_249.0;0,0478;-0,09084569967798518
+517;108;job_position_Fachspezialist/-in;0,0251;-0,10275798931643226
+518;108;job_position_untere Führungsstufe (z.B. Teamleitung);0,0283;0,10061175781837471
+519;109;educational_achievement_Berufliche Grundbildung;0,0157;-0,11079979080734892
+520;110;gender_f;0,0363;-0,09608312633340153
+521;110;gender_m;0,0452;0,09192763156999273
+522;110;registration_ageKat_50-59;0,04;-0,09426831428836316
+523;110;country_CH;0,0463;0,09149344014225026
+524;110;work_country_CH;0,0437;0,0925903233189815
+525;110;work_district_ZH;0,0009;0,15160725760044294
+526;110;educational_achievement_Berufs- oder Fachmaturität;0,0322;0,09828285708489665
+527;111;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0376;-0,0954335712862871
+528;111;educational_achievement_Bachelor;0,0191;0,10748273566530787
+529;111;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0362;-0,09615592366158413
+530;112;registration_ageKat_30-39;0,0053;0,1278471486988523
+531;112;registration_ageKat_50-59;0,0065;-0,12462202616925525
+532;112;work_country_CH;0,0253;0,10266403640994708
+533;112;work_district_SG;0,0484;-0,09062805734452546
+534;112;work_district_ZH;0,0126;0,11437252948317737
+535;112;job_position_Fachspezialist/-in;0,0031;-0,1355859415046723
+536;112;job_position_Sachbearbeiter/-in;0,0386;0,09494571281589316
+537;112;educational_achievement_Berufs- oder Fachmaturität;0,0149;0,11171062669259037
+538;113;gender_f;0,0165;0,10994721995112355
+539;113;gender_m;0,0147;-0,11188633383341313
+540;113;educational_achievement_Berufs- oder Fachmaturität;0,0184;0,10817277305612949
+541;114;registration_ageKat_30-39;0,0;0,1886408076997533
+542;114;registration_ageKat_50-59;0,0;-0,18534285437170123
+543;114;country_CH;0,0022;0,14040531676528195
+544;114;country_DE;0,0323;-0,09824904793467223
+545;114;work_country_CH;0,009;0,11976288452884047
+546;114;work_district_ZH;0,0079;0,12172622519798776
+547;115;registration_ageKat_30-39;0,036;0,0962233050740844
+548;115;registration_ageKat_50-59;0,0162;-0,11031857584670751
+549;115;country_DE;0,0101;-0,11785253237781021
+550;115;work_country_CH;0,0202;0,10650948191360907
+551;115;work_country_DE;0,0192;-0,10744342123957745
+552;115;work_district_SG;0,0327;-0,09801063489278347
+553;115;job_position_Fachspezialist/-in;0,0007;-0,15547117503004304
+554;115;job_position_Sachbearbeiter/-in;0,0225;0,1047053204486812
+555;115;educational_achievement_Berufs- oder Fachmaturität;0,0315;0,09870631312332698
+556;116;job_status_employed_fulltime;0,0456;-0,09175836111501205
+557;116;registration_ageKat_30-39;0,0206;0,10622092875473504
+558;116;registration_ageKat_50-59;0,0019;-0,1420388998669194
+559;116;country_DE;0,0203;-0,10647500101145693
+560;116;work_country_CH;0,0123;0,11476542886594643
+561;116;work_country_DE;0,0052;-0,12809158506259577
+562;116;work_district_ZH;0,0114;0,11601132984903023
+563;116;job_position_Fachspezialist/-in;0,0013;-0,1468450352725177
+564;116;job_position_Sachbearbeiter/-in;0,0001;0,1757090315465161
+565;116;company_size_9.0;0,0302;0,09946776801784765
+566;117;job_status_edu_parttime;0,0184;0,10816472384296243
+567;117;job_status_employed_fulltime;0,0027;-0,13717336663621765
+568;117;job_position_Fachspezialist/-in;0,0032;-0,13477640274625416
+569;117;job_position_Sachbearbeiter/-in;0,0027;0,13744809180919942
+570;118;gender_f;0,0389;-0,09477569687284391
+571;118;gender_m;0,0468;0,09126686490401799
+572;118;registration_ageKat_30-39;0,0024;0,13885282783860353
+573;118;registration_ageKat_50-59;0,0098;-0,11834897073159303
+574;118;work_district_SG;0,0292;-0,10004733450026283
+575;118;work_district_ZH;0,0115;0,11587005667911927
+576;118;job_position_Fachspezialist/-in;0,0002;-0,16804584614119936
+577;118;job_position_Sachbearbeiter/-in;0,0201;0,10659587178298509
+578;118;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0364;0,09606019780824553
+579;118;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0324;-0,09820043238091065
+580;119;job_status_edu_parttime;0,0369;0,09577743619951468
+581;119;gender_m;0,0424;-0,0931519808059443
+582;119;registration_ageKat_30-39;0,0156;0,1108621271878227
+583;119;registration_ageKat_50-59;0,0003;-0,16477645283627787
+584;119;job_position_Sachbearbeiter/-in;0,0002;0,16806103329148533
+585;119;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0045;-0,13026274700067383
+586;120;job_status_edu_parttime;0,0085;0,12063176847583156
+587;120;job_status_employed_fulltime;0,0186;-0,10790827156841597
+588;120;registration_ageKat_30-39;0,0416;0,0935454088444813
+589;120;registration_ageKat_50-59;0,0179;-0,10856755466803315
+590;120;job_position_Fachspezialist/-in;0,0033;-0,13452769226694442
+591;120;job_position_Sachbearbeiter/-in;0,0045;0,1302766931668953
+592;120;educational_achievement_Berufs- oder Fachmaturität;0,0225;0,1046659018217056
+593;120;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0442;-0,09237232559706847
+594;121;job_status_selfemployed;0,0219;-0,10515008377122448
+595;121;registration_ageKat_30-39;0,0069;0,1238217682851305
+596;121;registration_ageKat_50-59;0,0028;-0,13678125589025392
+597;121;job_position_Sachbearbeiter/-in;0,0316;0,09862126783391449
+598;121;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,029;-0,10019011348011021
+599;121;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,045;0,09201249649021245
+600;122;job_status_employed_fulltime;0,0256;-0,1024274816537783
+601;122;job_position_Fachspezialist/-in;0,0229;-0,10441642976668387
+602;123;gender_f;0,005;-0,12846066362113404
+603;123;gender_m;0,0058;0,12637266680227305
+604;123;educational_achievement_Bachelor;0,0029;0,13619440288175708
+605;123;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0092;-0,11946274368823495
+606;124;job_position_Fachspezialist/-in;0,0027;-0,13737408663436937
+607;125;gender_f;0,0243;-0,10335090890634098
+608;125;gender_m;0,0249;0,10289120315899333
+609;125;country_DE;0,0335;-0,09759947546497987
+610;125;work_country_DE;0,0284;-0,10055012879445109
+611;125;job_position_Sachbearbeiter/-in;0,0179;0,10863529978899895
+612;125;educational_achievement_Berufs- oder Fachmaturität;0,0191;0,10754597150913557
+613;125;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0073;-0,12302591246306618
+614;126;job_status_edu_parttime;0,0264;0,10189037679839524
+615;126;job_status_employed_parttime;0,0255;0,10251859676934233
+616;126;job_status_employed_fulltime;0,0372;-0,09562657871662333
+617;126;country_DE;0,0125;-0,11447029429446788
+618;126;work_country_CH;0,0098;0,11834720572309804
+619;126;work_country_DE;0,0037;-0,132802490170009
+620;127;registration_ageKat_30-39;0,04;0,09427762112060872
+621;127;job_position_Fachspezialist/-in;0,0073;-0,12296405029146071
+622;127;job_sector_Baugewerbe/Bau;0,0311;-0,09894182946668632
+623;128;job_status_edu_parttime;0,0232;0,10414761335617506
+624;128;job_status_employed_fulltime;0,0133;-0,1135194338847024
+625;128;registration_ageKat_30-39;0,0296;0,0998414013637232
+626;128;job_position_Fachspezialist/-in;0,0046;-0,1299165485029824
+627;128;job_position_Sachbearbeiter/-in;0,024;0,10352697501567328
+628;128;company_size_9.0;0,0064;0,1250438449722202
+629;128;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0349;0,09683520819300674
+630;129;job_status_edu_parttime;0,0151;0,11148682051988763
+631;129;job_status_employed_fulltime;0,0225;-0,10471505655780841
+632;129;country_CH;0,0349;0,09681465364567098
+633;129;job_position_Sachbearbeiter/-in;0,0359;0,09630507137333631
+634;129;job_sector_Baugewerbe/Bau;0,0065;-0,12477158979432625
+635;129;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0269;0,10157372224060107
+636;130;job_status_employed_fulltime;0,0031;-0,13523273059189705
+637;130;job_status_houskeeping;0,0141;0,11252401125996758
+638;130;gender_f;0,0;0,1882383900254498
+639;130;gender_m;0,0;-0,19870431354038273
+640;130;registration_ageKat_20-29;0,0144;-0,11226192526806344
+641;130;job_position_Sachbearbeiter/-in;0,0464;0,09144990888383671
+642;131;country_CH;0,0497;0,0900969458754741
+643;131;country_DE;0,0332;-0,09775317580658005
+644;131;work_district_BE;0,0477;0,09090295546891272
+645;131;job_position_Sachbearbeiter/-in;0,0056;0,12696530257613886
+646;131;job_sector_Erbringung von sonstigen Dienstleistungen;0,029;-0,10019912578640497
+647;132;job_status_edu_parttime;0,0488;0,09044266770383985
+648;132;job_status_employed_parttime;0,0394;0,09457748084587445
+649;132;job_status_employed_fulltime;0,004;-0,13177443784155474
+650;132;registration_ageKat_30-39;0,0193;0,10729999277570956
+651;132;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0477;0,09090839239521821
+652;133;job_status_employed_parttime;0,0367;0,0958994777983959
+653;133;gender_f;0,0035;0,13355316689282445
+654;133;gender_m;0,0027;-0,13715856490694375
+655;133;registration_ageKat_30-39;0,0287;0,10040133706593139
+656;133;registration_ageKat_50-59;0,0212;-0,10574790036270293
+657;133;country_CH;0,0456;0,09176249014137762
+658;133;country_DE;0,0254;-0,10257346891503692
+659;133;job_position_Fachspezialist/-in;0,0039;-0,13225299726446726
+660;133;job_position_Sachbearbeiter/-in;0,0095;0,11882849012440874
+661;133;job_sector_Erziehung und Unterricht;0,0416;-0,09350742121234533
+662;133;educational_achievement_Berufs- oder Fachmaturität;0,0388;-0,09486850447211036
+663;134;job_status_employed_parttime;0,0044;0,1304230684746815
+664;134;gender_f;0,0438;0,09254969708489824
+665;134;gender_m;0,0367;-0,09588331115731126
+666;134;registration_ageKat_30-39;0,0279;0,10089028830715457
+667;134;registration_ageKat_40-49;0,022;-0,10506292560578989
+668;134;company_size_49.0;0,0232;0,10413166242776682
+669;134;educational_achievement_Berufliche Grundbildung;0,0;-0,18510024565847297
+670;134;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0444;0,09229404135640823
+671;135;job_status_houskeeping;0,0459;0,09163415362174068
+672;135;registration_ageKat_20-29;0,013;0,11385759132085634
+673;135;job_sector_Erziehung und Unterricht;0,0413;-0,09368532225140645
+674;135;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0204;-0,10636318884608591
+675;135;educational_achievement_Berufs- oder Fachmaturität;0,0054;0,12735526951971002
+676;135;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0382;0,09512509940464402
+677;135;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0055;-0,1272765765181114
+678;136;job_status_edu_parttime;0,0355;0,09648959342385767
+679;136;registration_ageKat_30-39;0,0224;0,1047588777807967
+680;136;country_DE;0,0289;-0,10023282775562929
+681;136;job_sector_Erziehung und Unterricht;0,007;-0,1235348558842699
+682;137;registration_ageKat_30-39;0,0007;0,15502200101033606
+683;137;registration_ageKat_50-59;0,0064;-0,12500351577332294
+684;137;country_CH;0,0183;0,10824196933640222
+685;137;country_DE;0,0192;-0,10742094075432748
+686;137;job_position_Sachbearbeiter/-in;0,0253;0,10260705253060153
+687;137;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0036;-0,13317502646347718
+688;138;job_status_edu_parttime;0,0148;0,11173016954191775
+689;138;job_status_employed_fulltime;0,0339;-0,09737815475883368
+690;138;job_status_unemployed;0,0278;0,10093152785664664
+691;138;registration_ageKat_20-29;0,049;0,0903732758980723
+692;138;registration_ageKat_30-39;0,0075;0,12260632015036958
+693;138;registration_ageKat_50-59;0,0002;-0,16945448883343078
+694;138;job_position_Sachbearbeiter/-in;0,0175;0,10902744670468698
+695;138;company_size_9.0;0,0314;0,09874343160506083
+696;139;gender_f;0,0019;-0,14249223697618305
+697;139;gender_m;0,0032;0,1349460883768589
+698;139;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0389;0,0947897669625348
+699;140;job_status_unemployed;0,0061;0,12561799739812302
+700;140;gender_f;0,0076;-0,12229787669057116
+701;140;gender_m;0,0091;0,11957033230570972
+702;141;gender_m;0,0497;-0,09011030994745547
+703;141;job_position_Sachbearbeiter/-in;0,0001;0,17480855655220434
+704;141;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0042;-0,1309877130006999
+705;141;educational_achievement_Master, Lizentiat, Diplom, Staatsexamen, Nachdiplom;0,0173;-0,10915697964938387
+706;142;registration_ageKat_30-39;0,0021;0,14096609110758773
+707;142;registration_ageKat_50-59;0,001;-0,15074593816015885
+708;142;job_sector_Erziehung und Unterricht;0,0421;-0,09328306555821225
+709;142;educational_achievement_Berufs- oder Fachmaturität;0,0024;0,1392299066425462
+710;143;job_status_edu_parttime;0,0296;0,09982064235371879
+711;143;registration_ageKat_20-29;0,0385;-0,09499463659740541
+712;144;gender_f;0,0047;0,1295011145749674
+713;144;gender_m;0,0033;-0,13436827705532028
+714;144;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0286;-0,10043873791365976
+715;144;job_position_untere Führungsstufe (z.B. Teamleitung);0,0275;0,10113677901026413
+716;144;job_sector_Erziehung und Unterricht;0,015;-0,11153909964646953
+717;145;job_status_edu_parttime;0,0;0,19986239049997415
+718;145;job_status_employed_parttime;0,0227;0,10449727439038273
+719;145;gender_f;0,0373;0,0955961571948952
+720;145;gender_m;0,0236;-0,10388065305297219
+721;145;registration_ageKat_20-29;0,0122;0,11486923052817433
+722;145;country_DE;0,0268;-0,10157857575631936
+723;145;job_position_Sachbearbeiter/-in;0,0005;0,1594847082933703
+724;145;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,019;-0,10756649606458425
+725;146;job_status_houskeeping;0,0026;0,13789080724525313
+726;146;job_status_unemployed;0,0425;-0,09312041741620888
+727;146;country_DE;0,016;0,11045196222106406
+728;146;work_country_CH;0,0225;-0,10467320970414154
+729;146;work_country_DE;0,0103;0,1175659539908183
+730;146;job_sector_Gesundheits- und Sozialwesen;0,0434;0,09271260544090124
+731;146;educational_achievement_Bachelor;0,0053;-0,12766127286703158

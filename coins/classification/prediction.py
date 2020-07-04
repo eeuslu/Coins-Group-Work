@@ -34,7 +34,7 @@ def predict(x1, x2, x3, x4, targetDataFrame):
     # go through all targetFeature and predict them
     for index, row in dfBestResults.iterrows():
         targetFeatureString = str(row["TargetFeature"])
-        if row['BestAlgorithm'] != '-' and row['Accuracy'] != '0.0':
+        if row['BestAlgorithm'] != '-' and row['Accuracy'] != 0:
             inputFeatureList = row["InputFeature"].split("| ")
             # try to get all input feature
             try:
@@ -43,7 +43,6 @@ def predict(x1, x2, x3, x4, targetDataFrame):
                 return ("Fehler beim Extrahieren der InputFeature: Bitte übergebe alle notwendigen DataFrames.")
             # try to load model, pca and standardScaler
             try:
-                print(targetFeatureString)
                 model, pca, standardScaler = loadModel(targetFeatureString, targetDataFrame)
             except:
                 return ("Fehler beim Laden der Modelle: Bitte trainiere zunächst ein Model für die Target Feature.")

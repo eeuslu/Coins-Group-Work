@@ -1,22 +1,14 @@
 ;attribute 1;attribute 2;p-value;correlation
-0;job_status_employed_fulltime;nature;0,0237;0,11113835269498239
-1;job_status_unemployed;nature;0,0469;-0,0977291767817122
-2;registration_ageKat_40-49;nature;0,0202;0,11413263535099533
-3;registration_ageKat_50-59;nature;0,0175;-0,11670776068242765
-4;work_district_GR;human;0,0127;0,12245070769907962
-5;work_district_LU;food;0,0104;0,1258361355812815
-6;work_district_NI;human;0,0123;-0,12296813376497058
-7;job_position_Sachbearbeiter/-in;child;0,0289;0,10737432124966291
-8;job_sector_Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen;food;0,0039;0,14156874695603808
-9;job_sector_Gesundheits- und Sozialwesen;nature;0,0058;0,1354652039459256
-10;job_sector_Verkehr und Lagerei;human;0,0291;0,10726893495549594
-11;job_sector_Verkehr und Lagerei;nature;0,012;-0,12334232861013579
-12;job_sector_Verkehr und Lagerei;child;0,0026;0,14780133952829072
-13;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";animal;0,0044;0,1395990983040302
-14;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";nature;0,0144;-0,12021462108047282
-15;company_size_249.0;child;0,0443;-0,09891442243079511
-16;company_size_49.0;animal;0,0112;0,12453669244983737
-17;educational_achievement_Bachelor;food;0,0451;0,0985245210083654
-18;educational_achievement_Doktorat, Habilitation;child;0,0374;0,10233521693553886
-19;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;human;0,0222;0,11238571694159395
-20;educational_achievement_Höhere Fachschule lusive Nachdiplome;human;0,0016;-0,15450552679377025
+0;job_status_employed_fulltime;nature;0,0394;0,09566816996975205
+1;registration_ageKat_50-59;nature;0,037;-0,09686280243050008
+2;work_district_SG;mobility;0,0466;-0,09245003270420446
+3;job_position_Sachbearbeiter/-in;child;0,0476;0,09203158729854695
+4;job_sector_Baugewerbe/Bau;animal;0,0372;-0,09678011771316027
+5;job_sector_Gesundheits- und Sozialwesen;nature;0,0177;0,11009112492454218
+6;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";animal;0,0127;0,11565750911738383
+7;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";nature;0,0162;-0,11156549809853487
+8;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";food;0,0469;0,09230936010253785
+9;company_size_49.0;animal;0,0322;0,09946843563821783
+10;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;human;0,0239;0,10484225618639564
+11;educational_achievement_Höhere Fachschule lusive Nachdiplome;human;0,0033;-0,13611622154278574
+12;educational_achievement_Höhere Fachschule lusive Nachdiplome;mobility;0,0416;-0,09461759015422602

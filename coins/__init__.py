@@ -4,3 +4,4 @@ from . import dataExploration
 from . import nluTranslation
 from . import correlation
 from . import classification
+from . import operations
