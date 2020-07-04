@@ -364,7 +364,14 @@ def loadModel(targetFeatureName, targetDataFrameName):
 
     return model, pca, standardScaler
 
-
+def loadDf(path, header=True):
+    path = '{directory}/{path}'.format(directory=get_data_path(),path=path)
+    if header == True:
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False)
+    else:
+        df = pd.read_csv(path, sep=';', decimal=',', low_memory=False, header=None)
+  
+    return df
 
 def getHash(name):
     return hashlib.sha256(name.encode()).hexdigest()[:20]

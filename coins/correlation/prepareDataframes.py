@@ -46,6 +46,12 @@ def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
     # drop NaN values
     dfSocioDemographicsDummies.dropna(inplace=True)
 
+    # save all columns
+    columns = dfSocioDemographicsDummies.columns
+    dfColumns = pd.DataFrame(columns)
+    path = '{directory}/input/SystemOwned/dfSocioDemographics.csv'.format(directory=get_data_path())
+    dfColumns.to_csv(path, sep=";", index=False, header=False)
+
     return dfSocioDemographicsDummies, droppedColumnsList
 
 
