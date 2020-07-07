@@ -55,28 +55,26 @@ def prepareSocioDemographics(dfSocioDemographics, dropPercentage):
     return dfSocioDemographicsDummies, droppedColumnsList
 
 
-def cluster(cluster=5):
-#If Cluster wanted
-    pass
-    """
-    if cluster != 0:
-     
-        dfPersonalityNoId = dfInput.drop('user_id',axis=1)
+def cluster(dfInput,cluster=5, onlyCluster=False):
+    
+    dfWithId = dfInput.copy()
 
-        kmeans = KMeans(n_clusters=cluster, random_state=0).fit(dfPersonalityNoId)
+    if cluster > 0:
+        dfWithoutId = dfWithId.drop('user_id',axis=1)
 
-        prediction = kmeans.predict(dfPersonalityNoId)
-        dfInput['cluster'] = prediction
-        dfInput['cluster'] = dfInput['cluster'].astype('float')
+        kmeans = KMeans(n_clusters=cluster, random_state=0).fit(dfWithoutId)
 
-        #save cluster centers
-        configuration.append(['cluster',kmeans.cluster_centers_])
+        prediction = kmeans.predict(dfWithoutId)
+        dfWithId['cluster'] = prediction
+        dfWithId['cluster'] = dfWithId['cluster'].astype('float')
 
-        for column in dfInput.columns:
-            if column not in ['user_id','cluster']:
-                dfInput.drop(column,axis=1,inplace=True)
+        if onlyCluster == True:
+            for column in dfWithId.columns:
+                if column not in ['user_id','cluster']:
+                    dfWithId.drop(column,axis=1,inplace=True)
 
-    """
+    return dfWithId
+
 
 
 # transform values in dfPersonality from real numbers to classes for classification purpose
