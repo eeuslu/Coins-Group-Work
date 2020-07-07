@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as numpy
+from .utils import get_data_path
 
 def createPersonality(df_ipip):
 
@@ -10,35 +11,41 @@ def createPersonality(df_ipip):
     #drop duplicates
     dfPersonality.drop_duplicates(inplace=True)
 
+    dfPersonality = dfPersonality.reset_index(drop=True)
+    dfPersonality.dropna(inplace=True)
+
     return dfPersonality
 
 
-def createSocialDemographics(df_ipip, df_mpzm, df_images, df_emotions, df_mood):
-    
-    sources = [df_mpzm, df_images, df_emotions, df_mood]
+def createSocioDemographics(dfList):
     
     # create first DataFrame as base for concat
-    dfSocialDemographics = df_ipip[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
+    dfSocialDemographics = dfList[0][['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
                             'job_position','job_sector','company_size','job_status_edu_parttime','job_status_edu_fulltime',
                             'job_status_employed_parttime','job_status_employed_fulltime','job_status_selfemployed',
                             'job_status_houskeeping','job_status_unemployed','job_status_retired','educational_achievement']]
 
-    # concat defined columns with all other dataframes containing valuable information about demographics
-    for source in sources:
-        dfSocialDemographicsSource = source[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
+    if len(dfList) > 1:
+        # concat defined columns with all other dataframes containing valuable information about demographics
+        sources = dfList[1:]
+        for source in sources:
+            dfSocialDemographicsSource = source[['user_id','gender','registration_age','registration_ageKat','country','work_country','work_district',
                             'job_position','job_sector','company_size','job_status_edu_parttime','job_status_edu_fulltime',
                             'job_status_employed_parttime','job_status_employed_fulltime','job_status_selfemployed',
                             'job_status_houskeeping','job_status_unemployed','job_status_retired','educational_achievement']]
-        dfSocialDemographics = pd.concat([dfSocialDemographics,dfSocialDemographicsSource],ignore_index=True)
+            dfSocialDemographics = pd.concat([dfSocialDemographics,dfSocialDemographicsSource],ignore_index=True)
     
     # drop duplicates
     dfSocialDemographics.drop_duplicates(inplace=True)
+    dfSocialDemographics.drop('registration_age',axis=1,inplace=True)
 
     # reset index
     dfSocialDemographics = dfSocialDemographics.reset_index(drop=True)
+    dfSocialDemographics.dropna(inplace=True)
 
     return dfSocialDemographics
     
+
 
 def createImageDescriptions(df_images):
 
@@ -53,31 +60,53 @@ def createImageDescriptions(df_images):
 
     dfTextAboutImages['file_name'] = dfTextAboutImages['file_name'].str.replace('./', '')
     dfTextAboutImages = dfTextAboutImages.reset_index(drop=True)
+    dfTextAboutImages.dropna(inplace=True)
     
     return dfTextAboutImages
 
 
-def createImageRatings(df_images):
+#If train == true save the dict. Else load it
+def createImageRatings(df_images, train):
 
-    # get unique image names
-    imageNames = df_images['file_name'].unique()
-    uniqueImageNames = []
+    #First get the path
+    path = '{directory}/input/SystemOwned/imageDict.csv'.format(directory=get_data_path())
 
-    for imageName in imageNames:
-        imageName = imageName.replace('./', '')
-        uniqueImageNames.append(imageName)
+    if train == True:
+        # get unique image names
+        imageNames = df_images['file_name'].unique()
+        uniqueImageNames = []
 
-    uniqueImageNames = numpy.unique(uniqueImageNames)
+        for imageName in imageNames:
+            imageName = imageName.replace('./', '')
+            uniqueImageNames.append(imageName)
 
-    # create dict for image file names and numbers
-    imageNumbers = list(range(1, 148))
-    imageDict = dict(zip(imageNumbers, uniqueImageNames))
+        uniqueImageNames = numpy.unique(uniqueImageNames)
+
+        # create dict for image file names and numbers
+        imageNumbers = list(range(0, 147))
+
+        imageDict = dict(zip(imageNumbers, uniqueImageNames))
+
+        # create inverted image Dictionary
+        inv_imageDict = {v: k for k, v in imageDict.items()}
+
+        inv_imageDf = pd.DataFrame.from_dict(inv_imageDict,orient='index')
+        inv_imageDf.reset_index(inplace=True)
+        inv_imageDf.columns = ['imageName','number']
+        inv_imageDf.to_csv(path,index=False,sep=';',header=True,encoding='utf-8')
+
+    #If train == False load the dict
+    else:
+        inputDf = pd.read_csv(path,sep=';',encoding='utf-8')
+        inputDf = inputDf.set_index('imageName')
+        inputDf.drop('number',axis=1)
+
+        inv_imageDict = inputDf.to_dict()
+        inv_imageDict=inv_imageDict['number']
 
     # get unique user IDs
     uniqueUsers = df_images['user_id'].unique()
 
-    # create inverted image Dictionary
-    inv_imageDict = {v: k for k, v in imageDict.items()}
 
     # create rating table for user per image
     ratingList = []
@@ -97,13 +126,54 @@ def createImageRatings(df_images):
     dfImageRatings = pd.DataFrame(ratingList)
     dfImageRatings.rename(columns={0:'user_id'}, inplace=True)
     dfImageRatings.fillna(value=0.0, inplace=True)
+    dfImageRatings.dropna(inplace=True)
+
+    # create dict for image file names and numbers
+    imageNumbers = list(range(0, 147))
+    imageNumbers = list(map(str, imageNumbers))
+    imageNumbers = ["user_id"] + imageNumbers
+
+    dfImageRatings.columns = imageNumbers
     
     return dfImageRatings
 
 
+
+
+def createImageContents(df_images, df_imageLabels):
+    
+    # get important columns from images dataframe
+    dfImageContents = df_images[['user_id', 'file_name', 'favorite']]
+    
+    # drop duplicates
+    dfImageContents.drop_duplicates(inplace=True)
+    
+    # filter only for entries which are favorites
+    dfImageContents = dfImageContents[dfImageContents['favorite']==True][['user_id','file_name']]
+
+    # align file_name formatting
+    dfImageContents['file_name'] = dfImageContents['file_name'].str.replace('./', '')
+
+    # merge favorite images with imageLabels
+    dfImageContents = dfImageContents.merge(df_imageLabels, how='inner', on='file_name')
+
+    # drop file_name column and duplicates
+    dfImageContents = dfImageContents.drop(columns=['file_name'])
+    dfImageContents.drop_duplicates(inplace=True)
+
+    # reset index
+    dfImageContents = dfImageContents.reset_index(drop=True)
+    dfImageContents.dropna(inplace=True)
+
+    return dfImageContents
+
+
+
 # fill NaNs in dfImageDescriptions with bfill and ffill where possible, delete other NaN rows
 def cleanImageDescriptions(df):
-    df = df.drop(columns=['Unnamed: 0'])
+    
+    if 'Unnamed: 0' in df.columns:
+        df = df.drop(columns=['Unnamed: 0'])
 
     dfSentiments = df[['reasons_translation_sentiment', 'emotions_translation_sentiment', 'strengths_translation_sentiment', 'utilization_translation_sentiment', 'story_translation_sentiment']]
     dfSadness = df[['reasons_translation_sadness', 'emotions_translation_sadness', 'strengths_translation_sadness', 'utilization_translation_sadness', 'story_translation_sadness']]
@@ -138,22 +208,6 @@ def cleanImageDescriptions(df):
     
     return df
 
-
-def cleanImageDescriptions_old(df):
-    df = df.drop(columns=['Unnamed: 0'])
-    
-    dfNumeric = df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
-    
-    dfNumeric = dfNumeric.fillna(method='ffill', axis='columns')
-    dfNumeric = dfNumeric.fillna(method='bfill', axis='columns')
-    
-    df[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']] = dfNumeric[['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment']]
-    
-    df = df.dropna(axis='index', subset=['reasons_sentiment', 'emotions_sentiment', 'strengths_sentiment', 'utilization_sentiment', 'story_sentiment'])
-    
-    df = df.reset_index(drop=True)
-    
-    return df
 
 # ------------------------------------------------------------------
 # -------------------------- NOT USED NOW --------------------------

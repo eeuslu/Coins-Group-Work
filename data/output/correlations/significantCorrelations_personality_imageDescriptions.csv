@@ -1,0 +1,15 @@
+;attribute 1;attribute 2;p-value;correlation
+0;reasons_translation_angerCategory;offenheitCategory;0,023;0,1627535443994874
+1;emotions_translation_joyCategory;gewissenhaftigkeitCategory;0,0077;0,1901807044016055
+2;strengths_translation_sadnessCategory;extraversionCategory;0,0491;-0,1411055636375036
+3;strengths_translation_joyCategory;extraversionCategory;0,0031;0,21077367097047617
+4;strengths_translation_fearCategory;extraversionCategory;0,0371;-0,14944400098871813
+5;utilization_translation_angerCategory;neurotizismusCategory;0,0107;0,18249063261848691
+6;story_translation_sentimentCategory;neurotizismusCategory;0,0068;-0,19316156597666262
+7;story_translation_sadnessCategory;extraversionCategory;0,0302;-0,15528319914856817
+8;story_translation_joyCategory;neurotizismusCategory;0,0178;-0,16959929971429177
+9;story_translation_joyCategory;extraversionCategory;0,0413;0,14624810607903332
+10;story_translation_joyCategory;gewissenhaftigkeitCategory;0,0052;0,1994839826776259
+11;story_translation_fearCategory;neurotizismusCategory;0,0458;0,14321953565437426
+12;story_translation_angerCategory;neurotizismusCategory;0,012;0,17954709267033475
+13;story_translation_angerCategory;gewissenhaftigkeitCategory;0,0458;-0,1432208018490731
