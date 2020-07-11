@@ -1,0 +1,66 @@
+;attribute 1;attribute 2;p-value;correlation
+0;reasons_translation_sentimentCategory;gender_f;0,0414;0,09695492532599857
+1;reasons_translation_sentimentCategory;gender_m;0,0402;-0,09751471781795763
+2;reasons_translation_sadnessCategory;educational_achievement_Berufliche Grundbildung;0,027;-0,10506409782215424
+3;reasons_translation_sadnessCategory;educational_achievement_Berufs- oder Fachmaturität;0,0244;0,10694699952061372
+4;reasons_translation_joyCategory;gender_f;0,004;0,13659235544157503
+5;reasons_translation_joyCategory;gender_m;0,0065;-0,12908223824478327
+6;reasons_translation_joyCategory;registration_ageKat_50-59;0,0138;-0,11695663295998693
+7;reasons_translation_joyCategory;job_position_untere Führungsstufe (z.B. Teamleitung);0,0497;-0,09332033571569226
+8;reasons_translation_fearCategory;job_status_edu_parttime;0,0433;0,09608279544575138
+9;reasons_translation_fearCategory;registration_ageKat_50-59;0,0237;0,10747997731506141
+10;reasons_translation_fearCategory;job_position_Sachbearbeiter/-in;0,0474;-0,09425631872968565
+11;reasons_translation_fearCategory;job_sector_Erbringung von Finanz- und Versicherungsdienstleistungen;0,0097;0,12283384927058474
+12;reasons_translation_disgustCategory;job_status_employed_fulltime;0,0297;-0,1033332104425677
+13;reasons_translation_disgustCategory;job_status_unemployed;0,0496;0,09335360112849773
+14;reasons_translation_disgustCategory;job_position_Fachspezialist/-in;0,037;0,09912538238516089
+15;reasons_translation_disgustCategory;job_position_mittlere Führungsstufe (z.B. Abteilungs- / Bereichsleitung);0,0174;-0,11291005322148043
+16;reasons_translation_angerCategory;gender_m;0,0496;0,09333567094788009
+17;reasons_translation_angerCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0465;0,09465731865414707
+18;reasons_translation_angerCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0087;0,12442718112676283
+19;emotions_translation_sentimentCategory;country_CH;0,0054;0,13207572345766647
+20;emotions_translation_sentimentCategory;country_DE;0,0101;-0,12205006085910851
+21;emotions_translation_sentimentCategory;work_country_CH;0,0437;0,09585606005573938
+22;emotions_translation_sentimentCategory;work_country_DE;0,0262;-0,1056606485436398
+23;emotions_translation_joyCategory;country_DE;0,0399;-0,097664861464964
+24;emotions_translation_joyCategory;work_country_CH;0,0496;0,09335636976475335
+25;emotions_translation_joyCategory;educational_achievement_Höhere Fachschule lusive Nachdiplome;0,0058;-0,1310043788734267
+26;emotions_translation_fearCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0149;0,11559134223347607
+27;emotions_translation_fearCategory;educational_achievement_Berufs- oder Fachmaturität;0,0331;0,1012502637739445
+28;strengths_translation_sentimentCategory;gender_f;0,0269;0,10516229752827636
+29;strengths_translation_sentimentCategory;gender_m;0,0466;-0,09459872337958584
+30;strengths_translation_sentimentCategory;company_size_249.0;0,0171;-0,11329528270965199
+31;strengths_translation_sentimentCategory;company_size_250.0;0,027;0,10506326162448622
+32;strengths_translation_sadnessCategory;job_sector_Erziehung und Unterricht;0,0453;0,09515870799000897
+33;strengths_translation_joyCategory;job_status_selfemployed;0,0085;-0,12488396323665993
+34;strengths_translation_joyCategory;educational_achievement_Berufliche Grundbildung;0,0494;-0,09343044783880086
+35;strengths_translation_joyCategory;educational_achievement_Höhere Fach- und Berufsausbildung mit eidg. Fachausweis, eidg. Diplom oder Meisterdiplom, Höhere Fachschule für Technik;0,0482;0,09393136510412523
+36;strengths_translation_fearCategory;job_sector_Erbringung von sonstigen Dienstleistungen;0,0161;-0,1142639707975568
+37;strengths_translation_fearCategory;job_sector_Verarbeitendes Gewerbe/Herstellung von Waren;0,0142;-0,11647296778751628
+38;strengths_translation_fearCategory;"job_sector_Öffentliche Verwaltung, Verteidigung; Sozialversicherung";0,0223;0,10858954783480866
+39;strengths_translation_angerCategory;job_status_houskeeping;0,0395;0,097851956304111
+40;utilization_translation_sentimentCategory;work_district_BE;0,0488;0,0936543215355453
+41;utilization_translation_sadnessCategory;job_status_selfemployed;0,016;-0,11443837425008932
+42;utilization_translation_disgustCategory;country_CH;0,0409;0,09716425502749138
+43;utilization_translation_angerCategory;registration_ageKat_20-29;0,0381;-0,09855799235121109
+44;utilization_translation_angerCategory;job_position_Sachbearbeiter/-in;0,0257;-0,10597170303729682
+45;story_translation_sentimentCategory;work_district_BE;0,0109;0,1209172282310618
+46;story_translation_sentimentCategory;job_position_obere Führungsstufe (z.B. Geschäftsleitung / CEO);0,0142;-0,11646091099824919
+47;story_translation_sadnessCategory;job_status_edu_parttime;0,0391;0,09807256941631812
+48;story_translation_sadnessCategory;registration_ageKat_30-39;0,0445;0,09553222941172762
+49;story_translation_sadnessCategory;work_country_CH;0,0479;0,09404807008621784
+50;story_translation_sadnessCategory;work_district_AG;0,0188;0,11159568415754355
+51;story_translation_joyCategory;registration_ageKat_20-29;0,0419;0,09668929819595419
+52;story_translation_joyCategory;job_position_Fachspezialist/-in;0,0233;-0,10780213836282428
+53;story_translation_fearCategory;job_status_edu_parttime;0,0424;0,09646815956798266
+54;story_translation_fearCategory;job_status_employed_parttime;0,0169;0,1134828022118259
+55;story_translation_fearCategory;job_status_employed_fulltime;0,0475;-0,09421571260831023
+56;story_translation_disgustCategory;job_status_employed_fulltime;0,0079;-0,1260101041992111
+57;story_translation_disgustCategory;gender_f;0,0345;0,10047942376754135
+58;story_translation_disgustCategory;gender_m;0,0346;-0,1004185741325923
+59;story_translation_disgustCategory;registration_ageKat_30-39;0,0499;0,09322476799833726
+60;story_translation_disgustCategory;job_position_Sachbearbeiter/-in;0,0163;-0,11402564701400109
+61;story_translation_angerCategory;job_status_employed_fulltime;0,0167;-0,1137104887370285
+62;story_translation_angerCategory;work_country_CH;0,0095;0,12314853408033088
+63;story_translation_angerCategory;work_country_DE;0,0368;-0,09922726729953384
+64;story_translation_angerCategory;work_district_ZH;0,0402;0,09752966822362369
