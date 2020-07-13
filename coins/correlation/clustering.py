@@ -12,7 +12,10 @@ from sklearn.cluster import KMeans
 import numpy as np
 import seaborn as sns
 
+################################################################################################################################################################
 
+#Cluster a dataframe to the overgiven number of clusters
+#If onlyCluster == True returns only cluster number and user_id
 def cluster(dfInput,cluster=5, onlyCluster=False):
     
     dfWithId = dfInput.copy()
@@ -35,7 +38,8 @@ def cluster(dfInput,cluster=5, onlyCluster=False):
 
 
 
-
+#Returns the loss of clusters with different k
+#Allows to choose a good k manually
 def find_Good_K(dfInput, kMax=15):
 
     dfWithId = dfInput.copy()
